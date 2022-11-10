@@ -10,7 +10,7 @@ import Footer from '../components/Footer.astro'
 
 		<Header />
 
-		<h1><span class="text-gradient">alex eckardt</span></h1>
+		<h1><span class="title">alex eckardt</span></h1>
 
 		<h4>
 			<p class="code">
@@ -42,6 +42,14 @@ import Footer from '../components/Footer.astro'
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+	}
+	.title {
+		background-image: var(--titlegradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+		transition: 0.3s;
 	}
 	.instructions {
 		line-height: 1.6;

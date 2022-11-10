@@ -1,15 +1,29 @@
 ---
-const { platform, username } = Astro.props;
+const { platform, username, d } = Astro.props;
 import Layout from '../layouts/Layout.astro';
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<p>
+    <a href={`https://www.${platform}.com/${username}`} style="display: inline-block; width: 30px; height: 30px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="00 0 16 16" focusable="false">
+        
+        <path
+        d={d}
+        ></path>
+
+        </svg>
+    </a>
+</p>
 
 <style>
     a {
-      padding: 0.5rem 1rem;
-      color: var(--textcol);
-      background-color: var(--accent);
+      fill: var(--unobtrusive);
+      background-color: none;
       text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      fill: var(--accent);
     }
   </style>
