@@ -1,13 +1,15 @@
 ---
 const { platform, username } = Astro.props;
+import Layout from '../layouts/Layout.astro';
 ---
+
 <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
 
 <style>
     a {
       padding: 0.5rem 1rem;
-      color: white;
-      background-color: #4c1d95;
+      color: var(--textcol);
+      background-color: var(--accent);
       text-decoration: none;
     }
   </style>

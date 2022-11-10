@@ -8,9 +8,17 @@ import Footer from '../components/Footer.astro'
 <Layout title="Alex Eckardt">
 	<main>
 
-		<Navigation />
-
 		<h1><span class="text-gradient">alex eckardt</span></h1>
+
+		<h4>
+			<p class="code">
+				<code>src/pages</code>
+			</p>
+			Hello!
+			
+		</h4>
+
+		
 
 		<Footer />
 
@@ -29,7 +37,7 @@ import Footer from '../components/Footer.astro'
 		margin: 0;
 	}
 	.text-gradient {
-		background-image: var(--accent-gradient);
+		background-image: var(--titlegradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
@@ -43,14 +51,16 @@ import Footer from '../components/Footer.astro'
 		padding: 1rem;
 		border-radius: 0.4rem;
 	}
-	.instructions code {
+
+	.code {
 		font-size: 0.875em;
 		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
+		background: var(--codebackcol);
+		color: var(--codecol);
 		border-radius: 4px;
 		padding: 0.3em 0.45em;
 	}
+
 	.instructions strong {
 		color: rgb(var(--accent));
 	}
