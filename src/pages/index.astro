@@ -13,11 +13,14 @@ import Footer from '../components/Footer.astro'
 
 		<h1><span class="title">alex eckardt</span></h1>
 
-		<h4>
-			
-			Website Currently Under Construction. Please Check back later!
+		<br>
 
-		</h4>
+		<h2>
+			Website Currently Under Construction.
+		</h2>
+		<h3>
+			Please check back later!
+		</h3>
 
 		<Footer />
 
@@ -30,17 +33,32 @@ import Footer from '../components/Footer.astro'
 		padding: 1.5rem;
 		max-width: 60ch;
 	}
+
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
 	}
 
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 400;
+		margin: 0;
+		color: var(--accentlight);
+	}
+
+	h3 {
+		font-size: 1rem;
+		font-weight: 200;
+		margin: 0;
+		color: var(--textcol);
+	}
+
 	h4 {
 		font-size: 1rem;
-		font-weight: 32;
+		font-weight: 200;
 		margin: 0;
-		color: var(--codecol);
+		color: var(--fadedtextcol);
 	}
 
 	.text-gradient {
