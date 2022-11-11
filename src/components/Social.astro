@@ -1,11 +1,11 @@
 ---
-const { platform, username, d } = Astro.props;
+const { website, icon } = Astro.props;
 import Layout from '../layouts/Layout.astro';
 ---
 
 <p>
-    <a href={`https://www.${platform}.com/${username}`}>
-        <iconify-icon class="a" icon={d} width="30" height="30"></iconify-icon>
+    <a href={`https://www.${website}`}>
+        <iconify-icon class="a" icon={icon} width="30" height="30"></iconify-icon>
     </a>
 </p>
 
