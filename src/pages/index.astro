@@ -4,6 +4,7 @@ import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
 ---
+<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
 <Layout title="Alex Eckardt">
 	<main>
@@ -13,11 +14,9 @@ import Footer from '../components/Footer.astro'
 		<h1><span class="title">alex eckardt</span></h1>
 
 		<h4>
-			<p class="code">
-				<code>src/pages</code>
-			</p>
-			Hello!F
 			
+			Website Currently Under Construction. Please Check back later!
+
 		</h4>
 
 		<Footer />
@@ -36,6 +35,14 @@ import Footer from '../components/Footer.astro'
 		font-weight: 800;
 		margin: 0;
 	}
+
+	h4 {
+		font-size: 1rem;
+		font-weight: 32;
+		margin: 0;
+		color: var(--codecol);
+	}
+
 	.text-gradient {
 		background-image: var(--titlegradient);
 		-webkit-background-clip: text;

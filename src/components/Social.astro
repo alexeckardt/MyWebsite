@@ -4,26 +4,21 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <p>
-    <a href={`https://www.${platform}.com/${username}`} style="display: inline-block; width: 30px; height: 30px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="00 0 16 16" focusable="false">
-        
-        <path
-        d={d}
-        ></path>
-
-        </svg>
+    <a href={`https://www.${platform}.com/${username}`}>
+        <iconify-icon class="a" icon={d} width="30" height="30"></iconify-icon>
     </a>
 </p>
 
 <style>
     a {
-      fill: var(--unobtrusive);
+      color: var(--unobtrusive);
       background-color: none;
       text-decoration: none;
+      display: inline-block; 
       transition: 0.3s;
     }
 
     a:hover {
-      fill: var(--accent);
+    color: var(--accent);
     }
   </style>
