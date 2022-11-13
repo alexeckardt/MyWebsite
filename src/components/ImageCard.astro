@@ -1,0 +1,73 @@
+---
+const { href, title, body, imgsrc } = Astro.props;
+---
+
+<li class="link-card" style={`background-image:url(${imgsrc})`}>
+	<a href={href}>
+		
+		<h2>
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<h4>
+			{body}
+		</h4>
+	</a>
+</li>
+<br>
+
+
+<style>
+	.link-card {
+		list-style: none;
+		display: flex;
+		padding: 0.15rem;
+		border-radius: 0.5rem;
+		transition: 0.7s;
+
+		background-size: 100%;
+		background-position: center;
+		background-position-y: 78%;
+		
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	}
+	.link-card:hover {
+		transition: 0.3s;
+
+		background-size: 200%;
+		background-position: center;
+		background-position-y: 78%;
+
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 1);
+	}
+
+
+	.link-card > a {
+		transition: 0.7s;
+
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: 1rem 1.3rem;
+		border-radius: 0.35rem;
+		opacity: 0;
+		color: #fff;
+		background-color: rgba(255, 255, 255, 0.096);
+	}
+	.link-card:hover > a {
+		transition: 0.3s;
+		opacity: 1;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		color: #fff;
+	}
+	h4 {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		color: #fff;
+	}
+
+</style>
