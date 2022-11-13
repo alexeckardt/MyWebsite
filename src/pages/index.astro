@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import ImageCard from '../components/ImageCard.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
+import ProjectSection from '../components/ProjectSection.astro';
 
 ---
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
@@ -17,21 +17,17 @@ import Footer from '../components/Footer.astro'
 
 		<br>
 
-		<h2>
-			Website Currently Under Construction.
-		</h2>
+		<h2>About Me</h2>
 		<h3>
 			Please check back later!
 		</h3>
 
 		<br>
 
-		<ImageCard
-			href="https://alexeckardt.itch.io/soulflamealpha"
-			title="Soulflame Alpha"
-			body="Solo-Developed Action Adventure Game (in-progress)" 
-			imgsrc="/images/soulflame.png"
-			/>
+		<h2>Projects</h2>
+		<h3>Hover Over to see more about my projects! Click to see more.</h3>
+		<br>
+		<ProjectSection />
 
 		<Footer />
 
