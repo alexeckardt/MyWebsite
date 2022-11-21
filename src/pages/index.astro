@@ -1,116 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
 import ProjectSection from '../components/ProjectSection.astro';
-import AboutMeSection from '../components/AboutMeSection.astro';
-
+import Header from '../components/Header.astro';
 ---
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
 <Layout title="Alex Eckardt">
-	<main>
 
-		<Header />
-
-		<h1><span class="title">alex eckardt</span></h1>
-
-		<br>
-
-		<h2>About Me</h2>
-		<AboutMeSection />
-
-		<br>
-
-		<h2>Projects</h2>
-		<h3>Hover Over to see more about my projects! Click to see more.</h3>
-		<br>
+	<div class="main">
 		<ProjectSection />
-
-
-		<h2>Art</h2>
-		<h3>Some of My Sprite Work</h3>
-		<br>
-		
 		<Footer />
+	</div>
 
-	</main>
+	<!-- Header above all -->
+	
+	<Header />
+
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 70ch;
-	}
-
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-
-	h2 {
-		font-size: 1.5rem;
-		font-weight: 400;
-		margin: 0;
-		color: var(--accentlight);
-	}
-
-	h3 {
-		font-size: 1rem;
-		font-weight: 200;
-		margin: 0;
-		color: var(--textcol);
-	}
-
-	h4 {
-		font-size: 1rem;
-		font-weight: 200;
-		margin: 0;
-		color: var(--fadedtextcol);
-	}
-
-	.text-gradient {
-		background-image: var(--titlegradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.title {
-		background-image: var(--titlegradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-		transition: 0.3s;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-
-	.code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: var(--codebackcol);
-		color: var(--codecol);
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+	.main {
+		margin-top: var(--headerheight);
+		width: 100vw;
+		position: relative;
+		left: -1rem;
 	}
 </style>

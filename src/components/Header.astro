@@ -1,34 +1,69 @@
 ---
 import Social from './Social.astro';
 ---
+<div class="header">
 
+  <h1><span class="title">alex eckardt</span></h1>
 
-<header>
-    <g>
-      <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
-      <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
-      <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
-      <Social website="itch.io/alexeckardt" icon="cib:itch-io"/>
-      <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
-    </g>
-</header>
+    <div>
+      <div id="socials">
+        <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
+        <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
+        <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
+        <Social website="itch.io/alexeckardt" icon="cib:itch-io"/>
+        <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
+    </div>
+  </div>
+</div>
 
 <style>
-  header {
-    display: inline;
-    gap: 1rem;
-    margin-top: 0.5rem;
-    position: relative;
-  }
-  g {
+
+  /* Overall */
+
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--headerheight);
     display: flex;
+
+    left: 0rem;
+
+    background-color: var(--backgroundcol);
+    /* border: 3px solid green; */
+  }
+
+  #socials {
+    position: absolute;
+    display: flex; /* Icons same line */
+    gap: 1rem; /* Gap Between Icons */
+    right: 1%; 
+    top: 0.75rem;
+
+    /* border: 3px solid green; */
+  }
+
+  /* My Name Text */
+  h1 {
+		font-size: 2.5rem;
+		font-weight: 800;
+		margin: 0;
+	}
+
+  /* Text Colouring */
+  .title {
+		background-image: var(--titlegradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+		transition: 0.3s;
+
     position: relative;
-    gap: 1rem;
-  }
-  hr {
-    height:2px;
-    border-width:0;
-    color:var(--accent);
-    background-color:var(--accent);
-  }
+    top: 1rem;
+    left: 5%;
+
+    float:left;
+    /* border: 3px solid green; */
+	}
 </style>
