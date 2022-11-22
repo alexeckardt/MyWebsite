@@ -1,0 +1,54 @@
+---
+const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
+---
+
+<div class="container">
+    <img src={spriteurl} style={`transform: ${spritetrans} translateX(-50%)`}>
+    <div class="bkg">
+        <div class="text">
+            <h1>
+                {text}
+            </h1>
+        </div>
+    </div>
+
+</div>
+
+<style>
+
+    .container {
+        height: 20rem;
+        width: 100%;
+    }
+
+    img {
+        position: absolute; 
+        image-rendering: pixelated;
+    }
+
+    .bkg {
+
+        width: 100%;
+        height: 100%;
+
+        background-color: var(--spritebannerbkgcol);
+    }
+
+    .text {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+
+        color: var(--spritebannertextcol);
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 800;
+    }
+
+</style>

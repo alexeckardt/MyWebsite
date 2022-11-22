@@ -1,12 +1,15 @@
 ---
 import ImageCard from '../../components/ImageCard.astro';
-import Banner from '../Banner.astro';
+import SpriteBanner from '../SpriteBanner.astro';
 ---
 
 <!-- Banner -->
-<Banner 
+<SpriteBanner
     text= "Projects"
-    imgurl="images/me.jpg"
+    spriteurl="images/sprites/goof.png"
+    textcol="#ff00ff"
+    bkgcol="#ffffff"
+    spritetrans="translateX(25vw) translateY(20rem) translateY(-240px)"
     />
 
     <!-- Intro -->
@@ -79,5 +82,9 @@ import Banner from '../Banner.astro';
 
     h4 {
         color: var(--fadedtextcol);
+    }
+
+    SpriteBanner {
+
     }
 </style>
