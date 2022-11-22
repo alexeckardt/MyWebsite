@@ -1,13 +1,56 @@
+---
+const { text, imgurl, col} = Astro.props;
+---
 
-<div class="ban">
+<div class="container">
+    <div class="imgg" style={`background-image:url(${imgurl})`}>
+        <div class="colouroverlay">
+            <div class="text">
+                <h1>
+                    {text}
+                </h1>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
-    .ban {
+
+    .container {
         height: 20rem;
-        color: black;
-        background-color: white;
-        border: 3px solid green;
+        width: 100%;
+    }
+
+    .imgg {
+		background-size: 100%;
+		background-position: center;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .colouroverlay {
+        background-color: rgba(0, 0, 0, 50%);
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .text {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+        
+        color: white;
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 800;
     }
 
 </style>
