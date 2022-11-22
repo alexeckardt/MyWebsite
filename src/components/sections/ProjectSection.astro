@@ -9,82 +9,68 @@ import SpriteBanner from '../SpriteBanner.astro';
     spriteurl="images/sprites/goof.png"
     textcol="#ff00ff"
     bkgcol="#ffffff"
-    spritetrans="translateX(25vw) translateY(20rem) translateY(-240px)"
+    spritetrans="translateX(25vw) translateY(var(--bannerheight)) translateY(-240px)"
     />
 
-    <!-- Intro -->
+<!-- Section W Buttons -->
 <div class="section">
+    <div class="linesection">
 
-    <center>
+        <center>
+            <br>
+            <h4>
+            Learn more about each of the projects I've done!
+            </h4>
+            <br>
+            <br>
 
-        <br>
-        <h4>
-           Learn more about each of the projects I've done!
-        </h4>
-        <br>
-        <br>
+            <!-- Soulflame -->
+            <ImageCard
+                href="https://alexeckardt.itch.io/soulflamealpha"
+                title="Soulflame Alpha"
+                body="A Solo-Developed Action Adventure Video Game. Over 3 years of development (currently on pause)" 
+                imgsrc="/images/projects/soulflame.png"
+            />
 
-        <ImageCard
-            href="https://alexeckardt.itch.io/soulflamealpha"
-            title="Soulflame Alpha"
-            body="A Solo-Developed Action Adventure Video Game. Over 3 years of development (currently on pause)" 
-            imgsrc="/images/projects/soulflame.png"
-        />
+            <!-- GO Transit -->
+            <ImageCard
+                href="https://github.com/alexeckardt/Go-Transit-Viewer"
+                title="GO Transit Viewer"
+                body="Visualizer Of GO Transit Routes in Ontario, Canada using Real World Data" 
+                imgsrc="/images/projects/gotransitviewer.png"
+            />
 
-        <ImageCard
-            href="https://github.com/alexeckardt/Go-Transit-Viewer"
-            title="GO Transit Viewer"
-            body="Visualizer Of GO Transit Routes in Ontario, Canada using Real World Data" 
-            imgsrc="/images/projects/gotransitviewer.png"
-        />
+            <!-- Pixel Tile Set -->
+            <ImageCard
+                href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
+                title="Pixel Art Tile Set Completer"
+                body="Python Script to Create Base Tiles from Source Images" 
+                imgsrc="/images/projects/patsc.png"
+            />
 
-        <ImageCard
-            href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
-            title="Pixel Art Tile Set Completer"
-            body="Python Script to Create Base Tiles from Source Images" 
-            imgsrc="/images/projects/patsc.png"
-        />
+            <br>
+            <br>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </center>
+        </center>
+    </div>
 </div>
-
 
 <style>
     .section {
         background-color: var(--backgroundcol);
-        padding: 2rem;
+        buffer: 2rem;
         color: white;
+        border: 3px solid #00000000;
+        /* border: 2px solid green; */
+    }
+
+    .linesection {
+        margin: 2rem;
+        border-left: 2px solid var(--vlinecol);
+        /* border: 2px solid green; */
     }
 
     h4 {
         color: var(--fadedtextcol);
-    }
-
-    SpriteBanner {
-
     }
 </style>
