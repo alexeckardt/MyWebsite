@@ -1,17 +1,12 @@
 ---
-const { href, title, body, imgsrc } = Astro.props;
+const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card" style={`background-image:url(${imgsrc})`}>
+<li class="link-card">
 	<a href={href} target="_blank" rel="noopener noreferrer">
-		
 		<h2>
 			{title}
-			<span>&rarr;</span>
 		</h2>
-		<h4>
-			{body}
-		</h4>
 	</a>
 </li>
 <br>
@@ -32,6 +27,7 @@ const { href, title, body, imgsrc } = Astro.props;
 		width: 50vw;
 		
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+		background-color: var(--spritebannerbkgcol);
 	}
 	.link-card:hover {
 		transition: 0.3s ease-in-out;
@@ -40,6 +36,7 @@ const { href, title, body, imgsrc } = Astro.props;
 		background-position: center;
 
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 1);
+		background-color: var(--accent);
 	}
 
 	/* The Colour Fade Box Ontop */
@@ -50,25 +47,17 @@ const { href, title, body, imgsrc } = Astro.props;
 		line-height: 1.4;
 		padding: 1.3rem 1.3rem;
 		border-radius: 0.5rem;
-		opacity: 0;
-		color: #fff;
-		background-color: rgba(17, 7, 26, 0.616);
+		color: var(--accentdark);
 	}
 	.link-card:hover > a {
 		transition: 0.3s ease-in-out;
-		opacity: 1;
+		color: #fff;
 	}
 
 	/* Text */
 	h2 {
 		margin: 0;
 		font-size: 1.25rem;
-		color: var(--accentlight);
-	}
-	h4 {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: #fff;
 	}
 
 </style>

@@ -1,0 +1,40 @@
+---
+import ImageCard from '../../components/ImageCard.astro';
+import SpriteBanner from '../SpriteBanner.astro';
+---
+
+<!-- Banner -->
+<SpriteBanner
+    text= "Empty!!"
+    spriteurl="images/sprites/goof.png"
+    textcol="#ff00ff"
+    bkgcol="#ffffff"
+    spritetrans="translateX(25vw) translateY(var(--bannerheight)) translateY(-240px)"
+    />
+
+<!-- Section W Buttons -->
+<div class="section">
+    <div class="linesection">
+        <center>
+            
+            <br>
+            <br>
+
+        </center>
+    </div>
+</div>
+
+<style>
+    .section {
+        background-color: var(--backgroundcol);
+        buffer: 2rem;
+        color: white;
+        border: 3px solid #00000000;
+        /* border: 2px solid green; */
+    }
+    .linesection {
+        margin: 2rem;
+        border-left: 2px solid var(--vlinecol);
+        /* border: 2px solid green; */
+    }
+</style>
