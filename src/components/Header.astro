@@ -3,17 +3,26 @@ import Social from './Social.astro';
 ---
 <div class="header">
 
-  <h1><span class="title">alex eckardt</span></h1>
+  <!-- Title -->
+  <a href="" target="_blank" rel="noopener noreferrer">
 
-    <div>
-      <div id="socials">
-        <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
-        <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
-        <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
-        <Social website="itch.io/alexeckardt" icon="cib:itch-io"/>
-        <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
-    </div>
+      <h1>
+        <span class="title">
+            alex eckardt
+        </span>
+      </h1>
+
+  </a>
+
+  <!--  Socials (Right Side) -->
+  <div id="socials">
+    <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
+    <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
+    <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
+    <Social website="itch.io/alexeckardt" icon="cib:itch-io"/>
+    <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
   </div>
+
 </div>
 
 <style>
@@ -27,10 +36,21 @@ import Social from './Social.astro';
     height: var(--headerheight);
     display: flex;
 
-    left: 0rem;
-
     background-color: var(--backgroundcol);
     /* border: 3px solid green; */
+  }
+
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+
+    /* background-color: black; */
+    color: white;
+    margin: 20px;
+
+    text-decoration: none;
   }
 
   #socials {
@@ -48,6 +68,10 @@ import Social from './Social.astro';
 		font-size: 2.5rem;
 		font-weight: 800;
 		margin: 0;
+
+    text-decoration: none;
+
+    z-index: -1;
 	}
 
   /* Text Colouring */
@@ -57,13 +81,5 @@ import Social from './Social.astro';
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
-		transition: 0.3s;
-
-    position: relative;
-    top: 1rem;
-    left: 1.5rem;
-
-    float:left;
-    /* border: 3px solid green; */
 	}
 </style>
