@@ -1,5 +1,6 @@
 ---
 import SpriteBanner from '../SpriteBanner.astro';
+import SkillBar from '../SkillBar.astro';
 ---
 
 <!-- Banner -->
@@ -12,12 +13,120 @@ import SpriteBanner from '../SpriteBanner.astro';
 <!-- Empty Section -->
 <div class="section">
     <div class="linesection">
-        <center>
-            
+
+        <br>
+        <br>
+        <div class="overallcontainer">
+
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------------- -->
+
+            <div class="sectionname">
+                Programming Languages
+            </div>
+                
+            <div class="splitsection">
+
+                <div class="desc">
+                    <div class="textwrapper">
+                        I've been programming since I was 10 years old. I started out making projects on Scratch, and evolved into making small
+                        video games using GML.
+                        <br>
+                        <br>
+                        I'm now enrolled in Computer Science at McMaster University, where I now learn more and more about computers programming and software engineering.
+                    </div>
+                </div>
+
+                <div class="barcontainer">
+                    <SkillBar name="GML"        percentage="95%"/>
+                    <SkillBar name="Python"     percentage="95%"/>
+                    <SkillBar name="Java"       percentage="90%"/>
+                    <SkillBar name="C#"         percentage="75%"/>
+                    <SkillBar name="C"          percentage="70%"/>
+                    <SkillBar name="SQL"        percentage="65%"/>
+                    <SkillBar name="Haskell"    percentage="50%"/>
+                    <SkillBar name="Elm"        percentage="50%"/>
+                </div>
+            </div>
+
             <br>
             <br>
 
-        </center>
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------------- -->
+
+            <div class="sectionname">
+                Graphic Design
+            </div>
+                
+            <div class="splitsection">
+
+                <div class="barcontainer">
+                    <SkillBar name="Aseprite" percentage="95%"/>
+                    <SkillBar name="Paint.NET" percentage="75%"/>
+                    <SkillBar name="Photoshop" percentage="70%"/>
+                    <SkillBar name="GIMP" percentage="70%"/>
+                    <SkillBar name="LaTeX" percentage="70%"/>
+                    <SkillBar name="HTML" percentage="50%"/>
+                    <SkillBar name="CSS" percentage="50%"/>
+                </div>
+
+                
+                <div class="desc">
+                    <div class="textwrapper">
+                        I've always loved art, which eventually expanded into a great appriciation for design in general. I always enjoy 
+                        finding what makes a well designed website or menu work well.
+                        <br>
+                        <br>
+                        I've now accumulated well over 5,000 hours in pixel art creation -- much of it for my various games and projects.
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------------- -->
+
+            <div class="sectionname">
+                Technologies
+            </div>
+                
+            <div class="splitsection">
+
+                <div class="desc">
+                    <div class="textwrapper">
+                        I've experiemented with different technologies, many of which resurfaced in my last CO-OP position. I enjoy experiementing
+                        with new software and learning what is possible. 
+                    </div>
+                </div>
+
+                <div class="barcontainer">
+                    <SkillBar name="Git" percentage="80%"/>
+                    <SkillBar name="Excel" percentage="75%"/>
+                    <SkillBar name="Pandas" percentage="75%"/>
+                    <SkillBar name="Azure" percentage="60%"/>
+                    <SkillBar name="MongoDB" percentage="60%"/>
+                    <SkillBar name="MS Bot Composer" percentage="55%"/>
+                    <SkillBar name="Unity" percentage="50%"/>
+                    <SkillBar name="AzureML" percentage="40%"/>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+
+
+
+
+
+        </div>
     </div>
 </div>
 
@@ -27,11 +136,75 @@ import SpriteBanner from '../SpriteBanner.astro';
         buffer: 2rem;
         color: white;
         border: 3px solid #00000000;
+        
         /* border: 2px solid green; */
     }
     .linesection {
         margin: 2rem;
         border-left: 2px solid var(--vlinecol);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         /* border: 2px solid green; */
+    }
+
+    .overallcontainer {
+        width: 70vw;
+        height: 100%;
+    }
+
+    .splitsection {
+        width: 100%;
+        height: 100%;
+        
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: flex
+
+        /* border: 2px green solid; */
+    }
+
+    .desc {
+        width: 30%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+
+        text-align: center;
+
+        /* background-color: black;
+        border: 2px green solid; */
+    }
+
+    .textwrapper {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        transform: translateY(-15%);
+    }
+
+    .barcontainer {
+        width: 70%;
+        height: 100%;
+        
+        /* background-color: white;
+        border: 2px green solid; */
+    }
+
+    .sectionname {
+        font-size: 2rem;
+        font-weight: 600;
+
+        color: var(--fadedtextcol);
+        margin: 4rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* border: 2px green solid; */
     }
 </style>
