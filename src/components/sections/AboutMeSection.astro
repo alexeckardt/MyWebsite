@@ -1,0 +1,68 @@
+---
+import SpriteBanner from "../SpriteBanner.astro";
+---
+
+<!-- About Me Section -->
+<div class="section">   
+    <div class="linesection">
+        <center>
+            
+            <div class="halfsection">
+
+                <div class="aboutmetextSection"></div>
+
+                <div class="hbuff">
+                    <img src="./images/sprites/port.png" class="myspr">
+                </div>
+                
+
+            </div>
+
+        </center>
+    </div>
+</div>
+
+<style>
+    .section {
+
+        margin-top: var(--headerheight);
+
+        background-color: var(--backgroundcol);
+        buffer: 2rem;
+        color: white;
+        border: 3px solid #00000000;
+        /* border: 2px solid green; */
+    }
+    .linesection {
+        margin: 2rem;
+        border-left: 2px solid var(--vlinecol);
+        /* border: 2px solid green; */
+    }
+    .halfsection {
+
+        height: 30rem;
+        margin: 2rem;
+        border: solid 2px green;
+
+        display: flex;
+
+    }
+    .aboutmetextSection {
+        width: 50%;
+        height: 100%;
+        background-color: white;
+    }
+    .hbuff {
+        width: 50%;
+        height: 100%;
+        background-color: black;
+    }
+
+    .myspr {
+        position: absolute; 
+        image-rendering: pixelated;
+
+        transform: translateX(-50%) translateY(5%);
+    }
+
+</style>
