@@ -1,26 +1,28 @@
 ---
-import SpriteBanner from "../SpriteBanner.astro";
+import AboutMeText from "./AboutMeText.astro";
 ---
 
 <!-- About Me Section -->
 <div class="section">   
     <div class="linesection">
-        <center>
-            
             <div class="halfsection">
 
-                <div class="aboutmetextSection"></div>
+                <div class="aboutmetextSection">
+                    <AboutMeText />
+                </div>
 
                 <div class="hbuff">
-                    <img src="./images/sprites/port.png" class="myspr">
+                    <center>
+                        <img src="./images/sprites/port.png" class="myspr">
+                    </center>
                 </div>
                 
 
             </div>
-
-        </center>
     </div>
 </div>
+
+<AboutMeText />
 
 <style>
     .section {
@@ -43,25 +45,28 @@ import SpriteBanner from "../SpriteBanner.astro";
         height: 30rem;
         margin: 2rem;
         border: solid 2px green;
-
+        position: relative;
         display: flex;
+
 
     }
     .aboutmetextSection {
         width: 50%;
         height: 100%;
-        background-color: white;
+
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: flex
     }
     .hbuff {
         width: 50%;
         height: 100%;
-        background-color: black;
     }
 
     .myspr {
         position: absolute; 
         image-rendering: pixelated;
-
         transform: translateX(-50%) translateY(5%);
     }
 
