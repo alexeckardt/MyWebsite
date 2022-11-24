@@ -17,9 +17,11 @@ import TextCard from '../TextCard.astro';
 <div class="section">
     <div class="linesection">
         <center>
-            
-            <br>
-            <br>
+
+            <h4>
+                Click the button below to see my most up-to-date resume.
+                <br>
+            </h4>
 
             <!-- CV -->
             <TextCard
@@ -46,5 +48,11 @@ import TextCard from '../TextCard.astro';
         margin: 2rem;
         border-left: 2px solid var(--vlinecol);
         /* border: 2px solid green; */
+    }
+
+    h4 {
+        font-size: 1rem;
+        color: var(--fadedtextcol);
+        margin: 2rem;
     }
 </style>
