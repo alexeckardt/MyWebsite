@@ -3,7 +3,17 @@ const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
 ---
 
 <div class="container">
+
     <img src={spriteurl} style={`transform: ${spritetrans} translateX(-50%)`}>
+
+    <div class="textshadow">
+        <h1>
+            {text}
+        </h1>
+    </div>
+    
+
+
     <div class="bkg">
         <div class="text">
             <h1>
@@ -48,17 +58,31 @@ const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
         color: var(--spritebannertextcol);
     }
 
+    .textshadow {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        height: 100%;
+        width: 100%;
+
+        transform: translateY(4.75rem);
+
+        color: black;
+        text-shadow: 0px 0px 20px black;
+    }
+
     h1 {
         font-size: 4rem;
         font-weight: 800;
     }
    /* Text Colouring */    
    .title {
-            background-image: var(--titlegradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 400%;
-            background-position: 0%;
-        }
+        background-image: var(--titlegradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
 
 </style>
