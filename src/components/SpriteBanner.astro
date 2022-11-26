@@ -4,13 +4,10 @@ const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
 
 <div class="container">
 
-    <img src={spriteurl} style={`transform: ${spritetrans} translateX(-50%)`}>
-
-    <div class="textshadow">
-        <h1>
-            {text}
-        </h1>
+    <div class="spr">
+        <img src={spriteurl} style={`transform: ${spritetrans} translateX(-50%)`}>
     </div>
+
     
     <div class="bkg">
         <div class="text">
@@ -31,7 +28,7 @@ const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
         width: 100%;
     }
 
-    img {
+    .spr {
         position: absolute; 
         image-rendering: pixelated;
     }
@@ -54,20 +51,6 @@ const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
         width: 100%;
 
         color: var(--spritebannertextcol);
-    }
-
-    .textshadow {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-
-        height: 100%;
-        width: 100%;
-
-        transform: translateY(4.75rem);
-
-        color: black;
-        text-shadow: 0px 0px 20px black;
     }
 
     h1 {
