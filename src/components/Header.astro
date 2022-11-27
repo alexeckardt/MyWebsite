@@ -1,4 +1,5 @@
 ---
+import DayNightToggle from './DayNightToggle.astro';
 import Social from './Social.astro';
 ---
 <div class="header">
@@ -16,6 +17,9 @@ import Social from './Social.astro';
 
   <!--  Socials (Right Side) -->
   <div id="socials">
+    <DayNightToggle />
+    <br>
+    <br>
     <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
     <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
     <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>

@@ -23,28 +23,82 @@ const { title } = Astro.props;
 <style is:global>
 
 	:root {
-		--accent: rgb(148, 37, 244);
-		--accentalpha: rgba(148, 37, 244, 25%);
-		--accentdark: rgb(96, 16, 167);
-		--accentlight: rgb(179, 92, 255);
-		--titlegradient: linear-gradient(45deg, rgb(124, 58, 237), #f589ff 30%, rgb(224, 201, 217) 60%);
 
-		--textcol: #aca1be;
-		--fadedtextcol: #5a5961;
-		--codecol: var(--accent);
-		--codebackcol: rgba(5, 0, 15, 25%);
+		/* Dark Cols */
+		--accent-dark: rgb(148, 37, 244);
+		--accentalpha-dark: rgba(148, 37, 244, 25%);
+		--accentdark-dark: rgb(96, 16, 167);
+		--accentlight-dark: rgb(179, 92, 255);
+		--titlegradient-dark: linear-gradient(45deg, rgb(124, 58, 237), #f589ff 30%, rgb(224, 201, 217) 60%);
 
-		--unobtrusive: rgba(0, 0, 0, 75%);
-		--unobtrusivebright: rgba(100, 100, 100, 35%);
+		--textcol-dark: #aca1be;
+		--fadedtextcol-dark: #5a5961;
 
-		--backgroundcol: #181818;
-		--vlinecol: #363636;
+		--codecol-dark: var(--accent-dark);
+		--codebackcol-dark: rgba(5, 0, 15, 25%);
 
+		--unobtrusive-dark: rgba(0, 0, 0, 75%);
+		--unobtrusivebright-dark: rgba(100, 100, 100, 35%);
+
+		--backgroundcol-dark: #181818;
+		--vlinecol-dark: #363636;
+
+		--spritebannertextcol-dark:var(--accent-dark);
+		--spritebannerbkgcol-dark:#260d49;
+
+		--opposite-dark: white;
+
+
+		/* Light Cols */
+		--accent-light: rgb(75, 132, 255);
+		--accentalpha-light: rgba(98, 255, 255, 0.25);
+		--accentdark-light: rgb(73, 197, 255);
+		--accentlight-light: rgb(191, 255, 255);
+		--titlegradient-light: linear-gradient(45deg, rgb(25, 64, 148), #000000 30%, rgb(8, 41, 99) 60%);
+
+		--textcol-light: #161518;
+		--fadedtextcol-light: #3c5664;
+
+		--codecol-light: var(--accent-light);
+		--codebackcol-light: rgba(5, 0, 15, 25%);
+
+		--unobtrusive-light: rgba(0, 0, 0, 25%);
+		--unobtrusivebright-light: rgba(100, 100, 100, 35%);
+
+		--backgroundcol-light: #e0e0e0;
+		--vlinecol-light: #b6b6b6;
+
+		--spritebannertextcol-light:var(--accent-light);
+		--spritebannerbkgcol-light:#d6f9ff;
+
+		--opposite-light: black;
+
+
+
+		/* Style Cols */
+
+		color-scheme: dark;
+
+		--accent: 				var(--accent-dark);
+		--accentalpha:			var(--accentalpha-dark);
+		--accentdark: 			var(--accentdark-dark);
+		--accentlight: 			var(--accentlight-dark);
+		--titlegradient: 		var(--titlegradient-dark);
+		--textcol: 				var(--textcol-dark);
+		--fadedtextcol: 		var(--fadedtextcol-dark);
+		--codecol: 				var(--codecol-dark);
+		--codebackcol: 			var(--codebackcol-dark);
+		--unobtrusive: 			var(--unobtrusive-dark);
+		--unobtrusivebright:	var(--unobtrusivebright-dark);
+		--backgroundcol: 		var(--backgroundcol-dark);
+		--vlinecol: 			var(--vlinecol-dark);
+		--spritebannertextcol:	var(--spritebannertextcol-dark);
+		--spritebannerbkgcol:	var(--spritebannerbkgcol-dark);
+		--opposite:				var(--opposite-dark);
+
+		/* Constants */
 		--headerheight: 6rem;
 		--bannerheight: 15rem;
-
-		--spritebannertextcol:var(--accent);
-		--spritebannerbkgcol:#260d49;
 	}
 	* {
 		margin: 0;
