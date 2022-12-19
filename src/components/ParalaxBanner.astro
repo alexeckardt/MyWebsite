@@ -1,0 +1,30 @@
+---
+const { bkgimg } = Astro.props;
+---
+
+<!-- HTML -->
+<div class="container">
+    <div class="background-img" style={`background-image:url(${bkgimg})`} />
+</div>
+
+<!-- STYLE -->
+<style>
+
+    .container {
+        height: var(--bannerheight);
+        width: 100%;
+    }
+
+    .background-img {
+        background-size: 100%;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+    }
+</style>
