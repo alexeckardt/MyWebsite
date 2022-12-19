@@ -1,0 +1,84 @@
+---
+const { bkgimg } = Astro.props;
+---
+
+
+<!-- HTML -->
+<div class="container">
+    <div class="background-img" style={`background-image:url(${bkgimg})`}>
+
+        <div class="subcontainer">
+            <div>
+                <div class="text">
+                    <h1>
+                        alex eckardt
+                    </h1>
+                    <h2>
+                        Scroll to learn more
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- STYLE -->
+<style>
+
+    .container {
+        height: calc(100vh - var(--headerheight));
+        width: 100%;
+
+        /* border: yellow 2px solid; */
+    }
+
+    .subcontainer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 50%;
+
+        padding: calc(2*var(--headerheight));
+
+        /* border: red 2px solid; */
+    }
+
+    .background-img {
+        background-size: 100%;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: var(--headerheight);
+        background-size: cover;
+        background-attachment: fixed;
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+
+        border: rgba(0, 0, 0, 0) 2px solid;
+    }
+
+    .text {
+        height: 100%;
+        width: 100%;
+
+        text-align: center;
+
+        /* border: green 2px solid; */
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        color: white;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        font-weight: 100;
+        color: white;
+    }
+</style>

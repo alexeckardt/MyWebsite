@@ -7,7 +7,8 @@ import EmptySection from '../components/sections/EmptySection.astro';
 import CVSection from '../components/sections/CVSection.astro';
 import AboutMeSection from '../components/sections/AboutMeSection.astro';
 import SkillsSection from '../components/sections/SkillsSection.astro';
-import ParalaxBanner from '../components/ParalaxBanner.astro';
+import ParalaxBanner from '../components/ParalaxBanner/ParalaxBanner.astro';
+import HeaderParalaxBanner from '../components/ParalaxBanner/HeaderParalaxBanner.astro';
 ---
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
@@ -16,17 +17,20 @@ import ParalaxBanner from '../components/ParalaxBanner.astro';
 	<html>
 		<body>
 
-			<!-- Start Page -->
-
 			<!-- Main Content -->
 			<div class="main">
+
+				<!-- Start Page -->
+				<HeaderParalaxBanner bkgimg="images/backgrounds/valleybackground.png"/>
 				<AboutMeSection />
+
+				<ParalaxBanner bkgimg="images/backgrounds/valleybackground.png"/>
 				<ProjectSection />
 
 				<ParalaxBanner bkgimg="images/backgrounds/valleybackground.png"/>
+				<CVSection />
 
 				<!-- <SkillsSection /> -->
-				<CVSection />
 				
 				<Footer />
 			</div>

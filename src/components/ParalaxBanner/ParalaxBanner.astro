@@ -11,7 +11,7 @@ const { bkgimg } = Astro.props;
 <style>
 
     .container {
-        height: var(--bannerheight);
+        height: 30rem;
         width: 100%;
     }
 
@@ -20,7 +20,8 @@ const { bkgimg } = Astro.props;
         height: 100%;
         width: 100%;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position-x: center;
+        background-position-y: var(--headerheight);
         background-size: cover;
         background-attachment: fixed;
         margin-left: auto;

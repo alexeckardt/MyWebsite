@@ -1,7 +1,17 @@
 ---
 import Portrait from "../other/Portrait.astro";
+import SpriteBanner from "../SpriteBanner.astro";
 import AboutMeText from "./AboutMeText.astro";
 ---
+
+<!-- Banner -->
+<SpriteBanner
+    text= "About Me"
+    spriteurl="images/sprites/kingknight.png"
+    textcol="#ff00ff"
+    bkgcol="#ffffff"
+    spritetrans="translateX(30vw) translateY(var(--bannerheight)) translateY(-354px)"
+    />  
 
 <!-- About Me Section -->
 <div class="section">   
@@ -23,8 +33,6 @@ import AboutMeText from "./AboutMeText.astro";
 
 <style>
     .section {
-
-        margin-top: var(--headerheight);
 
         background-color: var(--backgroundcol);
         buffer: 2rem;
