@@ -10,9 +10,15 @@ const { bkgimg } = Astro.props;
         <div class="subcontainer">
             <div>
                 <div class="text">
+                    <h3>
+                        Hi, my name is
+                    </h3>
                     <h1>
                         alex eckardt
                     </h1>
+                    <br>
+                    <br>
+                    <br>
                     <h2>
                         Scroll to learn more
                     </h2>
@@ -40,7 +46,7 @@ const { bkgimg } = Astro.props;
 
         height: 50%;
 
-        padding: calc(2*var(--headerheight));
+        padding: calc(1.25*var(--headerheight));
 
         /* border: red 2px solid; */
     }
@@ -78,6 +84,11 @@ const { bkgimg } = Astro.props;
     
     h2 {
         font-size: 2rem;
+        font-weight: 100;
+        color: white;
+    }
+    h3 {
+        font-size: 1.5rem;
         font-weight: 100;
         color: white;
     }
