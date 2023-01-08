@@ -1,0 +1,78 @@
+---
+const { bkgimg } = Astro.props;
+---
+
+<!-- HTML -->
+<div class="container">
+    <div 
+        class="backgroundimg" 
+        style={`background-image:url(${bkgimg})`} 
+    >
+    hi
+    </div>
+
+    <script>
+
+        //Constant
+		function updateScrolls() {
+
+			//Loop
+			let elements = document.querySelectorAll(".backgroundimg")
+			for (let i = 0; elements[i]; i++) {
+
+				let el = elements[i];
+				updateBanner((el as HTMLElement));
+			}
+		}
+
+		//B
+		function updateBanner(el : HTMLElement) {
+
+			//Get Top Position
+			let top = el.getBoundingClientRect().top;
+            let off = 0.5*top;
+
+			//Update Bkg Position
+			el.style.backgroundPositionY = `${off}px`;
+
+		}
+
+        //Auto Update
+        updateScrolls();
+
+		//Repeat on Scroll Update
+		window.addEventListener("scroll", () => {
+
+			updateScrolls();
+
+		});
+
+    </script>
+
+
+</div>
+
+<!-- STYLE -->
+<style>
+
+    .container {
+        height: 30rem;
+        width: 100%;
+    }
+
+    .backgroundimg {
+        background-size: 100%;
+        height: 100%;
+        width: 100%;
+
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 5px;
+        background-size: cover;
+        background-attachment: fixed;
+        
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+    }
+</style>

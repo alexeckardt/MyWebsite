@@ -2,6 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
+<div class="container">
+    <center>
+        <p>
+            © Alex Eckardt 2022
+        </p>
+    </center>
+
+    <img src="images/sprites/tree.png" class="spr">
+</div>
+
+
 <style>
     .container {
         margin-top: 1rem;
@@ -12,13 +23,10 @@ import Layout from '../layouts/Layout.astro';
         color: var(--unobtrusivebright);
         font-size: 0.75rem;
     }
+
+    .spr {
+        transform: translateX(100vw) translateX(-120%) translateY(-100%) translateY(1rem);
+        position: absolute; 
+        image-rendering: pixelated;
+    }
 </style>
-
-
-<div class="container">
-    <center>
-        <p>
-            © Alex Eckardt 2022
-        </p>
-    </center>
-</div>

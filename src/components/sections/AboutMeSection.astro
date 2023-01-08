@@ -1,6 +1,17 @@
 ---
+import Portrait from "../other/Portrait.astro";
+import SpriteBanner from "../SpriteBanner.astro";
 import AboutMeText from "./AboutMeText.astro";
 ---
+
+<!-- Banner -->
+<SpriteBanner
+    text= "About Me"
+    spriteurl="images/sprites/kingknight.png"
+    textcol="#ff00ff"
+    bkgcol="#ffffff"
+    spritetrans="translateX(30vw) translateY(var(--bannerheight)) translateY(-354px)"
+    />  
 
 <!-- About Me Section -->
 <div class="section">   
@@ -12,9 +23,8 @@ import AboutMeText from "./AboutMeText.astro";
                 </div>
 
                 <div class="hbuff">
-                    <center>
-                        <img src="./images/sprites/port.png" class="myspr">
-                    </center>
+                    <Portrait 
+                    />
                 </div>
                 
 
@@ -25,28 +35,27 @@ import AboutMeText from "./AboutMeText.astro";
 <style>
     .section {
 
-        margin-top: var(--headerheight);
-
         background-color: var(--backgroundcol);
         buffer: 2rem;
         color: white;
         border: 3px solid #00000000;
+
         /* border: 2px solid green; */
     }
     .linesection {
         margin: 2rem;
         border-left: 2px solid var(--vlinecol);
+
         /* border: 2px solid green; */
     }
     .halfsection {
 
         height: 30rem;
         margin: 2rem;
-        /* border: solid 2px green; */
         position: relative;
         display: flex;
 
-
+        /* border: solid 2px green; */
     }
     .aboutmetextSection {
         width: 50%;
@@ -55,17 +64,20 @@ import AboutMeText from "./AboutMeText.astro";
         justify-content: center;
         align-items: center;
         position: relative;
-        display: flex
+        display: flex;
+
+        /* border: solid 2px green; */
     }
     .hbuff {
         width: 50%;
         height: 100%;
-    }
 
-    .myspr {
-        position: absolute; 
-        image-rendering: pixelated;
-        transform: translateX(-50%) translateY(5%);
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: flex;
+
+        /* border: solid 2px green; */
     }
 
 </style>
