@@ -1,4 +1,6 @@
 ---
+import TextCard from "../TextCard.astro";
+
 const { bkgimg } = Astro.props;
 ---
 
@@ -20,9 +22,17 @@ const { bkgimg } = Astro.props;
                     <br>
                     <br>
                     <br>
-                    <h2>
-                        Scroll to learn more
-                    </h2>
+                    <br>
+                    <div class="myhbox">
+                        <div class="half">
+                        <h2>
+                            I'm a Computer Science student, pixel-artist and game developer based near Toronto, Canada.
+                            <br>
+                            <br>
+                            Scroll to Learn more.
+                        </h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,6 +78,17 @@ const { bkgimg } = Astro.props;
         border: rgba(0, 0, 0, 0) 2px solid;
     }
 
+    .myhbox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .half {
+        width: 70%;
+    }
+
     .text {
         text-align: center;
         text-shadow: black 0 0 30px, black 0 0 30px;
@@ -83,6 +104,7 @@ const { bkgimg } = Astro.props;
         font-size: 2rem;
         font-weight: 100;
         color: white;
+        text-shadow: black 0 0 30px, black 0 0 30px;
     }
     h3 {
         font-size: 1.5rem;
