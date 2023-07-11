@@ -4,6 +4,8 @@ import Social from './Social.astro';
 ---
 <div class="header">
 
+  <div class="glob">
+
   <!-- Title -->
   <div class="title">
     <div class="leftcontent">
@@ -32,7 +34,7 @@ import Social from './Social.astro';
       <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
     </div>
   </div>
-
+</div>
 </div>
 
 <style>
@@ -41,16 +43,21 @@ import Social from './Social.astro';
 
   .header {
     position: fixed;
+    background-color: var(--backgroundcol);
+    height: var(--headerheight);
     top: 0;
-    width: 90%;
+    width: 100%;
+    /* border: 3px solid green; */
+  }
+
+  .glob {
+    left: 5%;
+    width:90%;
+    position: fixed;
+    top: 0;
     height: var(--headerheight);
     display: flex;
     justify-content: space-between;
-
-    left: 5%;
-
-    background-color: var(--backgroundcol);
-    /* border: 3px solid green; */
   }
 
   .title {
