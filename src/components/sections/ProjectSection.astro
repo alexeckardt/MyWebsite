@@ -9,7 +9,7 @@ import SpriteBanner from '../SpriteBanner.astro';
     spriteurl="images/sprites/goof.png"
     textcol="#ff00ff"
     bkgcol="#ffffff"
-    spritetrans="translateX(15vw) translateY(-300px)"
+    spritetrans="translateX(-25vw)"
     />
 
 <!-- Section W Buttons -->
@@ -30,6 +30,14 @@ import SpriteBanner from '../SpriteBanner.astro';
                 title="Soulflame Alpha"
                 body="A Solo-Developed Action Adventure Video Game. Over 3 years of development (currently on pause)" 
                 imgsrc="/images/projects/soulflame.png"
+            />
+
+            <!-- Pinball -->
+            <ImageCard
+                href="https://alexeckardt.itch.io/pinball-pioneer"
+                title="Pinball Pioneer"
+                body="A Solo-Developed Puzzle Game, originally created in 48 hours for the GMTK July 2023 Game Jam." 
+                imgsrc="/images/projects/pinball.png"
             />
             
                 <!-- GO Transit -->
@@ -86,13 +94,15 @@ import SpriteBanner from '../SpriteBanner.astro';
         buffer: 2rem;
         color: white;
         border: 3px solid #00000000;
-        /* border: 2px solid green; */
+        border: 2px solid magenta;
+
+        overflow: hidden;
     }
 
     .linesection {
         margin: 2rem;
         border-left: 2px solid var(--vlinecol);
-        /* border: 2px solid green; */
+        border: 2px solid green;
     }
 
     h4 {

@@ -5,26 +5,32 @@ import Social from './Social.astro';
 <div class="header">
 
   <!-- Title -->
-  <a href="" target="_blank" rel="noopener noreferrer">
+  <div class="title">
+    <div class="leftcontent">
+    <a href="" target="_blank" rel="noopener noreferrer">
 
-      <h1>
-        <span class="title">
-            alex eckardt
-        </span>
-      </h1>
+        <h1>
+          <span class="title">
+              alex eckardt
+          </span>
+        </h1>
 
-  </a>
+    </a>
+  </div>
+  </div>
 
   <!--  Socials (Right Side) -->
-  <div id="socials">
-    <DayNightToggle />
-    <br>
-    <br>
-    <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
-    <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
-    <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
-    <Social website="https://alexeckardt.itch.io/" icon="cib:itch-io"/>
-    <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
+  <div class="socialContainer">
+    <div id="socials">
+      <DayNightToggle />
+      <br>
+      <br>
+      <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
+      <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
+      <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
+      <Social website="https://alexeckardt.itch.io/" icon="cib:itch-io"/>
+      <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
+    </div>
   </div>
 
 </div>
@@ -39,32 +45,68 @@ import Social from './Social.astro';
     width: 100%;
     height: var(--headerheight);
     display: flex;
+    justify-content: space-between;
 
     background-color: var(--backgroundcol);
     /* border: 3px solid green; */
   }
 
+  .title {
+    /* border: 1px green solid; */
+    float: left;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .leftcontent {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .socialContainer {
+      /* border: 1px solid red; */
+      float: right;
+      
+      /* Center Align My Div */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+          
+      /* Resize */ 
+      max-width: 100%; /* Ensures the image doesn't exceed the available space */
+      max-height: 100%; /* Ensures the image doesn't exceed the available space */
+      object-fit: contain; /* Maintains aspect ratio while fitting the content */
+      transform-origin: center center; /* Sets the scaling origin to the center */
+  }
+
+  #socials {
+    display: flex; /* Icons same line */
+    gap: 1rem; /* Gap Between Icons */
+
+    margin: 0 auto;
+    /* border: 1px solid aqua; */
+  }
+
   a {
-    position: relative;
-    display: flex;
-    align-items: center;  
-    justify-content: center;
+    /* position: relative; */
+    /* display: flex; */
+    /* align-items: center;   */
+    /* justify-content: center; */
 
     /* background-color: black; */
     color: white;
     margin: 20px;
 
     text-decoration: none;
-  }
-
-  #socials {
-    position: absolute;
-    display: flex; /* Icons same line */
-    gap: 1rem; /* Gap Between Icons */
-    right: 1.5rem; 
-    top: 2rem;
-
-    /* border: 3px solid green; */
   }
 
   /* My Name Text */
@@ -85,5 +127,7 @@ import Social from './Social.astro';
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+
+    scale: calc(50vw);
 	}
 </style>
