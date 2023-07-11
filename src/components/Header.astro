@@ -28,7 +28,7 @@ import Social from './Social.astro';
       <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
       <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
       <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
-      <Social website="https://alexeckardt.itch.io/" icon="cib:itch-io"/>
+      <Social website="alexeckardt.itch.io/" icon="cib:itch-io"/>
       <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
     </div>
   </div>
@@ -42,10 +42,12 @@ import Social from './Social.astro';
   .header {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 90%;
     height: var(--headerheight);
     display: flex;
     justify-content: space-between;
+
+    left: 5%;
 
     background-color: var(--backgroundcol);
     /* border: 3px solid green; */
@@ -80,6 +82,7 @@ import Social from './Social.astro';
       align-items: center;
       justify-content: center;
 
+      transform: translateY(0.4rem);
           
       /* Resize */ 
       max-width: 100%; /* Ensures the image doesn't exceed the available space */
