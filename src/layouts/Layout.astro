@@ -30,6 +30,7 @@ const { title } = Astro.props;
 		--accentdark-dark: rgb(96, 16, 167);
 		--accentlight-dark: rgb(179, 92, 255);
 		--titlegradient-dark: linear-gradient(45deg, rgb(124, 58, 237), #f589ff 30%, rgb(224, 201, 217) 60%);
+		--projectgradient-dark: linear-gradient(135deg, rgb(251, 130, 255), #ffffff 30%, rgb(255, 255, 255) 60%);
 
 		--textcol-dark: #aca1be;
 		--fadedtextcol-dark: #5a5961;
@@ -58,6 +59,7 @@ const { title } = Astro.props;
 		--accentdark-light: rgb(73, 197, 255);
 		--accentlight-light: rgb(191, 255, 255);
 		--titlegradient-light: linear-gradient(45deg, rgb(25, 64, 148), #000000 30%, rgb(8, 41, 99) 60%);
+		--projectgradient-light: linear-gradient(135deg, rgb(5, 5, 5), #172422 30%, rgb(39, 33, 56) 60%);
 
 		--textcol-light: #161518;
 		--fadedtextcol-light: #3c5664;
@@ -107,6 +109,8 @@ const { title } = Astro.props;
 		--headerheight: 6rem;
 		--bannerheight: 15rem;
 		--paralaxbannerHeight: 50rem;
+
+		--projectgradient: var(--projectgradient-dark);
 	}
 	* {
 		margin: 0;

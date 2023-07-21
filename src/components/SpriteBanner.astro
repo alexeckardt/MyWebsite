@@ -104,7 +104,11 @@ const { text, spriteurl, textcol, bkgcol, spritetrans} = Astro.props;
     }
    /* Text Colouring */    
    .title {
-        color: var(--opposite-dark)
+        background-image: var(--projectgradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
     }
 
 </style>
