@@ -22,100 +22,16 @@ const { title } = Astro.props;
 
 <style is:global>
 
+	/* Variables */
 	:root {
-
-		/* Dark Cols */
-		--accent-dark: rgb(148, 37, 244);
-		--accentalpha-dark: rgba(148, 37, 244, 25%);
-		--accentdark-dark: rgb(96, 16, 167);
-		--accentlight-dark: rgb(179, 92, 255);
-		--titlegradient-dark: linear-gradient(45deg, rgb(124, 58, 237), #f589ff 30%, rgb(224, 201, 217) 60%);
-		--projectgradient-dark: linear-gradient(135deg, rgb(251, 130, 255), #ffffff 30%, rgb(255, 255, 255) 60%);
-
-		--textcol-dark: #aca1be;
-		--fadedtextcol-dark: #5a5961;
-
-		--codecol-dark: var(--accent-dark);
-		--codebackcol-dark: rgba(5, 0, 15, 25%);
-
-		--unobtrusive-dark: rgba(0, 0, 0, 75%);
-		--unobtrusivebright-dark: rgba(100, 100, 100, 35%);
-
-		--backgroundcol-dark: #181818;
-		--vlinecol-dark: #363636;
-
-		--spritebannertextcol-dark:var(--accent-dark);
-		--spritebannerbkgcol-dark:#260d49;
-
-		--opposite-dark: white;
-
-		/* Generated Here: https://jsfiddle.net/zbpakrw9/23/ */
-		--four-corner-dark: url("data:image/svg+xml;utf8,%3Csvg preserveAspectRatio='none' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='1'%3E%3C/stop%3E%3C/linearGradient%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='1' height='1' fill='url(%23g)'%3E%3C/rect%3E%3C/mask%3E%3ClinearGradient id='a' gradientTransform='rotate(90)'%3E%3Cstop offset='0' stop-color='%235314f2'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%237e33ff'%3E%3C/stop%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientTransform='rotate(90)'%3E%3Cstop offset='0' stop-color='%23b44eff'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23945cf4'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='1' height='1' fill='url(%23a)' mask='url(%23m)'%3E%3C/rect%3E%3Crect x='0' y='0' width='1' height='1' fill='url(%23b)' mask='url(%23m)' transform='translate(1,1) rotate(180)'%3E%3C/rect%3E%3C/svg%3E ");
-
-
-		/* Light Cols */
-		--accent-light: rgb(75, 132, 255);
-		--accentalpha-light: rgba(98, 255, 255, 0.25);
-		--accentdark-light: rgb(73, 197, 255);
-		--accentlight-light: rgb(191, 255, 255);
-		--titlegradient-light: linear-gradient(45deg, rgb(25, 64, 148), #000000 30%, rgb(8, 41, 99) 60%);
-		--projectgradient-light: linear-gradient(135deg, rgb(5, 5, 5), #172422 30%, rgb(39, 33, 56) 60%);
-
-		--textcol-light: #161518;
-		--fadedtextcol-light: #3c5664;
-
-		--codecol-light: var(--accent-light);
-		--codebackcol-light: rgba(5, 0, 15, 25%);
-
-		--unobtrusive-light: rgba(0, 0, 0, 25%);
-		--unobtrusivebright-light: rgba(100, 100, 100, 35%);
-
-		--backgroundcol-light: #e0e0e0;
-		--vlinecol-light: #b6b6b6;
-
-		--spritebannertextcol-light:var(--accent-light);
-		--spritebannerbkgcol-light:#9bb6cc;
-
-		--opposite-light: black;
-
-		--four-corner-light: url("data:image/svg+xml;utf8,%3Csvg preserveAspectRatio='none' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='1'%3E%3C/stop%3E%3C/linearGradient%3E%3Cmask id='m'%3E%3Crect x='0' y='0' width='1' height='1' fill='url(%23g)'%3E%3C/rect%3E%3C/mask%3E%3ClinearGradient id='a' gradientTransform='rotate(90)'%3E%3Cstop offset='0' stop-color='%234B84FF'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%232977ff'%3E%3C/stop%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientTransform='rotate(90)'%3E%3Cstop offset='0' stop-color='%2348ffc1'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%2300bcff'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='1' height='1' fill='url(%23a)' mask='url(%23m)'%3E%3C/rect%3E%3Crect x='0' y='0' width='1' height='1' fill='url(%23b)' mask='url(%23m)' transform='translate(1,1) rotate(180)'%3E%3C/rect%3E%3C/svg%3E ");
-
-
-
-
-		/* Style Cols */
-
-		color-scheme: dark;
-
-		--accent: 				var(--accent-dark);
-		--accentalpha:			var(--accentalpha-dark);
-		--accentdark: 			var(--accentdark-dark);
-		--accentlight: 			var(--accentlight-dark);
-		--titlegradient: 		var(--titlegradient-dark);
-		--textcol: 				var(--textcol-dark);
-		--fadedtextcol: 		var(--fadedtextcol-dark);
-		--codecol: 				var(--codecol-dark);
-		--codebackcol: 			var(--codebackcol-dark);
-		--unobtrusive: 			var(--unobtrusive-dark);
-		--unobtrusivebright:	var(--unobtrusivebright-dark);
-		--backgroundcol: 		var(--backgroundcol-dark);
-		--vlinecol: 			var(--vlinecol-dark);
-		--spritebannertextcol:	var(--spritebannertextcol-dark);
-		--spritebannerbkgcol:	var(--spritebannerbkgcol-dark);
-		--opposite:				var(--opposite-dark);
-		--four-corner:			var(--four-corner-dark);
-
-		/* Constants */
-		--headerheight: 6rem;
-		--bannerheight: 15rem;
-		--paralaxbannerHeight: 50rem;
-
-		--projectgradient: var(--projectgradient-dark);
+		--titlegradient: linear-gradient(45deg, rgb(124, 58, 237), #f589ff 30%, rgb(224, 201, 217) 60%);
 	}
+
 	* {
 		margin: 0;
 		padding: 0;
 	}
+
 	html {
 		font-family: system-ui, sans-serif;
 		width: 100%;
@@ -126,6 +42,8 @@ const { title } = Astro.props;
 
 		background-color: var(--backgroundcol);
 	}
+
+	/* Code Systems */
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
