@@ -2,16 +2,18 @@
 const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.props;
 ---
 
-
+<div class="group">
 <a href={href} target="_blank">   
     <div class="card">
         <div class="wrapper">
             <img src={backgroundSprite} class="cover-image" />
         </div>
+      
         <img src={logoSprite} class="title" />
         <img src={characterSprite} class="character" />
     </div>
 </a>
+</div>
 
 <div class="displayText">{body}</div>
 
@@ -21,19 +23,14 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
 :root {
   --card-height: 300px;
   --card-width: calc(var(--card-height) / 1.5);
+  --card-border: 10px;
+  --logo-text-transition: 0.5s;
 }
-* {
-  box-sizing: border-box;
+
+.group  {
+  padding: 30px;
 }
-body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #191c29;
-}
+
 .card {
   width: var(--card-width);
   height: var(--card-height);
@@ -44,12 +41,20 @@ body {
   padding: 0 36px;
   perspective: 2500px;
   margin: 0 50px;
+
+  box-sizing: border-box;
+  text-decoration: none;
+
+  border-radius: var(--card-border); 
+  
 }
 
 .cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--card-border); 
+  image-rendering: pixelated;
 }
 
 .wrapper {
@@ -57,10 +62,11 @@ body {
   position: absolute;
   width: 100%;
   z-index: -1;
+  border-radius: var(--card-border); 
 }
 
 .card:hover .wrapper {
-  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  transform: perspective(900px) translateY(-5%) rotateX(15deg) translateZ(0);
   box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
@@ -75,6 +81,7 @@ body {
   transition: all 0.5s;
   position: absolute;
   left: 0;
+  border-radius: var(--card-border); 
 }
 .wrapper::before {
   top: 0;
@@ -107,10 +114,12 @@ body {
 }
 .title {
   width: 100%;
-  transition: transform 0.5s;
-}
-.card:hover .title {
-  transform: translate3d(0%, -50px, 100px);
+  display: flex;
+  text-align: center;
+  transition: transform var(--logo-text-transition);
+  image-rendering: pixelated;
+  align-items: center
+
 }
 
 .character {
@@ -119,11 +128,13 @@ body {
   transition: all 0.5s;
   position: absolute;
   z-index: -1;
+  image-rendering: pixelated;
+
 }
 
 .card:hover .character {
   opacity: 1;
-  transform: translate3d(0%, -30%, 100px);
+  transform: translate3d(0%, -20%, 100px);
 }
 
 /*  Display */
@@ -135,6 +146,18 @@ body {
 .card:hover .displayText {
   opacity: 1;
   transform: translate3d(0%, -30%, 100px);
+}
+
+.title {
+  text-decoration: none;
+  transform: translate(0%, -30px);
+  transition: var(--logo-text-transition);
+}
+
+.card:hover .title {
+  scale: 125%;
+  transition: var(--logo-text-transition);
+  transform: translate3d(0%, calc(-100%), -100px);
 }
 
 </style>
