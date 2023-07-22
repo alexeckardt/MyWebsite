@@ -1,19 +1,19 @@
 ---
-const { href, bodyText, logoSprite, backgroundSprite, characterSprite } = Astro.props;
+const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.props;
 ---
 
 
 <a href={href} target="_blank">   
     <div class="card">
         <div class="wrapper">
-            <img src={logoSprite} class="cover-image" />
+            <img src={backgroundSprite} class="cover-image" />
         </div>
-        <img src={backgroundSprite} class="title" />
+        <img src={logoSprite} class="title" />
         <img src={characterSprite} class="character" />
     </div>
 </a>
 
-<div class="displayText">{bodyText}</div>
+<div class="displayText">{body}</div>
 
 
 <style>

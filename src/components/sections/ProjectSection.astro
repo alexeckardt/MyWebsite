@@ -1,79 +1,53 @@
 ---
 import ImageCard from '../../components/ImageCard.astro';
 import SpriteBanner from '../SpriteBanner.astro';
+import ThreeDeeCard from '../ThreeDeeCard.astro';
+import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
 ---
 
 <!-- Section W Buttons -->
 <div class="section">
     <div class="linesection">
 
-        <center>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-            <!-- Soulflame -->
-            <ImageCard
-                href="https://alexeckardt.itch.io/soulflamealpha"
-                title="Soulflame Alpha"
-                body="A Solo-Developed Action Adventure Video Game. Over 3 years of development (currently on pause)" 
-                imgsrc="/images/projects/soulflame.png"
-            />
+        <div class="card_sec">
+        <!-- <center> -->
 
-            <!-- Pinball -->
-            <ImageCard
-                href="https://alexeckardt.itch.io/pinball-pioneer"
-                title="Pinball Pioneer"
-                body="A Solo-Developed Puzzle Game, originally created in 48 hours for the GMTK July 2023 Game Jam. Ranked 7th out of 7000 in Overall." 
-                imgsrc="/images/projects/pinball.png"
-            />
-            
-                <!-- GO Transit -->
-            <ImageCard
-                href="https://alexeckardt.github.io/GO-Transit-Visualizer/"
-                title="GO Transit Viewer"
-                body="Visualizer Of GO Transit Routes in Ontario, Canada using Real World Data" 
-                imgsrc="/images/projects/gotransitviewer.png"
-            />
+            <ThreeDeeCardTextLogo 
+                    href="https://alexeckardt.itch.io/soulflamealpha"
+                    body="" 
+                    title="Soulflame Alpha"
 
-            <h1>
-            Side Projects
-            </h1>
+                    backgroundSprite="/images/projects/soulflame_bkg.png"
+                    characterSprite="/images/projects/soulflame_char.png"
+                    />
 
-            <!-- Dungeon -->
-            <ImageCard
-                href="https://github.com/alexeckardt/RougelikeDungeon"
-                title="Rougelike Dungeon C# Game"
-                body="An simple, randomly generated bullet hell video game, created using C# using the MonoGame Game Framework. (In Development)" 
-                imgsrc="/images/projects/rougelikedungeon.png"
-            />
+            <ThreeDeeCardTextLogo 
+                    href="https://alexeckardt.itch.io/pinball-pioneer"
+                    body="" 
+                    title="Pinball Pioneer"
 
-            <!-- IOS App -->
-            <ImageCard
-                href="https://github.com/alexeckardt/iOS-Speedrun-Timer/"
-                title="iOS Speedrun Timer"
-                body="iOS App, writen in XCode, to act as a timer to store and compare speedruns to one another" 
-                imgsrc="/images/projects/ios_speedrun.png"
-            />
+                    backgroundSprite="/images/projects/pinball_bkg.png"
+                    characterSprite="/images/projects/pinball_char.png"
+                    />
 
-            <!-- Pixel Tile Set -->
-            <ImageCard
-                href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
-                title="Pixel Art Tile Set Completer"
-                body="Python Script to Create Base Tiles from Source Images" 
-                imgsrc="/images/projects/patsc.png"
-            />
+            <ThreeDeeCardTextLogo 
+                    href="https://alexeckardt.itch.io/soulflamealpha"
+                    body="" 
+                    title="Soulflame Alpha"
 
-            <br>
+                    backgroundSprite="/images/projects/soulflame_bkg.png"
+                    characterSprite="/images/projects/soulflame_char.png"
+                    />
 
-            
-            <a href="https://github.com/alexeckardt/MyWebsite" target="_blank" rel="noopener noreferrer">
-                <h3>
-                    See the source code for this website!
-                </h3>
-            </a>
-
-            <br>
-            <br>
-
-        </center>
+            <!-- </center> -->
+        </div>
     </div>
 </div>
 
@@ -92,6 +66,12 @@ import SpriteBanner from '../SpriteBanner.astro';
         margin: 2rem;
         border-left: 2px solid var(--vlinecol);
         /* border: 2px solid green; */
+    }
+
+    .card_sec {
+        border: 2px solid green;
+        display: flex;
+        justify-content: center;
     }
 
     h4 {
