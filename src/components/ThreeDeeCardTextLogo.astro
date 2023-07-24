@@ -33,7 +33,8 @@ const { href, body, title, backgroundSprite, characterSprite } = Astro.props;
 }
 
 .group  {
-  padding: 30px;
+  padding-top: 30px;
+  text-decoration: none;
 }
 
 .card {
@@ -123,7 +124,7 @@ const { href, body, title, backgroundSprite, characterSprite } = Astro.props;
   transition: transform var(--logo-text-transition);
 }
 .card:hover .title {
-  transform: translate3d(0%, calc(-1*var(--card-height) + 30%), -100px);
+  transform: translate3d(0%, calc(-100%), -100px);
 }
 
 .character {
@@ -172,6 +173,10 @@ h1 {
   margin-left:-60px;
   margin-right:-60px;
   transition: var(--logo-text-transition);
+}
+
+a {
+  text-decoration: none;
 }
 
 </style>
