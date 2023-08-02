@@ -39,6 +39,7 @@ const { href, title, body, imgsrc, year } = Astro.props;
 
 		background-size: 100%;
 		background-position: center;
+		background-repeat:none;
 		width: 50vw;
 		height: 8rem;
 		
@@ -117,13 +118,13 @@ const { href, title, body, imgsrc, year } = Astro.props;
 	/* Media query for smaller screens */
 	@media (max-width: 640px) {
 		.link-card {
-			width: 80%;
+			width: 100%;
 		}
   	}
 
-	  @media (max-width: 640px) {
+	@media (max-width: 400px) {
 		.link-card {
-			width: 80%;
+			width: 100%;
 			background-size: 150%;
 		}
   	}
