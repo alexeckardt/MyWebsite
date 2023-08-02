@@ -28,8 +28,10 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
 }
 
 .group  {
-  padding: 30px;
+  border: 1px red solid;
+  width: var(--card-width);
 }
+
 
 .card {
   width: var(--card-width);
@@ -38,9 +40,9 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 0 36px;
+  padding: 0px 36px;
   perspective: 2500px;
-  margin: 0 50px;
+  margin: 0px 0px;
 
   box-sizing: border-box;
   text-decoration: none;
