@@ -114,4 +114,18 @@ const { href, title, body, imgsrc, year } = Astro.props;
 		color: #fff;
 	}
 
+	/* Media query for smaller screens */
+	@media (max-width: 640px) {
+		.link-card {
+			width: 80%;
+		}
+  	}
+
+	  @media (max-width: 640px) {
+		.link-card {
+			width: 80%;
+			background-size: 150%;
+		}
+  	}
+
 </style>
