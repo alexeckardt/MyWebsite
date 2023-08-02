@@ -143,10 +143,18 @@ const { bkgimg, header, desc } = Astro.props;
         text-align: center;
     }
 
+    @media (max-width: 840px) {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+
+
      /* Media query for smaller screens */
      @media (max-width: 640px) {
         h1 {
-            font-size: 5rem;
+            font-size: 4rem;
         }
 
         h2 {
@@ -156,7 +164,7 @@ const { bkgimg, header, desc } = Astro.props;
 
     @media (max-width: 400px) {
         h1 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
         }
 
         h2 {

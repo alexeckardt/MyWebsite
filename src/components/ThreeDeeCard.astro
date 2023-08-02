@@ -26,7 +26,7 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
   --card-border: 10px;
   --logo-text-transition: 0.5s;
 
-  --shrinkCardHeight: 200px;
+  --shrinkCardHeight: 180px;
   --shrinkCardWidth: calc(var(--shrinkCardHeight) / 1.5);
 }
 
@@ -181,9 +181,13 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
       .group {
         width: var(--shrinkCardWidth);
       }
+
+      .title {
+        scale: 200%;
+      }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 470px) {
       .card {
         width: calc(var(--card-width));
         height: calc(var(--card-height));
@@ -191,6 +195,10 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
 
       .group {
         width: var(--card-width);
+      }
+
+      .title {
+        scale: 100%;
       }
   }
 
