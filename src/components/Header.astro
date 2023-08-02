@@ -57,7 +57,7 @@ import Social from './Social.astro';
 
       /* Start Hidden */
       transform: translateY(-100%); 
-      transition: transform 0.3s;
+      transition: transform 0.3s ease-in;
 
       /* border: 1px solid black; */
     }
@@ -125,7 +125,7 @@ import Social from './Social.astro';
         flex-direction: column; /* Stack the elements vertically */
         align-items: center;
         height: var(--headerheightTinyScreen);
-        position:static;
+        display: none;
       }
 
       .left-text {
