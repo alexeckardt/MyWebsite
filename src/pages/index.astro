@@ -1,52 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro'
-import ProjectSection from '../components/sections/ProjectSection.astro';
-import Header from '../components/Header.astro';
-import EmptySection from '../components/sections/EmptySection.astro';
-import CVSection from '../components/sections/CVSection.astro';
-import AboutMeSection from '../components/sections/AboutMeSection.astro';
-import SkillsSection from '../components/sections/SkillsSection.astro';
-import ParalaxBanner from '../components/ParalaxBanner/ParalaxBanner.astro';
-import HeaderParalaxBanner from '../components/ParalaxBanner/HeaderParalaxBanner.astro';
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import CVSection from "../sections/CVSection.astro";
+import ProjectSection from "../sections/ProjectSection.astro";
+import WelcomeSection from "../sections/WelcomeSection.astro";
 ---
+
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
 <Layout title="Alex Eckardt">
-
 	<html>
 		<body>
-
-			<!-- Main Content -->
-			<div class="main">
-
-				<!-- Start Page -->
-				<HeaderParalaxBanner bkgimg="images/backgrounds/valleybackground.png"/>
-
-				<!-- <SkillsSection /> -->
-				<!-- <ParalaxBanner id="p2" bkgimg="images/backgrounds/cityscape2.png"/> -->
-
-				<ProjectSection />
-
-				<ParalaxBanner id="p3" bkgimg="images/backgrounds/prettycloud.png"/>
-				<CVSection />
 			
-				
-				<Footer />
-			</div>
-	
-			<!-- Header above all, Zero Margin -->
 			<Header />
 
-			<!-- End Body -->
+			<!--  -->
+			<div class="main">
+			
+					<WelcomeSection />
+
+					<ProjectSection />
+
+					<CVSection />
+			
+			</div>
+
+			
+			
 		</body>
 	</html>
-
-	<script>
-
-		
-
-	</script>
 </Layout>
 
 <style>
@@ -54,8 +36,9 @@ import HeaderParalaxBanner from '../components/ParalaxBanner/HeaderParalaxBanner
 		margin: 0;
 		buffer: 0;
 	}
+
 	.main {
-		margin-top: var(--headerheight);
 		width: 100vw;
+		/* border-top: 1px solid black; */
 	}
 </style>

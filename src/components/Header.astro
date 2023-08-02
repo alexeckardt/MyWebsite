@@ -1,143 +1,141 @@
 ---
-import DayNightToggle from './DayNightToggle.astro';
 import Social from './Social.astro';
 ---
-<div class="header">
-
-  <div class="glob">
-
-  <!-- Title -->
-  <div class="title">
-    <div class="leftcontent">
-    <a href="" target="_blank" rel="noopener noreferrer">
-
-        <h1>
-          <span class="title">
-              alex eckardt
-          </span>
-        </h1>
-
+<header id="header">
+  <div class="left-text">
+    <a href="" rel="noopener noreferrer">
+    <h1><span class="title">alex eckardt</span></h1>
     </a>
   </div>
+  <div class="social-links">
+    <Social num="00" text="twitter" website="twitter.com/pixeqla"/>
+    <Social num="01" text="github" website="github.com/alexeckardt"/>
+    <Social num="02" text="linkedin" website="linkedin.com/in/alex-eckardt"/>
+    <Social num="03" text="itch.io" website="alexeckardt.itch.io"/>
   </div>
 
-  <!--  Socials (Right Side) -->
-  <div class="socialContainer">
-    <div id="socials">
-      <DayNightToggle />
-      <br>
-      <br>
-      <Social website="twitter.com/pixeqla" icon="bi:twitter"/>
-      <Social website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
-      <Social website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
-      <Social website="alexeckardt.itch.io/" icon="cib:itch-io"/>
-      <Social website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/>
-    </div>
-  </div>
-</div>
-</div>
+</header>
+
+<script>
+
+  //Get Header
+  const header = document.getElementById('header');
+  let prevScrollPosition = window.scrollY;
+  const showHeaderAt = window.innerHeight * 0.8;
+
+  window.addEventListener('scroll', () => {
+
+    const currentScrollPosition = window.scrollY;
+    
+    // Hide the header when the screen is at the top
+    if (header != null) {
+        // Show the header with animation when scrolling down
+        header.style.transform = currentScrollPosition < showHeaderAt ? 'translateY(-100%)' : 'translateY(0)';
+    }
+    
+    prevScrollPosition = currentScrollPosition;
+  });
+</script>
+
 
 <style>
 
-  /* Overall */
-
-  .header {
-    position: fixed;
-    background-color: var(--backgroundcol);
-    height: var(--headerheight);
-    top: 0;
-    width: 100%;
-    /* border: 3px solid green; */
-  }
-
-  .glob {
-    left: 5%;
-    width:90%;
-    position: fixed;
-    top: 0;
-    height: var(--headerheight);
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .title {
-    /* border: 1px green solid; */
-    float: left;
-    flex-grow: 0;
-    flex-shrink: 0;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .leftcontent {
-    display: inline-block;
-    max-width: 100%;
-    vertical-align: middle;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .socialContainer {
-      /* border: 1px solid red; */
-      float: right;
+    header {
+      background-color: var(--backgroundcol);
+      padding: 20px;
+      width: calc(100vw - 40px);
+      height: 3rem;
       
-      /* Center Align My Div */
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
 
-      transform: translateY(0.4rem);
-          
-      /* Resize */ 
-      max-width: 100%; /* Ensures the image doesn't exceed the available space */
-      max-height: 100%; /* Ensures the image doesn't exceed the available space */
-      object-fit: contain; /* Maintains aspect ratio while fitting the content */
-      transform-origin: center center; /* Sets the scaling origin to the center */
-  }
+      position:fixed;
+      top: 0;
 
-  #socials {
-    display: flex; /* Icons same line */
-    gap: 1rem; /* Gap Between Icons */
+      z-index: 2;
 
-    margin: 0 auto;
-    /* border: 1px solid aqua; */
-  }
+      /* Start Hidden */
+      transform: translateY(-100%); 
+      transition: transform 0.3s ease-in;
 
-  a {
-    /* position: relative; */
-    /* display: flex; */
-    /* align-items: center;   */
-    /* justify-content: center; */
+      /* border: 1px solid black; */
+    }
 
-    /* background-color: black; */
-    color: white;
-    margin: 20px;
+    a {
+      text-decoration: none;
+    }
 
-    text-decoration: none;
-  }
+    .left-text {
+      text-decoration: none;
+    }
 
-  /* My Name Text */
-  h1 {
-		font-size: 2.5rem;
-		font-weight: 800;
-		margin: 0;
+    /* Text Colouring */
+    .title {
+      background-image: var(--titlegradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* -webkit-text-fill-color: black; */
+      background-size: 400%;
+      background-position: 0%;
 
-    text-decoration: none;
+      text-decoration: none;
+      scale: calc(50vw);
+    }
 
-    z-index: -1;
-	}
+    .social-links {
+      margin: 0;
+      margin-left: 15px;
+      margin-right: 20px;
+      padding: 0;
 
-  /* Text Colouring */
-  .title {
-		background-image: var(--titlegradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+      display: flex;
+      flex-direction: row; /* Set the links to be stacked vertically */
+      /* border: 1px green solid; */
 
-    scale: calc(50vw);
-	}
+      gap: 20px;
+    }
+
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0;
+      z-index: -1;
+      color: var(--textcol);
+      text-shadow: 0 0 5 black;
+	  }
+
+
+    /* Media query for smaller screens */
+    @media (max-width: 640px) {
+      .social-links {
+        flex-direction: column; /* Align the social links horizontally */
+      }
+
+      header {
+        height: var(--headerheightSmallScreen);
+        /* border: 2px red solid; */
+      }
+    }
+
+    /* Media query for TINY screens */
+    @media (max-width: 400px) {
+      header {
+        flex-direction: column; /* Stack the elements vertically */
+        align-items: center;
+        height: var(--headerheightTinyScreen);
+        display: none;
+      }
+
+      .left-text {
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 15vw; /* Reduce the font size for the title */
+      }
+    }
+
+    
 </style>

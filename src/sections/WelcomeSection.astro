@@ -1,0 +1,264 @@
+<!-- Empty Section -->
+<div class="section">
+    <div class="linesection">
+        <center>
+            
+
+            <div class="title">
+                <h1>
+                    alex eckardt
+                </h2>
+                <div class="aurora">
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                </div>
+
+                <h2>
+                    Developer and Artist 
+                </h2>
+            </div>
+
+
+        </center>
+    </div>
+</div>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+
+    :root {
+        --clr-1: #4cd5ffe8;
+        --clr-2: #ff7b7b93;
+        --clr-3: #ffc640ea;
+        --clr-4: #e44cffce;
+
+        --blur: 3rem;
+    }
+
+    .section {
+        background-color: var(--backgroundcol);
+        buffer: 2rem;
+        color: white;
+        /* border: 3px solid #00000000; */
+        /* border-top: 1px solid red; */
+
+        height: 100vh;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .linesection {
+        margin: 2rem;
+        border-left: 2px solid var(--vlinecol);
+        /* border: 2px solid green; */
+    }
+
+    .title {
+        position: relative;
+        overflow: hidden;
+        background: var(--backgroundcol);
+        margin: 0;
+
+        margin-bottom: 4vh;
+
+        width: fit-content;
+        
+        /* border: 1px solid white; */
+        font-family: "Inter", "DM Sans", Arial, sans-serif;
+    }
+
+     /* Media query for smaller screens */
+     @media (max-width: 70rem) {
+        .h1 {
+            font-size: 12vw;
+        }
+    }
+
+    @media (max-width: 300px) {
+        .title {
+            width: 80vw;
+        }
+    }
+
+    h1 {
+        font-size: 10rem;
+        font-weight: 800;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 10;
+        color: white
+    }
+
+
+    /* Animated */
+    
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;   
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+
+  75% {
+    top: 80%;
+    right: 25%;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+
+  60% {
+    top: 80%;
+    left: 75%;
+  }
+
+  85% {
+    top: 80%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 50%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 50%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+</style>

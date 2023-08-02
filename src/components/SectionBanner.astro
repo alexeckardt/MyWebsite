@@ -1,0 +1,167 @@
+---
+const { bkgimg, header, desc } = Astro.props;
+---
+
+<!-- HTML -->
+<div class="container">
+    <div 
+        class="backgroundimg" 
+        style={`background-image:url(${bkgimg})`} >
+
+        <div class="subcontainer">
+
+            <h1>
+                {header}
+            </h1>
+            <h2>
+                {desc}
+            </h2>
+
+        </div>
+    </div>
+
+    <script>
+
+        //Constant
+		function updateScrolls() {
+
+			//Loop
+			let elements = document.querySelectorAll(".backgroundimg")
+			for (let i = 0; elements[i]; i++) {
+
+				let el = elements[i];
+				updateBanner((el as HTMLElement));
+			}
+		}
+
+		//B
+		function updateBanner(el : HTMLElement) {
+
+			//Get Top Position
+			let top = el.getBoundingClientRect().top;
+            let depth = 0.01
+            let off = depth*top;
+
+			//Update Bkg Position
+			el.style.backgroundPositionY = `${off}rem`;
+
+		}
+
+        //Auto Update
+        updateScrolls();
+
+		//Repeat on Scroll Update
+		window.addEventListener("scroll", () => {
+
+			updateScrolls();
+
+		});
+
+    </script>
+
+
+</div>
+
+<!-- STYLE -->
+<style>
+
+    :root {
+        --section-height: 25rem;
+    }
+
+    .container {
+        height: var(--section-height);
+        width: 100%;
+    }
+
+    .backgroundimg {
+        background-size: 100%;
+        height: var(--section-height);
+        width: 100vw;
+        position: absolute;
+        left: 0;
+
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 5px;
+        background-size: cover;
+        background-attachment: fixed;
+
+        background-color: var(--backgroundcol);
+        /* border-top: 1px solid var(--textcol); */
+        /* border-bottom: 1px solid var(--textcol); */
+        /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.377); */
+        
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+        
+        overflow: hidden;
+    }
+
+    .subcontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 80vw;
+        height: var(--section-height);
+        position: absolute;
+        left: 10vw;
+
+        /* border: 1px solid red; */
+    }
+
+    h1 {
+        font-size: 8rem;
+        font-weight: 800;
+        text-shadow: 0px 0px 30px black;
+
+
+        color: var(--textcol);
+        font: monospace;
+        
+        font-smooth: never;
+        -webkit-font-smoothing : none;
+        /* -webkit-text-stroke: 3px var(--backgroundcol); */
+        /* text-stroke: 3px var(--backgroundcol); */
+
+        transition: 0.3s;
+    }
+
+    h2 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        font-size: 2rem;
+        font-weight: 400;
+        text-shadow: 0px 0px 30px black;
+        color: var(--subtext-col);
+        
+        transition: 0.3s;
+        text-align: center;
+    }
+
+     /* Media query for smaller screens */
+     @media (max-width: 640px) {
+        h1 {
+            font-size: 5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
+</style>
