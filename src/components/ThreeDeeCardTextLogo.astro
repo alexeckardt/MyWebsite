@@ -30,6 +30,9 @@ const { href, body, title, backgroundSprite, characterSprite } = Astro.props;
   --card-width: calc(var(--card-height) / 1.5);
   --card-border: 10px;
   --logo-text-transition: 0.5s;
+
+  --shrinkCardHeight: 200px;
+  --shrinkCardWidth: calc(var(--shrinkCardHeight) / 1.5);
 }
 
 .group  {
@@ -179,5 +182,28 @@ h1 {
 a {
   text-decoration: none;
 }
+
+ /* Media query for smaller screens */
+ @media (max-width: 640px) {
+      .card {
+        width: var(--shrinkCardWidth);
+        height: var(--shrinkCardHeight);
+      }
+
+      .group {
+        width: var(--shrinkCardWidth);
+      }
+  }
+
+  @media (max-width: 400px) {
+      .card {
+        width: calc(var(--card-width));
+        height: calc(var(--card-height));
+      }
+
+      .group {
+        width: var(--card-width);
+      }
+  }
 
 </style>
