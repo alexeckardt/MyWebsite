@@ -56,7 +56,11 @@ const { href, body, title, backgroundSprite, characterSprite } = Astro.props;
   text-decoration: none;
 
   border-radius: var(--card-border); 
-  
+  transition: 0.3s ease-out; 
+}
+
+.card:hover {
+  transform: translateY(-10%);
 }
 
 .cover-image {
