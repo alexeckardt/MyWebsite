@@ -27,7 +27,7 @@ const { title } = Astro.props;
 		--accentcol: rgb(255, 254, 255);
 		--titlegradient: linear-gradient(45deg, rgb(124, 58, 237), #f589ff 30%, rgb(224, 201, 217) 60%);
 		--sectiongradient: linear-gradient(135deg, rgba(237,87,234,1) 0%,rgba(81,12,242,1) 100%);
-		--backgroundcol: #0d0d0d;
+		--backgroundcol: #101010;
 		--textcol: white;
 		--fadedtextcol: grey;
 		--headercol: black;
@@ -39,6 +39,8 @@ const { title } = Astro.props;
 		--headerheight: 7rem;
 		--headerheightSmallScreen: 10rem;
 		--headerheightTinyScreen: 19rem;
+
+		color-scheme: dark;
 	}
 
 	* {
@@ -53,7 +55,6 @@ const { title } = Astro.props;
 		margin: 0;
 		padding: 0;
 		overflow-x: hidden; 
-
 		background-color: var(--backgroundcol);
 	}
 
@@ -62,4 +63,5 @@ const { title } = Astro.props;
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
 </style>
