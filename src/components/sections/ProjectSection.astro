@@ -1,5 +1,6 @@
 ---
 import ImageCard from '../../components/ImageCard.astro';
+import ParalaxBannerText from '../ParalaxBanner/ParalaxBannerText.astro';
 import SpriteBanner from '../SpriteBanner.astro';
 import ThreeDeeCard from '../ThreeDeeCard.astro';
 import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
@@ -11,12 +12,10 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
 
         <!-- Published Components -->
 
-        <h1>
-            Projects
-        </h1>
-        <h2>
-            Main projects that I've put a ton of time and effort into. Useable by you, right now.
-        </h2>
+        <ParalaxBannerText id="p3" 
+                            bkgimg="images/backgrounds/valley.png" 
+                            header="Projects"
+                            desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."/>
 
         <div class="card_sec">
             <ThreeDeeCard
@@ -49,12 +48,10 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
 
         <!-- Published Components -->
 
-        <h1>
-            Experiments
-        </h1>
-        <h2>
-            Technical Side Projects that are cool to use and see, but aren't as user friendly.
-        </h2>
+        <ParalaxBannerText id="p3" 
+            bkgimg="images/backgrounds/valley.png" 
+            header="Experiments"
+            desc="Technical Side Projects that are cool to use and see, but aren't as user friendly."/>
 
         <div class="project_sec">
             <center>
@@ -122,12 +119,15 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
         justify-content: center; /* If you want to center the items instead */
 
         gap: 1vw;
+
+        padding: 4rem;
     }
     
     .project_sec {
         border: 2px solid green;
         justify-content: center;
         gap: 20px;
+        padding: 4rem;
     }
 
 
