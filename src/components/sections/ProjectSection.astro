@@ -85,9 +85,7 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
             />
 
             <a href="https://github.com/alexeckardt/MyWebsite" target="_blank" rel="noopener noreferrer">
-                <h3>
-                    See the source code for this website!
-                </h3>
+                See the source code for this website!
             </a>
 
             </center>
@@ -142,17 +140,6 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
         padding-bottom: 1.5rem;
     }
 
-
-    h3 {
-        color: var(--fadedtextcol);
-        font-size: 1.1rem;
-        /* text-shadow: 0 0 2px black, 0 0 2px black; */
-    }
-
-    h4 {
-        color: var(--fadedtextcol);
-    }
-
     /* Media query for smaller screens */
     @media (max-width: 640px) {
         .card_sec {
@@ -172,6 +159,18 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
 			margin: 0rem;
 		}
     }
+
+    a {
+        color: var(--fadedtextcol);
+        transition: 0.1s;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+    a:hover {
+        color: var(--textcol);
+    }
+
 
 
 </style>
