@@ -2,7 +2,6 @@
 import Social from './Social.astro';
 ---
 <header>
-
   <div class="left-text">
     <a href="" rel="noopener noreferrer">
     <h1><span class="title">alexeckardt</span></h1>
@@ -23,13 +22,16 @@ import Social from './Social.astro';
       background-color: transparent;
       padding: 20px;
       width: calc(100vw - 40px);
-
+      height: 3rem;
+      
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       position:fixed;
       top: 0;
+
+      /* border: 1px solid black; */
     }
 
     a {
@@ -74,11 +76,25 @@ import Social from './Social.astro';
       text-shadow: 0 0 5 black;
 	  }
 
+
     /* Media query for smaller screens */
+    @media (max-width: 640px) {
+      .social-links {
+        flex-direction: column; /* Align the social links horizontally */
+      }
+
+      header {
+        height: var(--headerheightSmallScreen);
+        /* border: 2px red solid; */
+      }
+    }
+
+    /* Media query for TINY screens */
     @media (max-width: 400px) {
       header {
         flex-direction: column; /* Stack the elements vertically */
         align-items: center;
+        height: var(--headerheightTinyScreen);
       }
 
       .left-text {
@@ -90,11 +106,5 @@ import Social from './Social.astro';
       }
     }
 
-    /* Media query for smaller screens */
-    @media (max-width: 640px) {
-      .social-links {
-        flex-direction: column; /* Align the social links horizontally */
-      }
-    }
     
 </style>
