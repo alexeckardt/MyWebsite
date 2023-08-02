@@ -91,6 +91,8 @@ const { bkgimg, header, desc } = Astro.props;
         margin-left: auto;
         margin-right: auto;
         image-rendering: pixelated;
+        
+        overflow: hidden;
     }
 
     .subcontainer {
@@ -111,13 +113,16 @@ const { bkgimg, header, desc } = Astro.props;
         font-size: 8rem;
         font-weight: 800;
         text-shadow: 0px 0px 30px black;
+
+
         color: var(--backgroundcol);
         font: monospace;
         font-smooth: never;
         -webkit-font-smoothing : none;
-
         -webkit-text-stroke: .5px white; /* Set the width and color of the text outline */
         text-stroke: .5px white;
+
+        transition: 0.3s;
     }
 
     h2 {
@@ -125,6 +130,31 @@ const { bkgimg, header, desc } = Astro.props;
         font-size: 2rem;
         font-weight: 400;
         text-shadow: 0px 0px 30px black;
-        color: var(--fadedtextcol);
+        color: var(--textcol);
+        
+        transition: 0.3s;
+        text-align: center;
     }
+
+     /* Media query for smaller screens */
+     @media (max-width: 640px) {
+        h1 {
+            font-size: 6rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
 </style>
