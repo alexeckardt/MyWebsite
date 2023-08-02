@@ -25,10 +25,13 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
   --card-width: calc(var(--card-height) / 1.5);
   --card-border: 10px;
   --logo-text-transition: 0.5s;
+
+  --shrinkCardHeight: 200px;
+  --shrinkCardWidth: calc(var(--shrinkCardHeight) / 1.5);
 }
 
 .group  {
-  /* border: 1px red solid; */
+  border: 1px red solid;
   width: var(--card-width);
   display: inline-block;
 }
@@ -49,7 +52,7 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
   text-decoration: none;
 
   border-radius: var(--card-border); 
-  
+  transform: 0.3s; 
 }
 
 .cover-image {
@@ -162,5 +165,28 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
   transition: var(--logo-text-transition);
   transform: translate3d(0%, calc(-100%), -100px);
 }
+
+ /* Media query for smaller screens */
+ @media (max-width: 640px) {
+      .card {
+        width: var(--shrinkCardWidth);
+        height: var(--shrinkCardHeight);
+      }
+
+      .group {
+        width: var(--shrinkCardWidth);
+      }
+  }
+
+  @media (max-width: 400px) {
+      .card {
+        width: calc(var(--card-width));
+        height: calc(var(--card-height));
+      }
+
+      .group {
+        width: var(--card-width);
+      }
+  }
 
 </style>

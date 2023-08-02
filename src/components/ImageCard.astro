@@ -1,5 +1,5 @@
 ---
-const { href, title, body, imgsrc } = Astro.props;
+const { href, title, body, imgsrc, year } = Astro.props;
 ---
 
 <li class="link-card" style={`background-image:url(${imgsrc})`}>
@@ -16,6 +16,8 @@ const { href, title, body, imgsrc } = Astro.props;
 				<h4>
 					<div class="textbody">
 						{body}
+						<br>
+						({year})
 					</div>
 				</h4>
 			</div>

@@ -16,9 +16,17 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
         <br>
         <br>
 
-        <div class="card_sec">
-        <!-- <center> -->
 
+        <!-- Published Components -->
+
+        <h1>
+            Projects
+        </h1>
+        <h2>
+            Main projects that I've put a ton of time and effort into. Useable by you, right now.
+        </h2>
+
+        <div class="card_sec">
             <ThreeDeeCard
                     href="https://alexeckardt.itch.io/soulflamealpha"
                     body="" 
@@ -44,8 +52,56 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
                     backgroundSprite="/images/projects/gotransitviewer.png"
                     characterSprite="/images/projects/empty.png"
                     />
+        </div>
 
-            <!-- </center> -->
+
+        <!-- Published Components -->
+
+        <h1>
+            Experiments
+        </h1>
+        <h2>
+            Technical Side Projects that are cool to use and see, but aren't as user friendly.
+        </h2>
+
+        <div class="project_sec">
+            <center>
+    
+                
+            <!-- Pixel Tile Set -->
+            <ImageCard
+                href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
+                title="Pixel Art Tile-Set Extrapolator"
+                body="Python Command Line Tool to extrapolate a tile-set from Source Images" 
+                imgsrc="/images/projects/patsc.png"
+                year="2023"
+            />
+
+            <!-- Dungeon -->
+            <ImageCard
+                href="https://github.com/alexeckardt/RougelikeDungeon"
+                title="Rougelike Dungeon C# Game"
+                body="An simple, randomly generated bullet hell video game, created using C# using the MonoGame Game Framework." 
+                imgsrc="/images/projects/rougelikedungeon.png"
+                year="2023"
+            />
+
+            <!-- IOS App -->
+            <ImageCard
+                href="https://github.com/alexeckardt/iOS-Speedrun-Timer/"
+                title="iOS Speedrun Timer"
+                body="iOS App, writen in XCode, to act as a timer to store and compare speedruns time to one another" 
+                imgsrc="/images/projects/ios_speedrun.png"
+                year="2022"
+            />
+
+            <a href="https://github.com/alexeckardt/MyWebsite" target="_blank" rel="noopener noreferrer">
+                <h3>
+                    See the source code for this website!
+                </h3>
+            </a>
+
+            </center>
         </div>
     </div>
 </div>
@@ -69,14 +125,31 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
     
 
     .card_sec {
-        /* border: 2px solid green; */
+        border: 2px solid green;
         display: flex;
         justify-content: center;
+        gap: 20px;
+    }
+    
+    .project_sec {
+        border: 2px solid green;
+        justify-content: center;
+        gap: 20px;
     }
 
-    h4 {
-        color: var(--fadedtextcol);
+
+    h1 {
+        color: var(--headercol);
+        font-size: 1.5rem;
+        padding-bottom: 1.5rem;
     }
+
+    h2 {
+        color: var(--headercol);
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
 
     h3 {
         color: var(--fadedtextcol);
@@ -84,13 +157,23 @@ import ThreeDeeCardTextLogo from '../ThreeDeeCardTextLogo.astro';
         /* text-shadow: 0 0 2px black, 0 0 2px black; */
     }
 
-    a {
-        text-decoration: none;
+    h4 {
+        color: var(--fadedtextcol);
     }
 
-    h1 {
-        color: var(--fadedtextcol);
-        font-size: 1.5rem;
-        padding-bottom: 1.5rem;
+    /* Media query for smaller screens */
+    @media (max-width: 640px) {
+        .card_sec {
+            gap: 5px
+        }
     }
+
+    /* Media query for smaller screens */
+    @media (max-width: 400px) {
+        .card_sec {
+            display:grid;
+        }
+    }
+
+
 </style>
