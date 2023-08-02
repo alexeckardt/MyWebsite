@@ -31,6 +31,8 @@ import Social from './Social.astro';
       position:fixed;
       top: 0;
 
+      z-index: 2;
+
       /* border: 1px solid black; */
     }
 
@@ -58,6 +60,7 @@ import Social from './Social.astro';
     .social-links {
       margin: 0;
       margin-left: 15px;
+      margin-right: 20px;
       padding: 0;
 
       display: flex;
@@ -73,6 +76,7 @@ import Social from './Social.astro';
       font-weight: 800;
       margin: 0;
       z-index: -1;
+      color: var(--textcol);
       text-shadow: 0 0 5 black;
 	  }
 
@@ -95,6 +99,7 @@ import Social from './Social.astro';
         flex-direction: column; /* Stack the elements vertically */
         align-items: center;
         height: var(--headerheightTinyScreen);
+        position:static;
       }
 
       .left-text {

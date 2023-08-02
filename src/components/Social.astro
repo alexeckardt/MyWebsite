@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
     a {
       background-color: none;
       text-decoration: none;
-      color: black;
+      color: var(--textcol);
     }
 
     .num {
@@ -24,6 +24,8 @@ import Layout from '../layouts/Layout.astro';
       height: 1rem;
       font-weight: 400;
       padding-right: 3px;
+      
+      text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.185);
     }
 
     .text {
@@ -31,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
       font-weight: bold;
       height: 1rem;
       
-      text-shadow: 0px 0px 5px #00000077;
+      text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.185);
     }
 
     .social {
