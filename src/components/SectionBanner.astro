@@ -141,6 +141,10 @@ const { bkgimg, header, desc } = Astro.props;
 
 <script>
 
+    function isTouchScreenDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.maxTouchPoints > 0;
+    }
+
     //Constant
     function updateScrolls() {
 
@@ -158,11 +162,16 @@ const { bkgimg, header, desc } = Astro.props;
 
         //Get Top Position
         let top = el.getBoundingClientRect().top;
-        let depth = 0.01
+        let depth = .7;
         let off = depth*top;
 
+        if (!isTouchScreenDevice()) {
+            
+        }
+
+
         //Update Bkg Position
-        el.style.backgroundPositionY = `${off}rem`;
+        el.style.backgroundPositionY = `${off}px`;
 
     }
 
