@@ -141,6 +141,8 @@ const { bkgimg, header, desc } = Astro.props;
 
 <script>
 
+    let isScrolling = false;
+
     function isTouchScreenDevice() {
         return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.maxTouchPoints > 0;
     }
@@ -148,12 +150,19 @@ const { bkgimg, header, desc } = Astro.props;
     //Constant
     function updateScrolls() {
 
-        //Loop
-        let elements = document.querySelectorAll(".backgroundimg")
-        for (let i = 0; elements[i]; i++) {
+        
+        if (!isScrolling) {
+            isScrolling = true;
+            //Loop
+            let elements = document.querySelectorAll(".backgroundimg")
+            for (let i = 0; elements[i]; i++) {
 
-            let el = elements[i];
-            updateBanner((el as HTMLElement));
+                let el = elements[i];
+                updateBanner((el as HTMLElement));
+            }
+            window.requestAnimationFrame(() => {
+                isScrolling = false;
+            });
         }
     }
 
