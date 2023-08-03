@@ -1,5 +1,5 @@
 ---
-import Social from './Social.astro';
+import SocialNumbered from './SocialNumbered.astro';
 ---
 <header id="header">
   <div class="left-text">
@@ -8,10 +8,10 @@ import Social from './Social.astro';
     </a>
   </div>
   <div class="social-links">
-    <Social num="00" text="twitter" website="twitter.com/pixeqla"/>
-    <Social num="01" text="github" website="github.com/alexeckardt"/>
-    <Social num="02" text="linkedin" website="linkedin.com/in/alex-eckardt"/>
-    <Social num="03" text="itch.io" website="alexeckardt.itch.io"/>
+    <SocialNumbered num="00" text="twitter" website="twitter.com/pixeqla"/>
+    <SocialNumbered num="01" text="github" website="github.com/alexeckardt"/>
+    <SocialNumbered num="02" text="linkedin" website="linkedin.com/in/alex-eckardt"/>
+    <SocialNumbered num="03" text="itch.io" website="alexeckardt.itch.io"/>
   </div>
 
 </header>
@@ -76,7 +76,6 @@ import Social from './Social.astro';
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       /* -webkit-text-fill-color: black; */
-      background-size: 400%;
       background-position: 0%;
 
       text-decoration: none;

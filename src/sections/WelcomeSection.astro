@@ -16,10 +16,16 @@
                 </div>
 
                 <h2>
-                    Developer and Artist 
+                    Developer and Pixel Artist 
                 </h2>
-            </div>
 
+                <!-- Socials -->
+
+
+
+
+
+            </div>
 
         </center>
     </div>
@@ -62,26 +68,32 @@
     .title {
         position: relative;
         overflow: hidden;
-        background: var(--backgroundcol);
+        background: black;
         margin: 0;
 
         margin-bottom: 4vh;
 
         width: fit-content;
+        padding: 4rem;
         
         /* border: 1px solid white; */
         font-family: "Inter", "DM Sans", Arial, sans-serif;
+
+        mix-blend-mode: screen;
+        /* addition basically */
     }
 
     h1 {
         font-size: 10rem;
         font-weight: 800;
+
+        text-shadow: 0px 0px 30px rgb(31, 31, 31);
     }
 
     h2 {
         font-size: 2rem;
         font-weight: 10;
-        color: white
+        color: rgb(109, 109, 109)
     }
 
      /* Media query for smaller screens */
@@ -110,7 +122,7 @@
   width: 100%;
   height: 100%;
   z-index: 2;   
-  mix-blend-mode: darken;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
@@ -133,15 +145,15 @@
 
 .aurora__item:nth-of-type(2) {
   background-color: var(--clr-3);
-  right: 0;
-  top: 0;
+  right: 50%;
+  top: 50%;
   animation: aurora-border 6s ease-in-out infinite,
     aurora-2 12s ease-in-out infinite alternate;
 }
 
 .aurora__item:nth-of-type(3) {
   background-color: var(--clr-2);
-  left: 0;
+  left: 200%;
   bottom: 0;
   animation: aurora-border 6s ease-in-out infinite,
     aurora-3 8s ease-in-out infinite alternate;
