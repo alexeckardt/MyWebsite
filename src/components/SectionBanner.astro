@@ -150,7 +150,6 @@ const { bkgimg, header, desc } = Astro.props;
     //Constant
     function updateScrolls() {
 
-        
         if (!isScrolling) {
             isScrolling = true;
             //Loop
@@ -171,7 +170,7 @@ const { bkgimg, header, desc } = Astro.props;
 
         //Get Top Position
         let top = el.getBoundingClientRect().top;
-        let depth = .7;
+        let depth = .5;
         let off = depth*top;
 
         if (!isTouchScreenDevice()) {
