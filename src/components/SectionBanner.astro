@@ -13,54 +13,14 @@ const { bkgimg, header, desc } = Astro.props;
             <h1>
                 {header}
             </h1>
-            <h2>
-                {desc}
-            </h2>
 
         </div>
     </div>
-
-    <script>
-
-        //Constant
-		function updateScrolls() {
-
-			//Loop
-			let elements = document.querySelectorAll(".backgroundimg")
-			for (let i = 0; elements[i]; i++) {
-
-				let el = elements[i];
-				updateBanner((el as HTMLElement));
-			}
-		}
-
-		//B
-		function updateBanner(el : HTMLElement) {
-
-			//Get Top Position
-			let top = el.getBoundingClientRect().top;
-            let depth = 0.01
-            let off = depth*top;
-
-			//Update Bkg Position
-			el.style.backgroundPositionY = `${off}rem`;
-
-		}
-
-        //Auto Update
-        updateScrolls();
-
-		//Repeat on Scroll Update
-		window.addEventListener("scroll", () => {
-
-			updateScrolls();
-
-		});
-
-    </script>
-
-
 </div>
+
+<h2>
+    {desc}
+</h2>
 
 <!-- STYLE -->
 <style>
@@ -72,6 +32,7 @@ const { bkgimg, header, desc } = Astro.props;
     .container {
         height: var(--section-height);
         width: 100%;
+        /* border: 1px solid red; */
     }
 
     .backgroundimg {
@@ -131,13 +92,13 @@ const { bkgimg, header, desc } = Astro.props;
     }
 
     h2 {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px;
+        padding-top: 70px;
 
         font-size: 2rem;
         font-weight: 400;
         text-shadow: 0px 0px 30px black;
-        color: var(--subtext-col);
+        color: var(--fadedtextcol);
         
         transition: 0.3s;
         text-align: center;
@@ -173,3 +134,43 @@ const { bkgimg, header, desc } = Astro.props;
     }
 
 </style>
+
+
+<script>
+
+    //Constant
+    function updateScrolls() {
+
+        //Loop
+        let elements = document.querySelectorAll(".backgroundimg")
+        for (let i = 0; elements[i]; i++) {
+
+            let el = elements[i];
+            updateBanner((el as HTMLElement));
+        }
+    }
+
+    //B
+    function updateBanner(el : HTMLElement) {
+
+        //Get Top Position
+        let top = el.getBoundingClientRect().top;
+        let depth = 0.01
+        let off = depth*top;
+
+        //Update Bkg Position
+        el.style.backgroundPositionY = `${off}rem`;
+
+    }
+
+    //Auto Update
+    updateScrolls();
+
+    //Repeat on Scroll Update
+    window.addEventListener("scroll", () => {
+
+        updateScrolls();
+
+    });
+
+</script>
