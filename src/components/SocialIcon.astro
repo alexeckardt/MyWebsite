@@ -1,0 +1,28 @@
+---
+const { website, icon } = Astro.props;
+import Layout from '../layouts/Layout.astro';
+---
+
+<p>
+    <a href={`https://${website}`} target="_blank" rel="noopener noreferrer">
+        <iconify-icon class="a" icon={icon} width="30px" height="30px"></iconify-icon>
+    </a>
+</p>
+
+<style>
+    a {
+      color: var(--socialunhighlighted);
+
+      background-color: none;
+      text-decoration: none;
+
+      display: inline-block; 
+      transition: 0.3s;
+
+      width: 30px;
+    }
+
+    a:hover {
+      color: var(--socialhighlighted);
+    }
+  </style>
