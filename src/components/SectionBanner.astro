@@ -173,8 +173,8 @@ const { bkgimg, header, desc } = Astro.props;
         let depth = .5;
         let off = depth*top;
 
-        if (!isTouchScreenDevice()) {
-            
+        if (isTouchScreenDevice()) {
+            return;
         }
 
 
