@@ -176,6 +176,7 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
       .card {
         width: var(--shrinkCardWidth);
         height: var(--shrinkCardHeight);
+        align-items: center;
       }
 
       .group {
@@ -184,6 +185,11 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
 
       .title {
         scale: 200%;
+        transform: translateY(0px);
+      }
+
+      .character {
+        display: none;
       }
   }
 
@@ -191,6 +197,7 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
       .card {
         width: calc(var(--card-width));
         height: calc(var(--card-height));
+        align-items: center;
       }
 
       .group {
@@ -198,7 +205,12 @@ const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.prop
       }
 
       .title {
-        scale: 100%;
+        scale: 150%;
+        transform: translateY(0px);
+      }
+
+      .character {
+        display: none;
       }
   }
 
