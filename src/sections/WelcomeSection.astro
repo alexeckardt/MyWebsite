@@ -57,7 +57,6 @@ import SocialIcon from "../components/SocialIcon.astro";
         background-color: var(--backgroundcol);
         buffer: 2rem;
         color: white;
-        /* border: 3px solid #00000000; */
         /* border-top: 1px solid red; */
 
         height: 100vh;
@@ -67,6 +66,8 @@ import SocialIcon from "../components/SocialIcon.astro";
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        overflow: hidden;
 
     }
     .linesection {
@@ -143,6 +144,7 @@ import SocialIcon from "../components/SocialIcon.astro";
       justify-content: center; /* If you want to center the items instead */
       padding-top: 30px;
       gap: 20px;
+      overflow: hidden;
     }
 
      /* Media query for smaller screens */
@@ -159,6 +161,9 @@ import SocialIcon from "../components/SocialIcon.astro";
         .title {
             width: 80vw;
         }
+        .socials {
+          gap: 0px;
+        }
     }
 
 
@@ -172,6 +177,7 @@ import SocialIcon from "../components/SocialIcon.astro";
     
     .aurora {
         position: absolute;
+        overflow: hidden;
         top: 0;
         left: 0;
         width: calc(100% - 4px);
@@ -179,13 +185,15 @@ import SocialIcon from "../components/SocialIcon.astro";
         z-index: 2;   
         mix-blend-mode: multiply;
         pointer-events: none;
+
+        /* border: 1px solid red; */
       }
       
       .aurora__item {
         overflow: hidden;
         position: absolute;
-        width: 60vw;
-        height: 60vw;
+        width: 100%;
+        height: 100%;
         background-color: var(--clr-1);
         border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
         filter: blur(var(--blur));
