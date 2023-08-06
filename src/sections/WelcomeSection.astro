@@ -96,17 +96,48 @@ import SocialIcon from "../components/SocialIcon.astro";
     h1 {
         font-size: 10rem;
         font-weight: 800;
-
         text-shadow: 0px 0px 30px rgb(31, 31, 31);
+        animation: startup-fade 8s ease-in-out forwards;
+    }
+
+    @keyframes startup-fade {
+      0% {
+        color: black;
+        text-shadow: 0px 0px 30px black;
+      }
+      10% {
+        color: black;
+        text-shadow: 0px 0px 30px black;
+      }
+      40% {
+        color: white;
+        text-shadow: 0px 0px 30px rgb(102, 102, 102);
+      }
+      100% {
+        color: white;
+        text-shadow: 0px 0px 30px rgb(31, 31, 31);
+      }
     }
 
     h2 {
         font-size: 2rem;
         font-weight: 10;
-        color: rgb(109, 109, 109)
+        color: rgb(179, 179, 179);
+        animation: startup-fade-1 8s ease-in-out forwards;
     }
 
-    
+    @keyframes startup-fade-1 {
+      0% {
+        color: black;
+      }
+      30% {
+        color: black;
+      }
+      80% {
+        color: rgb(219, 219, 219);
+      }
+    }
+
     .socials {
       display: flex;
       justify-content: center; /* If you want to center the items instead */
@@ -163,6 +194,7 @@ import SocialIcon from "../components/SocialIcon.astro";
       
       .aurora__item:nth-of-type(1) {
         top: -50%;
+        left: 50%;
         animation: aurora-border 6s ease-in-out infinite,
           aurora-1 12s ease-in-out infinite alternate;
       }
