@@ -52,6 +52,7 @@ import SocialIcon from "../components/SocialIcon.astro";
         --clr-4: #e44cffce;
 
         --blur: 3rem;
+        --motion: 2rem;
     }
 
     .section {
@@ -106,18 +107,24 @@ import SocialIcon from "../components/SocialIcon.astro";
       0% {
         color: black;
         text-shadow: 0px 0px 30px black;
+        transform: translateY(var(--motion));
+        
       }
       10% {
         color: black;
         text-shadow: 0px 0px 30px black;
+        transform: translateY(var(--motion));
+
       }
       40% {
         color: white;
         text-shadow: 0px 0px 30px rgb(102, 102, 102);
+        transform: translateY(0rem);
       }
       100% {
         color: white;
         text-shadow: 0px 0px 30px rgb(31, 31, 31);
+        transform: translateY(0rem);
       }
     }
 
@@ -131,12 +138,15 @@ import SocialIcon from "../components/SocialIcon.astro";
     @keyframes startup-fade-1 {
       0% {
         color: black;
+        transform: translateY(var(--motion));
       }
       20% {
         color: black;
+        transform: translateY(var(--motion));
       }
       80% {
         color: rgb(219, 219, 219);
+        transform: translateY(0rem);
       }
     }
 
