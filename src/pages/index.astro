@@ -1,33 +1,23 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import CVSection from "../sections/CVSection.astro";
+// import CVSection from "../sections/CVSection.astro";
 import ProjectSection from "../sections/ProjectSection.astro";
 import WelcomeSection from "../sections/WelcomeSection.astro";
 ---
+<html>
 
-<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+	<canvas></canvas>
+	<script is:inline src="/fluid.js"></script>
 
-<Layout title="Alex Eckardt">
-	<html>
-		<body>
-			
-			<Header />
+	<Layout title="Alex Eckardt">
+		<WelcomeSection></WelcomeSection>
+		<ProjectSection></ProjectSection>
+	</Layout>
+	
+	
 
-			<!--  -->
-			<div class="main">
-			
-					<WelcomeSection />
-
-					<ProjectSection />
-
-					<CVSection />
-			
-			</div>
-			
-		</body>
-	</html>
-</Layout>
+</html>
 
 <style>
 	* {
@@ -38,5 +28,18 @@ import WelcomeSection from "../sections/WelcomeSection.astro";
 	.main {
 		width: 100vw;
 		/* border-top: 1px solid black; */
+	}
+
+	canvas {
+		width: 100vw;
+		height: 100vh;
+		/* overflow: hidden; */
+		position:fixed;
+
+		/* Set to negative to hide */
+		z-index: -2;
+
+		/* mix-blend-mode: multiply; */
+
 	}
 </style>

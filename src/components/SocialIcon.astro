@@ -12,21 +12,9 @@ import Layout from '../layouts/Layout.astro';
 <style>
 
 
-    @keyframes startup-fade-social {
-      0% {
-        opacity: 0;
-      }
-      30% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
     a {
-      opacity: 0;
-      background-color: none;
+      opacity: 1;
+      background-color: transparent;
       text-decoration: none;
       color: var(--socialunhighlighted);
 
@@ -34,7 +22,6 @@ import Layout from '../layouts/Layout.astro';
       transition: 0.3s;
 
       width: 30px;
-      animation: startup-fade-social 6s ease-in-out forwards;
     }
 
     a:hover {
