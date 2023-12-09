@@ -7,176 +7,78 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
 <!-- Section W Buttons -->
 <div class="section">
+
     <div class="linesection">
-
-        <!-- Published Components -->
-
-        <SectionBanner id="p3" 
-                            bkgimg="images/backgrounds/valley.png" 
-                            header="Projects"
-                            desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."/>
-
-        <div class="card_sec">
-            <ThreeDeeCard
-                    href="https://alexeckardt.itch.io/soulflamealpha"
-                    body="" 
-                    logoSprite="/images/projects/soulflame_logo.png"
-
-                    backgroundSprite="/images/projects/soulflame_bkg.png"
-                    characterSprite="/images/projects/soulflame_char.png"
-                    />
-
-            <ThreeDeeCard
-                    href="https://alexeckardt.itch.io/pinball-pioneer"
-                    body="" 
-                    logoSprite="/images/projects/pinball_logo.png"
-                    backgroundSprite="/images/projects/pinball_bkg.png"
-                    characterSprite="/images/projects/pinball_char.png"
-                    />
-
-            <ThreeDeeCardTextLogo 
-                    href="https://alexeckardt.github.io/GO-Transit-Visualizer/"
-                    body="" 
-                    title="GO Transit Viewer"
-
-                    backgroundSprite="/images/projects/gotransitviewer.png"
-                    characterSprite="/images/projects/empty.png"
-                    />
-        </div>
-
-
-        <!-- Published Components -->
 
         <SectionBanner id="p3" 
             bkgimg="images/backgrounds/valley.png" 
-            header="Experiments"
-            desc="Technical Side Projects that are cool to use and see, but aren't as user friendly."/>
+            header="Projects"
+            desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."/>
 
-        <div class="project_sec">
-            <center>
-    
-                
-            <!-- Pixel Tile Set -->
-            <ImageCard
-                href="https://github.com/alexeckardt/ChessOpenings"
-                title="Chess Opening Explorer"
-                body="Simple Puzzle Game that makes you choose the best move from a variety of chess openings." 
-                imgsrc="/images/projects/chessers.png"
-                year="2023"
-            />
 
-            <ImageCard
-                href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
-                title="Pixel Art Tile-Set Extrapolator"
-                body="Python Command Line Tool to extrapolate a tile-set from Source Images" 
-                imgsrc="/images/projects/patsc.png"
-                year="2023"
-            />
 
-            <!-- Dungeon -->
-            <ImageCard
-                href="https://github.com/alexeckardt/RougelikeDungeon"
-                title="Rougelike Dungeon C# Game"
-                body="An simple, randomly generated bullet hell video game, created using C# using the MonoGame Game Framework." 
-                imgsrc="/images/projects/rougelikedungeon.png"
-                year="2023"
-            />
+            
+            <div class="wrapper">
 
-            <!-- IOS App -->
-            <ImageCard
-                href="https://github.com/alexeckardt/iOS-Speedrun-Timer/"
-                title="iOS Speedrun Timer"
-                body="iOS App, writen in XCode, to act as a timer to store and compare speedruns time to one another" 
-                imgsrc="/images/projects/ios_speedrun.png"
-                year="2022"
-            />
 
-            <a href="https://github.com/alexeckardt/MyWebsite" target="_blank" rel="noopener noreferrer">
-                See the source code for this website!
-            </a>
+                <div class="card card-0">
+                <div class="glare-container">
+                    <div class="glare">
+                    </div>
+                </div>
+                </div>
 
-            </center>
-        </div>
+
+            </div>
+
+
+        <script is:inline src="/card.js"></script>
+
     </div>
 </div>
+
+
 
 <style>
 
     .section {
-        background-color: var(--backgroundcol);
+        background-color: black;
         color: white;
         /* border: 3px solid #00000000; */
-        /* border: 2px solid magenta; */
-
+        border: 2px solid magenta;
         overflow: hidden;
+
+        height: 200vh;
     }
 
     .linesection {
+
         margin: 2rem;
-        border-left: 2px solid var(--vlinecol);
-        /* border: 2px solid green; */
     }
     
 
-    .card_sec {
-        /* border: 2px solid green; */
-        display: flex;
-        justify-content: center; /* If you want to center the items instead */
-
-        gap: 1vw;
-
-        padding: 4rem;
+    /*  Cards  */
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        height: 100vh;
     }
+
+    .card-0{
+        background-color: rgba(0, 166, 255, 0.3);
+    }
+
     
-    .project_sec {
-        /* border: 2px solid green; */
-        justify-content: center;
-        gap: 20px;
-        padding: 4rem;
-    }
-
-    h1 {
-        color: var(--headercol);
-        font-size: 1.5rem;
-        padding-bottom: 1.5rem;
-    }
-
-    h2 {
-        color: var(--headercol);
-        font-size: 1rem;
-        padding-bottom: 1.5rem;
-    }
-
-    /* Media query for smaller screens */
-    @media (max-width: 640px) {
-        .card_sec {
-            gap: 5px
-        }
-        .project_sec {
-			padding: 1rem;
-		}
-    }
-
-    /* Media query for smaller screens */
-    /* 470 instead of 400 because changes */
-    @media (max-width: 470px) { 
-        .card_sec {
-            display:grid;
-        }
-        .linesection {
-			margin: 0rem;
-		}
-    }
-
-    a {
-        color: var(--fadedtextcol);
-        transition: 0.1s;
-        text-decoration: none;
-        font-size: 1.1rem;
-    }
-
-    a:hover {
-        color: var(--textcol);
+    .card {
+        backdrop-filter: blur(5px);
+        min-width: 35vh;
+        height: 55vh;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051),
+            0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09),
+            0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129),
+            0px 0px 109px rgba(0, 0, 0, 0.18);
     }
 
 </style>
