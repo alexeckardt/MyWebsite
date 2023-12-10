@@ -40,11 +40,12 @@ import SocialIcon from "../components/SocialIcon.astro";
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
 
     .section {
-        background-color: black;
+        background-color: var(--backgroundcol);
         buffer: 2rem;
         color: white;
         /* border-top: 1px solid red; */
 
+        width: 100vw;
         height: 100vh;
         text-align: center;
 
@@ -56,7 +57,7 @@ import SocialIcon from "../components/SocialIcon.astro";
         overflow: hidden;
 
         /* Mix so We can see the effect under */
-        mix-blend-mode: multiply;
+        /* mix-blend-mode: multiply; */
 
     }
     .linesection {
@@ -68,8 +69,7 @@ import SocialIcon from "../components/SocialIcon.astro";
     .title {
         position: relative;
         overflow: hidden;
-        background: black;
-        border: 2px solid black;
+        /* border: 2px solid black; */
 
         margin-bottom: 4vh;
 

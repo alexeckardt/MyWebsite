@@ -20,14 +20,10 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             
             <div class="wrapper">
 
-
-                <div class="card card-0">
-                <div class="glare-container">
-                    <div class="glare">
-                    </div>
+                <div class="card">
+                    3D Card
+                    <div class="glow"></div>
                 </div>
-                </div>
-
 
             </div>
 
@@ -42,11 +38,12 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 <style>
 
     .section {
-        background-color: black;
+        background-color: var(--backgroundcol);
         color: white;
         /* border: 3px solid #00000000; */
-        border: 2px solid magenta;
+        /* border: 2px solid magenta; */
         overflow: hidden;
+        width: 100vw;
 
         height: 200vh;
     }
@@ -54,6 +51,8 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     .linesection {
 
         margin: 2rem;
+        overflow: hidden;
+        width: 100vw;
     }
     
 
@@ -63,22 +62,45 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
         align-items: center;
-        height: 100vh;
-    }
 
-    .card-0{
-        background-color: rgba(0, 166, 255, 0.3);
+        border: 1px red solid;
+        overflow: hidden;
     }
-
     
     .card {
-        backdrop-filter: blur(5px);
         min-width: 35vh;
         height: 55vh;
-        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051),
+        /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051),
             0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09),
             0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129),
-            0px 0px 109px rgba(0, 0, 0, 0.18);
+            0px 0px 109px rgba(0, 0, 0, 0.18); */
+
+        border-radius: 10px;
+        background-color: black;
+        background-image: url("/images/projects/soulflame_char.png");
+        background-size: cover;
+
+        transform: rotateX(0);
+        /* background-color: red; */
+
+        transition-duration: 1000ms;
+        transition-property: transform;
+    }
+
+    .card:hover {
+        transition-duration: 0ms;
+    }
+
+    .glow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        
+        background-image: radial-gradient(circle at 50% -20%, #ffffff62, #000000ff);
+        mix-blend-mode:luminosity;
+        border-radius: 10px;
     }
 
 </style>

@@ -49,7 +49,7 @@ let config = {
     COLOR_UPDATE_SPEED: 10,
 
     PAUSED: false,
-    BACK_COLOR: { r: 15, g: 15, b: 15 },
+    BACK_COLOR: { r: 10, g: 3, b: 20 }, //0A0314
 
     TRANSPARENT: false,
     BLOOM: true,
@@ -1468,8 +1468,12 @@ canvas.addEventListener('mousedown', e => {
 window.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
-    let posX = scaleByPixelRatio(e.clientX);
-    let posY = scaleByPixelRatio(e.clientY);
+
+    console.log(e);
+
+
+    let posX = scaleByPixelRatio(e.offsetX);
+    let posY = scaleByPixelRatio(e.offsetY);
     updatePointerMoveData(pointer, posX, posY);
 });
 
