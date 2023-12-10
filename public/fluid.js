@@ -49,7 +49,7 @@ let config = {
     COLOR_UPDATE_SPEED: 10,
 
     PAUSED: false,
-    BACK_COLOR: { r: 10, g: 3, b: 20 }, //0A0314
+    BACK_COLOR: { r: 30, g: 30, b: 30 }, //0A0314
 
     TRANSPARENT: false,
     BLOOM: true,
@@ -1442,8 +1442,12 @@ function correctRadius (radius) {
 }
 
 function generate_pointer(e) {
-    let posX = scaleByPixelRatio(e.offsetX);
-    let posY = scaleByPixelRatio(e.offsetY);
+
+    var newX = e.clientX;
+    var newY = e.clientY;
+
+    let posX = scaleByPixelRatio(newX);
+    let posY = scaleByPixelRatio(newY);
     generate_pointer(posX, posY);
 }
 
@@ -1472,8 +1476,8 @@ window.addEventListener('mousemove', e => {
     console.log(e);
 
 
-    let posX = scaleByPixelRatio(e.offsetX);
-    let posY = scaleByPixelRatio(e.offsetY);
+    let posX = scaleByPixelRatio(e.x);
+    let posY = scaleByPixelRatio(e.y);
     updatePointerMoveData(pointer, posX, posY);
 });
 
