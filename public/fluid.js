@@ -84,14 +84,6 @@ pointers.push(new pointerPrototype());
 
 const { gl, ext } = getWebGLContext(canvas);
 
-if (isMobile()) {
-    console.log('IS MOBILE!')
-    config.DYE_RESOLUTION = 512;
-    config.DENSITY_DISSIPATION = 0.3;
-    doAuto = true;
-
-    config.BACK_COLOR = {"r": 200, "g": 200, "b": 200}; 
-}
 if (!ext.supportLinearFiltering) {
     config.DYE_RESOLUTION = 512;
     config.SHADING = false;
@@ -1691,3 +1683,13 @@ function hashCode (s) {
     }
     return hash;
 };
+
+if (isMobile()) {
+    console.log('IS MOBILE!')
+    config.DYE_RESOLUTION = 512;
+    config.DENSITY_DISSIPATION = 0.3;
+    doAuto = true;
+
+    config.BACK_COLOR = {"r": 200, "g": 200, "b": 200}; 
+    multipleSplats(10, 0.6);
+}
