@@ -15,6 +15,8 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             header="Projects"
             desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."/>
 
+            <div class="cards">
+
             <!-- 
                 SOULFLAME
                 SECTION 
@@ -140,6 +142,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             </div>
             <!-- End Card Section -->
 
+        </div>
 
         <script is:inline src="/card.js"></script>
 
@@ -157,8 +160,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         /* border: 2px solid magenta; */
         overflow: hidden;
         width: 100vw;
-
-        padding-bottom: 4rem;
+        padding-bottom: 5rem;
     }
 
     .linesection {
@@ -191,7 +193,6 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         /* border: 1px solid red; */
         position: relative;
 
-        
         transition-duration: 1000ms;
         transition-property: transform;
     }
@@ -278,6 +279,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     .desc {
         padding-right: 5vw;
         margin-bottom: 0.75rem;
+        font-size: 1rem;
     }
 
     .card_tag.purple {
@@ -307,6 +309,39 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     }
 
     
+    .card_text {
+         padding: 0px;   
+    }
 
+    .cards {
+        padding: 0px;
+    }
+
+    @media (max-width: 780px) {
+		.card_section {
+            display: inline;
+            justify-content: center;
+        }
+
+        .cards {
+            padding: 2rem;
+        }
+
+        .card_wrapper {
+            display: none;
+        }
+
+        .desc {
+            font-size: 2rem;
+        }
+
+        .section {  
+            padding-bottom: 1rem;
+        }
+
+        .card_title {
+            padding-bottom: 1rem;
+        }
+  	}
 
 </style>
