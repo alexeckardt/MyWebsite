@@ -33,7 +33,7 @@ let config = {
     DYE_RESOLUTION: 512, //'high': 1024, 'medium': 512, 'low': 256, 'very low': 128 
     CAPTURE_RESOLUTION: 512,
 
-    DENSITY_DISSIPATION: 3,
+    DENSITY_DISSIPATION: 1, // 3
     VELOCITY_DISSIPATION: 1.64,
     PRESSURE: 0.35,
     PRESSURE_ITERATIONS: 20,
@@ -87,6 +87,7 @@ const { gl, ext } = getWebGLContext(canvas);
 if (isMobile()) {
     console.log('IS MOBILE!')
     config.DYE_RESOLUTION = 512;
+    config.DENSITY_DISSIPATION = 0.7;
     doAuto = true;
 }
 if (!ext.supportLinearFiltering) {
@@ -1157,6 +1158,7 @@ initFramebuffers();
 let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
 let startupticks = 0;
+let burstsLeft = 0;
 update();
 
 function update () {
@@ -1167,9 +1169,15 @@ function update () {
     startupticks++;
     if (doAuto && startupticks > 5) {
         let rand = Math.random();
-        if (rand < 0.1) {
-            multipleSplats(1);
+        if (rand < 0.05) {
+            burstsLeft = (parseInt(Math.random() * 2) + 1);
         }
+    }
+
+    if (burstsLeft > 0) {
+        let toDo = (parseInt(Math.random() * burstsLeft / 4) + 1)
+        burstsLeft -= toDo;
+        multipleSplats(toDo, 0.4); //0.4 move to center
     }
 
     updateColors(dt);
@@ -1419,19 +1427,24 @@ function splatPointer (pointer) {
     splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
 }
 
-function multipleSplats (amount) {
+function lerp(a, b, alpha) {
+    return a + alpha * (b-a);
+}
+
+function multipleSplats (amount, lerpStr = 0) {
     for (let i = 0; i < amount; i++) {
         const color = generateColor();
         color.r *= 10.0;
         color.g *= 10.0;
         color.b *= 10.0;
-        const x = Math.random();
-        const y = Math.random();
+        const x = lerp(Math.random(), 0.5, lerpStr);
+        const y = lerp(Math.random(), 0.5, lerpStr);
         const dx = 1000 * (Math.random() - 0.5);
         const dy = 1000 * (Math.random() - 0.5);
         splat(x, y, dx, dy, color);
     }
 }
+
 
 function splat (x, y, dx, dy, color) {
     splatProgram.bind();
