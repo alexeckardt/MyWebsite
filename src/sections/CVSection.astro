@@ -7,7 +7,9 @@
         </h1>
 
         <a href="/Alex_Eckardt_Website_Resume.pdf">
-            <iconify-icon class="a" icon="mingcute:document-3-fill" width="30" height="30"/>
+            <div class="link">
+                <iconify-icon class="a" icon="mingcute:document-3-fill" width="30" height="30"/>
+            </div>
         </a>
     </center>
 </div>
@@ -16,20 +18,22 @@
 <style>
     .linesection {
         padding-bottom: 4rem;
+        background-color: var(--backgroundcol);
     }
 
-    a {
-        color: var(--fadedtextcol);
+    .link {
+        color: var(--primary-p);
         transition: 0.3s;
     }
-    a:hover {
+
+    .link:hover {
         color: var(--textcol);
     }
 
     h1 {
-        color: var(--fadedtextcol);
+        color: var(--primary-p);
         padding-bottom: 0.7rem;
-        font-size: 1rem;
+        font-size: 2vh;
         font-weight: 100;
     }
 
