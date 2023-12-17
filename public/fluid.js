@@ -1473,7 +1473,7 @@ window.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
 
-    console.log(e);
+    // console.log(e);
 
 
     let posX = scaleByPixelRatio(e.x);
@@ -1573,8 +1573,9 @@ function correctDeltaY (delta) {
 
 function generateColor () {
 
-    let hue_min = 132 / 255; //Green
-    let hue_max = 308 / 360; // Magenta
+    let hue_min = 100 / 255; //Green
+    let hue_max = 320 / 360; // Magenta
+
     let hue = hue_min + (Math.random()*(hue_max - hue_min));
 
     let c = HSVtoRGB(hue, 1.0, 1.0);

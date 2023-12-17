@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import ExperimentSection from "../sections/ExperimentSection.astro";
 // import CVSection from "../sections/CVSection.astro";
 import ProjectSection from "../sections/ProjectSection.astro";
 import WelcomeSection from "../sections/WelcomeSection.astro";
@@ -15,9 +16,8 @@ import WelcomeSection from "../sections/WelcomeSection.astro";
 	<Layout title="Alex Eckardt">
 		<WelcomeSection />
 		<ProjectSection />
+		<ExperimentSection />
 	</Layout>
-	
-	
 
 </html>
 
@@ -42,6 +42,5 @@ import WelcomeSection from "../sections/WelcomeSection.astro";
 		z-index: -2;
 
 		/* mix-blend-mode: multiply; */
-
 	}
 </style>

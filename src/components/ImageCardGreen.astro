@@ -5,21 +5,23 @@ const { href, title, body, imgsrc, year } = Astro.props;
 <li class="link-card" style={`background-image:url(${imgsrc})`}>
 	<a href={href} target="_blank" rel="noopener noreferrer">
 		
-		<div class="textbox">
-			<div class="textboxsub">
-				<h2>
-					<div class="textbody">
-						{title}
-						<span id="rightarrow">&rarr;</span>
-					</div>
-				</h2>
-				<h4>
-					<div class="textbody">
-						{body}
-						<br>
-						({year})
-					</div>
-				</h4>
+		<div class="green">
+			<div class="textbox">
+				<div class="textboxsub">
+					<h2>
+						<div class="textbody">
+							{title}
+							<!-- <span id="rightarrow">&rarr;</span> -->
+						</div>
+					</h2>
+					<h4>
+						<div class="textbody">
+							{body}
+							<br>
+							({year})
+						</div>
+					</h4>
+				</div>
 			</div>
 		</div>
 	</a>
@@ -41,7 +43,7 @@ const { href, title, body, imgsrc, year } = Astro.props;
 		background-position: center;
 		background-repeat:none;
 		width: 50vw;
-		height: 8rem;
+		height: 9rem;
 
 		image-rendering: pixelated;
 		overflow: hidden;
@@ -89,9 +91,9 @@ const { href, title, body, imgsrc, year } = Astro.props;
 		border-radius: 0.5rem;
 		opacity: 0;
 		color: #fff;
-		background-color: rgba(17, 7, 26, 0.616);
+		background-color: rgba(0, 0, 0, 0.616);
 
-		border: 1px white solid;
+		border: 1px var(--primary-g) solid;
 		/* border: 1px green solid; */
 	}
 	.link-card:hover > a {
@@ -109,13 +111,25 @@ const { href, title, body, imgsrc, year } = Astro.props;
 	h2 {
 		margin: 0;
 		font-size: 1.25rem;
-		color: var(--accentlight);
+		font-weight: 800;
+		
 		text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 2px var(--accent);
 	}
 	h4 {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
-		color: #fff;
+		font-weight: 200;
+
+	}
+
+	.purple {
+		color: var(--primary-g);
+	}
+	.blue {
+		color: var(--primary-b);
+	}
+	.green {
+		color: var(--primary-g);
 	}
 	
 	/* Media query for smaller screens */

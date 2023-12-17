@@ -1,6 +1,21 @@
 var limits = 15.0;
 
-$(".card").mousemove(function (e) {
+const card_ind = 0;
+const char_ind = 1;
+
+$(".card_wrapper").mousemove(function (e) {
+
+  let children = $(this).children();
+  let cardChild = children[card_ind];
+  let glowChild = cardChild.childNodes[1];
+  let charChild = children[char_ind];
+
+  //Reset Duration -- Instant
+  cardChild.style.transitionDuration  = "0ms";
+  charChild.style.transitionDuration  = "0ms";
+
+  console.log(children, cardChild, charChild);
+
   var rect = e.target.getBoundingClientRect();
   var x = e.clientX - rect.left; //x position within the element.
   var y = e.clientY - rect.top; //y position within the element.
@@ -13,21 +28,35 @@ $(".card").mousemove(function (e) {
   var shadowOffsetX = (offsetX) * 32 - 16;
   var shadowOffsetY = (offsetY) * 32 - 16;
 
-  $(this).css({
-    transform: "perspective(1000px) rotateX(" + -rotateX + "deg) rotateY(" + rotateY + "deg)"
-  });
+  // Char
+  cardChild.style.transform = "perspective(1000px) rotateX(" + -rotateX + "deg) rotateY(" + rotateY + "deg)";
+  charChild.style.transform = "perspective(10000px) rotateX(" + -rotateX + "deg) rotateY(" + rotateY + "deg) translateZ(5px)";
 
+  let sw = rect.width / 2;
+  let sh = rect.height / 2;
 
-  let glowChild = $(this).children()[0];
+  let distance = Math.sqrt((x - sw)*(x - sw) + (y - sh)*(y-sh))
+  let scaleScale = (distance / 15);
+
+  let glowScale = 136 - scaleScale * 7;
+
+  const light = 170;
+  let med = 120;
+  const dark = 100;
+
+  console.log(distance);
+
   glowChild.style.backgroundImage = `
     radial-gradient(
       circle at
-      ${x}px
-      ${y}px,
-      #ffffff62,
-      #00000000
+      ${sw*2 - x}px
+      ${sh*2 - y}px,
+      rgba(${light},${light},${light},1) 0%, 
+      rgba(${med},${med},${med},1) ${glowScale}%, 
+      rgba(${dark},${dark},${dark},1) 100%
     )`;
-    glowChild.style.mixBlendMode = 'luminosity';
+
+  glowChild.style.mixBlendMode = "hard-light";
 
   // var glarePos = rotateX + rotateY + 90;
   // $(this)
@@ -36,6 +65,21 @@ $(".card").mousemove(function (e) {
   //   .css("left", glarePos + "%");
 });
 
-$(".card").mouseleave(function (e) {
-  $(".card").css({"transform": "rotateX(0)"});
+$(".card_wrapper").mouseleave(function (e) {
+
+  
+  let children = $(this).children();
+  let cardChild = children[card_ind];
+  let glowChild = cardChild.childNodes[1];
+  let charChild = children[char_ind];
+
+  let transitionDur = "1000ms";
+
+  cardChild.style.transform = "rotateX(0)";
+  charChild.style.transform = "rotateX(0)";
+
+  cardChild.style.transitionDuration  = transitionDur;
+  charChild.style.transitionDuration  = transitionDur;
+
+  $(".card_wrapper").css({"transform": "rotateX(0)"});
 });

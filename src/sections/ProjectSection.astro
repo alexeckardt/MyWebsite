@@ -1,5 +1,5 @@
 ---
-import ImageCard from "../components/ImageCard.astro";
+import ImageCard from "../components/ImageCardPurple.astro";
 import SectionBanner from "../components/SectionBanner.astro";
 import ThreeDeeCard from "../components/ThreeDeeCard.astro";
 import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
@@ -15,17 +15,130 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             header="Projects"
             desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."/>
 
+            <!-- 
+                SOULFLAME
+                SECTION 
+             -->
+            <div class="card_section">
+
+                <!-- Card Start -->
+                <a href="https://alexeckardt.itch.io/soulflamealpha" target="_blank">
+                    
+                    <div class="card_wrapper">
+                        <div class="card purple" style=`background-image:url(/images/projects/soulflame_bkg.png);`>
+                            <div class="glow"></div>
+                        </div>
+                        <div class="card_char" style=`background-image:url(/images/projects/soulflame_logo_card.png);`></div>
+                    </div>
+                    
+                </a>
+                <!-- Card End -->
 
 
-            
-            <div class="wrapper">
+                
+                <div class="card_text">
+                    <div class="card_title">Soulflame (Alpha)</div>
+                    <div class="card_tag purple">Action Adventure Platformer</div>
+                    
+                    <div class="desc purple">
+                        A Game I've been developing for 3 years,
+                        but currently on break.
+                    </div>
+                    <div class="desc purple">
+                        The game follows Metriodvania gameplay, allowing the player to explore an open 2d world.
+                    </div>
+                    <div class="desc purple">
+                        When Keira Eldrid arrives on the Old Continent, she finds herself in the midst of calamity: the return of ancient titans known as the Spirit Phoenixes. To prevent the destruction of the continent, she'll have to harness the power of new weapons and abilities by connecting with her inner self.
+                    </div>
 
-                <div class="card">
-                    3D Card
-                    <div class="glow"></div>
                 </div>
 
             </div>
+            <!-- End Card Section -->
+
+            
+            <!-- 
+                Pinball
+                SECTION 
+             -->
+             <div class="card_section">
+
+                <div class="card_text">
+                    <div class="card_title blue">Pinball Pioneer</div>
+                    <div class="card_tag blue">Top 10 Puzzle Game of GMTK 2023 Game Jam</div>
+                    
+                    <div class="desc blue">
+                        Pinball Pioneer was a puzzle game, originally developed in 48 hours for the largest game jam in (at the time) Itch.io history.
+                    </div>
+                    <div class="desc blue">
+                        The game was developed for the Game Maker's Tool Kit (GMTK) Game Jam in July 2023. The theme of the game jam was 'Roles Reversed' -- meaning that some aspect of the game was to have some role reversal.
+                        After a week-long voting period, Pinball Pioneer finished Top 10 (7th) out of 7000 submissions.
+                    </div>
+                    <div class="desc blue">
+                        Play as a little worker inside a pinball machine who's job is to design the course! 
+                        Obviously, if the pinball-player wins the course then the pinball machine is too easy-- and the machine loses tokens! Use whatever you have available to you and make sure that the balls don't go into the holes!
+                    </div>
+
+                </div>
+
+                <!-- Card Start -->
+                <a href="https://alexeckardt.itch.io/pinball-pioneer" target="_blank">
+                    
+                    <div class="card_wrapper">
+                        <div class="card blue" style=`background-image:url(/images/projects/pinball_bkg.png);`>
+                            <div class="glow"></div>
+                        </div>
+                        <div class="card_char" style=`background-image:url(/images/projects/pinball_char.png);`></div>
+                    </div>
+                    
+                </a>
+                <!-- Card End -->
+
+            </div>
+            <!-- End Card Section -->
+
+
+            <!-- 
+                GO TRANSIT
+                SECTION 
+             -->
+             <div class="card_section">
+
+                <!-- Card Start -->
+                <a href="https://alexeckardt.github.io/GO-Transit-Visualizer/" target="_blank">
+                    
+                    <div class="card_wrapper">
+                        <div class="card green" style=`background-image:url(/images/projects/gotransitviewer.png);`>
+                            <div class="glow"></div>
+                        </div>
+                        <div class="card_char"></div>
+                    </div>
+                    
+                </a>
+                <!-- Card End -->
+
+
+
+                <div class="card_text">
+                    <div class="card_title">GO Transit Viewer</div>
+                    <div class="card_tag green">GTA Transit Network Visualizer</div>
+                    
+                    <div class="desc green">
+                        GO Transit viewer is a visualizer of all Bus and Train routes handeld by GO Transit in Souther Ontario.
+                    </div>
+
+                    <div class="desc green">
+                        Using the same public data used by other companies like Google and Apple, I create a visual network using JS and HTML and displayed it geographically.
+                    </div>
+
+                    <div class="desc green">
+                        By clicking on different stations, you can see every line that goes there, as well as every other station directly accessable from there.
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End Card Section -->
 
 
         <script is:inline src="/card.js"></script>
@@ -45,31 +158,72 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         overflow: hidden;
         width: 100vw;
 
-        height: 200vh;
+        padding-bottom: 4rem;
     }
 
     .linesection {
 
-        margin: 2rem;
+        /* margin: 2rem; */
         overflow: hidden;
         width: 100vw;
     }
     
 
     /*  Cards  */
-    .wrapper{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        align-items: center;
+        
+    .card_section {
+        
+        /* border: magenta 1px solid; */
+        display: flex;
+        gap: 5vw;
 
-        border: 1px red solid;
-        overflow: hidden;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-top: 3vw;
+        padding-bottom: 2vw;
+        /* width: 100%; */
+
     }
-    
-    .card {
-        min-width: 35vh;
+
+    .card_wrapper {
+        width: 35vh;
         height: 55vh;
+        /* border: 1px solid red; */
+        position: relative;
+
+        
+        transition-duration: 1000ms;
+        transition-property: transform;
+    }
+
+    .card_wrapper:hover {
+        transition-duration: 0ms;
+    }
+
+
+    .card_char {
+        top: 0;
+        left: 0;
+        width: 35vh;
+        height: 55vh;
+        position: absolute;
+
+        transform: translateZ(100px);
+
+        image-rendering: pixelated;
+        background-repeat: no-repeat;
+        background-size:cover;
+        z-index: 5;
+        
+    }
+
+    .card {
+        width: 35vh;
+        height: 55vh;
+        top: 0;
+        left: 0;
+        /* position: absolute; */
+        /* position: absolute; */
         /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051),
             0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09),
             0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129),
@@ -77,18 +231,19 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
         border-radius: 10px;
         background-color: black;
-        background-image: url("/images/projects/soulflame_char.png");
         background-size: cover;
 
         transform: rotateX(0);
+        /* border: 1px solid red; */
         /* background-color: red; */
-
-        transition-duration: 1000ms;
-        transition-property: transform;
     }
 
-    .card:hover {
-        transition-duration: 0ms;
+    .card.purple {
+        border: 1px solid var(--secondary-1);
+    }
+
+    .card.blue {
+        border: 1px solid var(--secondary-2);
     }
 
     .glow {
@@ -98,9 +253,60 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         left: 0;
         top: 0;
         
-        background-image: radial-gradient(circle at 50% -20%, #ffffff62, #000000ff);
-        mix-blend-mode:luminosity;
+        background-image: radial-gradient(circle at 50% 50%,       
+                rgba(170,170,170,1) 0%, 
+                rgba(120,120,120,1) 136%, 
+                rgba(100,100,100,1) 100%);
+
+        mix-blend-mode:hard-light;
         border-radius: 10px;
     }
+
+    .card_title {
+        font-size: 5rem;
+        font-weight: 800;
+        color: white;
+    }   
+    
+    .card_tag {
+        font-size: 2rem;
+        font-weight: 200;
+        margin-top: -1rem;
+        padding-bottom: 1rem;
+    }
+
+    .desc {
+        padding-right: 5vw;
+        margin-bottom: 0.75rem;
+    }
+
+    .card_tag.purple {
+        color: var(--accent-p);
+    }
+
+    .desc.purple {
+        color: var(--primary-p);
+    }
+
+    
+    .card_tag.blue {
+        color: var(--accent-b);
+    }
+
+    .desc.blue {
+        color: var(--primary-b);
+    }
+
+    
+    .card_tag.green {
+        color: var(--accent-g);
+    }
+
+    .desc.green {
+        color: var(--primary-g);
+    }
+
+    
+
 
 </style>
