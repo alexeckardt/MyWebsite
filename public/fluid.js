@@ -87,10 +87,10 @@ const { gl, ext } = getWebGLContext(canvas);
 if (isMobile()) {
     console.log('IS MOBILE!')
     config.DYE_RESOLUTION = 512;
-    config.DENSITY_DISSIPATION = 0.7;
+    config.DENSITY_DISSIPATION = 0.3;
     doAuto = true;
 
-    config.BACK_COLOR = {"r": 255, "g": 255, "b": 255}; 
+    config.BACK_COLOR = {"r": 200, "g": 200, "b": 200}; 
 }
 if (!ext.supportLinearFiltering) {
     config.DYE_RESOLUTION = 512;
@@ -228,6 +228,7 @@ function startGUI () {
     } }, 'fun').name('Github');
     github.__li.className = 'cr function bigFont';
     github.__li.style.borderLeft = '3px solid #8C8C8C';
+
     let githubIcon = document.createElement('span');
     github.domElement.parentElement.appendChild(githubIcon);
     githubIcon.className = 'icon github';
@@ -328,12 +329,12 @@ function textureToCanvas (texture, width, height) {
 }
 
 function downloadURI (filename, uri) {
-    let link = document.createElement('a');
-    link.download = filename;
-    link.href = uri;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // let link = document.createElement('a');
+    // link.download = filename;
+    // link.href = uri;
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
 }
 
 class Material {
@@ -1168,8 +1169,8 @@ function update () {
     if (resizeCanvas())
         initFramebuffers();
 
-    startupticks++;
-    if (doAuto && startupticks > 5) {
+    startupticks += dt;
+    if (doAuto && startupticks > 0.01) {
         let rand = Math.random();
         if (rand < 0.05) {
             burstsLeft = (parseInt(Math.random() * 2) + 1);
