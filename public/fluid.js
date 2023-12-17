@@ -49,7 +49,7 @@ let config = {
     COLOR_UPDATE_SPEED: 10,
 
     PAUSED: false,
-    BACK_COLOR: { r: 30, g: 30, b: 30 }, //0A0314
+    BACK_COLOR: { r: 255, g: 255, b: 255 }, //0A0314
 
     TRANSPARENT: false,
     BLOOM: true,
@@ -89,6 +89,8 @@ if (isMobile()) {
     config.DYE_RESOLUTION = 512;
     config.DENSITY_DISSIPATION = 0.7;
     doAuto = true;
+
+    // config.BACK_COLOR = {"r": 255, "g": 255, "b": 255}; 
 }
 if (!ext.supportLinearFiltering) {
     config.DYE_RESOLUTION = 512;
