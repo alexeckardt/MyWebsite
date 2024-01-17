@@ -3,6 +3,16 @@ var limits = 15.0;
 const card_ind = 0;
 const char_ind = 1;
 
+const HSLToRGB = (h, s, l) => {
+  s /= 100;
+  l /= 100;
+  const k = n => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = n =>
+    l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+  return [255 * f(0), 255 * f(8), 255 * f(4)];
+};
+
 $(".card_wrapper").mousemove(function (e) {
 
   let children = $(this).children();
@@ -14,7 +24,7 @@ $(".card_wrapper").mousemove(function (e) {
   cardChild.style.transitionDuration  = "0ms";
   charChild.style.transitionDuration  = "0ms";
 
-  console.log(children, cardChild, charChild);
+  // console.log(children, cardChild, charChild);
 
   var rect = e.target.getBoundingClientRect();
   var x = e.clientX - rect.left; //x position within the element.
@@ -38,20 +48,40 @@ $(".card_wrapper").mousemove(function (e) {
   let distance = Math.sqrt((x - sw)*(x - sw) + (y - sh)*(y-sh))
   let scaleScale = (distance / 15);
 
+  const startLogScale = 10;
+  if (scaleScale > startLogScale) {
+    scaleScale = startLogScale + Math.log(scaleScale-startLogScale + 1);
+    console.log("SC", scaleScale);
+  }
+
   let glowScale = 136 - scaleScale * 7;
 
+
+  // Decide a colour
+  var angleDeg = Math.atan2(rotateY, rotateX) * 180 / Math.PI + 180;
+  var hue = angleDeg / 360 * 360;
+
+  var colRGB = HSLToRGB(hue, 80, 50);
+  console.log(colRGB);
+
+  let mix = Math.log(distance + 2) / 60;
+  console.log(mix);
   const light = 170;
   let med = 120;
   const dark = 100;
 
-  console.log(distance);
+  let lR = (1-mix) * light + mix*colRGB[0];
+  let lG = (1-mix) * light + mix*colRGB[1];
+  let lB = (1-mix) * light + mix*colRGB[2];
+
+  // console.log(colRGB);
 
   glowChild.style.backgroundImage = `
     radial-gradient(
       circle at
       ${sw*2 - x}px
       ${sh*2 - y}px,
-      rgba(${light},${light},${light},1) 0%, 
+      rgba(${lR},${lG},${lB},1) 0%, 
       rgba(${med},${med},${med},1) ${glowScale}%, 
       rgba(${dark},${dark},${dark},1) 100%
     )`;
