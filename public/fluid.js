@@ -30,7 +30,7 @@ resizeCanvas();
 
 let config = {
     SIM_RESOLUTION: 128,
-    DYE_RESOLUTION: 512, //'high': 1024, 'medium': 512, 'low': 256, 'very low': 128 
+    DYE_RESOLUTION: 256, //'high': 1024, 'medium': 512, 'low': 256, 'very low': 128 
     CAPTURE_RESOLUTION: 512,
 
     DENSITY_DISSIPATION: 1, // 3
@@ -1154,17 +1154,23 @@ let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
 let startupticks = 0;
 let burstsLeft = 0;
+const lowerPerformanceDT = 0.1;
+const raisePerformanceDT = 0.01;
+const burstChance = 0.05;
 update();
+
 
 function update () {
     const dt = calcDeltaTime();
+
+    //
     if (resizeCanvas())
         initFramebuffers();
 
     startupticks += dt;
     if (doAuto && startupticks > 0.01) {
         let rand = Math.random();
-        if (rand < 0.05) {
+        if (rand < burstChance) {
             burstsLeft = (parseInt(Math.random() * 2) + 1);
         }
     }
@@ -1179,6 +1185,7 @@ function update () {
     applyInputs();
     if (!config.PAUSED)
         step(dt);
+
     render(null);
     requestAnimationFrame(update);
 }
