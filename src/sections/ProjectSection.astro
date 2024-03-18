@@ -218,7 +218,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         height: 55vh;
         position: absolute;
 
-        transform: translateZ(100px);
+        transform: translateZ(100px) rotateY(5deg);
 
         image-rendering: pixelated;
         background-repeat: no-repeat;
@@ -243,7 +243,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         background-color: black;
         background-size: cover;
 
-        transform: rotateX(0);
+        transform: rotateX(50deg) rotateY(5deg);
         /* border: 1px solid red; */
         /* background-color: red; */
     }
@@ -263,12 +263,12 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         left: 0;
         top: 0;
         
-        background-image: radial-gradient(circle at 50% 50%,       
-                rgba(170,170,170,1) 0%, 
-                rgba(120,120,120,1) 136%, 
-                rgba(100,100,100,1) 100%);
+        background-image: radial-gradient(circle at 10% 10%,       
+                rgb(158, 158, 158) 0%, 
+                rgb(83, 83, 83) 136%, 
+                rgb(34, 34, 34) 100%);
 
-        mix-blend-mode:hard-light;
+        mix-blend-mode: hard-light;
         border-radius: 10px;
     }
 
