@@ -52,7 +52,7 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
     }
 
     return (
-        <Card style={{ marginTop: '20px', width: '100%'}}>
+        <Card style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
             <CardContent style={{position: 'relative', paddingLeft: `calc(${imageWidth} + ${imageGap})`}}>
                 <ColumnBox style={imageLineStyle}>
                     {/* <img src={props.image} alt={props.imageAlt} style={{objectFit: 'fill'}}/> */}
@@ -81,7 +81,7 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
                 </ColumnBox>
 
                 <ColumnBox>
-                Hello.
+                {/* Hello. */}
                 </ColumnBox>
 
             </ CardContent>

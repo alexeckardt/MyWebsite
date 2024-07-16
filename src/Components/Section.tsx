@@ -12,7 +12,7 @@ type SectionProps = {
 
 const Section = (props: SectionProps) => {
   return (
-    <Box sx={{minWidth:'300px', width:'50%'}}>
+    <Box sx={{minWidth:'300px', padding: '30px'}}>
         <Typography variant="h5" style={{ flexGrow: 1 }}>
             {props.title}
           </Typography>
