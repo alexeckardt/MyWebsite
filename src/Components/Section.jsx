@@ -1,22 +1,17 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import React from 'react';
 
 
-type SectionProps = {
+const Section = (props) => {
 
-  title: string,
-  subheader?: string
-
-  children?: React.ReactNode;
-};
-
-const Section = (props: SectionProps) => {
+  const theme = useTheme();
+  
   return (
     <Box sx={{minWidth:'300px', padding: '30px'}}>
         <Typography variant="h5" style={{ flexGrow: 1 }}>
             {props.title}
           </Typography>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Typography variant="h6" style={{ flexGrow: 1, color: theme.palette.grey.main}}>
             {props.subheader}
           </Typography>
           {props.children}

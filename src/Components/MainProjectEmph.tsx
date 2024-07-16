@@ -1,10 +1,11 @@
 
-import { Box, Button, Card, CardActions, CardContent, styled, Typography } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, Link, styled, Typography } from '@mui/material';
 import React, { CSSProperties } from 'react';
 
 
 type ProjectEmphProps = {
     title: string,
+    titlehref: string
     subheader?: string,
     desc?: string,
     children: React.ReactNode,
@@ -23,11 +24,18 @@ const ColumnBox = styled(Box)({
     // border: '1px solid red'
 });
 
+const CustomLink = styled(Link)(({ theme }) => ({
+    color: 'inherit',
+    textDecoration: 'none',
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  }));
+
 const MainProjectEmph = (props: ProjectEmphProps) => {
 
 
     const imageWidth = '80px'
-
     const paddingFromCard = '18px'
 
 
@@ -55,9 +63,8 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
 
     return (
         <Card style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
-
-            
-            <CardContent style={{position: 'relative', display: 'grid'}}>
+           
+            <CardContent style={{position: 'relative', display: 'grid', paddingBottom: '0'}}>
                 <ColumnBox style={imageLineStyle}>
                     {/* <img src={props.image} alt={props.imageAlt} style={{objectFit: 'fill'}}/> */}
                 </ColumnBox>
@@ -65,7 +72,9 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
                 <ColumnBox style={{marginLeft: imageWidth}}>
                     <Box>
                         <Typography variant="h5" fontWeight='bold' component="div">
-                            {props.title}
+                            <CustomLink href={props.titlehref} target='_blank' rel="noreferrer">
+                                {props.title}
+                            </CustomLink>
                         </Typography>
                         <Typography variant="body2" color="secondary">
                             {props.subheader}
