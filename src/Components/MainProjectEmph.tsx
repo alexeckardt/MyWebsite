@@ -34,10 +34,8 @@ const CustomLink = styled(Link)(({ theme }) => ({
 
 const MainProjectEmph = (props: ProjectEmphProps) => {
 
-
     const imageWidth = '80px'
     const paddingFromCard = '18px'
-
 
     const imageX = (props.imageX) ? props.imageX : 0;
     const imageY = (props.imageY) ? props.imageY : 0;
@@ -62,7 +60,8 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
     }
 
     return (
-        <Card style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
+        <Card 
+        style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
            
             <CardContent style={{position: 'relative', display: 'grid', paddingBottom: '0'}}>
                 <ColumnBox style={imageLineStyle}>

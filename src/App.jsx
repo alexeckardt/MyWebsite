@@ -87,6 +87,14 @@ function App() {
             </MainProjectEmph>
       
       </Section>
+      <br />
+      <br />
+      <Section
+        title='Experiments'
+        subheader="Technical Side Projects that are cool to use and see, but aren't as user friendly."
+        >
+          hi
+        </Section>
     </>
   );
 }
