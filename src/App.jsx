@@ -4,11 +4,14 @@ import { CssBaseline, Container, Typography, Button, AppBar, Toolbar, Switch } f
 import { lightTheme, darkTheme } from './themes';
 import Site from './Site';
 import ThemeToggler from './Components/ThemeToggler';
+import TopBar from './Components/TopBar';
 
 function App() {
 
   return (
-    <ThemeToggler />
+    <>
+      <TopBar />
+    </>
   );
 }
 
