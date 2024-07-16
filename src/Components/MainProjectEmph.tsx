@@ -16,10 +16,10 @@ type ProjectEmphProps = {
 };
 
 const ColumnBox = styled(Box)({
-    display: 'flex',
-    float: 'left',
-    flexFlow: 'row nowrap',
-    height: '100%',
+    // display: 'flex',
+    // float: 'left',
+    // flexFlow: 'row nowrap',
+    // height: '100%',
     // border: '1px solid red'
 });
 
@@ -27,38 +27,42 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
 
 
     const imageWidth = '80px'
-    const imageGap = '20px'
+
+    const paddingFromCard = '18px'
+
 
     const imageX = (props.imageX) ? props.imageX : 0;
     const imageY = (props.imageY) ? props.imageY : 0;
 
     const imageLineStyle: CSSProperties = {
-        position:'absolute',
 
+        position:'absolute',
+        gridArea: '1 / 1 / 2 / 2',
         // backgroundColor: 'black', 
         width: imageWidth, 
-        height: '230px', 
-        
-        overflow: 'hidden', 
-        top: '0', 
-        left: '0',
+        height: `calc(100% + 4*${paddingFromCard})`, 
+        transform: `translateX(-${paddingFromCard}) translateY(-${paddingFromCard})`,
 
+        overflow: 'hidden', 
         backgroundImage: `url(${props.image})`,
         backgroundSize: 'cover',
 
         backgroundPosition: `${imageX}% ${imageY}%`,
         // WebkitBackgroundSize: '100%'
+        // border: '1px solid red'
         
     }
 
     return (
         <Card style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
-            <CardContent style={{position: 'relative', paddingLeft: `calc(${imageWidth} + ${imageGap})`}}>
+
+            
+            <CardContent style={{position: 'relative', display: 'grid'}}>
                 <ColumnBox style={imageLineStyle}>
                     {/* <img src={props.image} alt={props.imageAlt} style={{objectFit: 'fill'}}/> */}
                 </ColumnBox>
 
-                <ColumnBox style={{width: '90%'}}>
+                <ColumnBox style={{marginLeft: imageWidth}}>
                     <Box>
                         <Typography variant="h5" fontWeight='bold' component="div">
                             {props.title}
