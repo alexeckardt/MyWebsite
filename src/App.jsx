@@ -24,6 +24,7 @@ function App() {
             <MainProjectEmph 
                 title='Soulflame'
                 subheader='Action Adventure Platformer'
+                image={'soulflame_bkg.png'}
             >
             A Game I've been passionately developing for 3 years, but currently on a hiatus do focus on my schooling.
             </MainProjectEmph>

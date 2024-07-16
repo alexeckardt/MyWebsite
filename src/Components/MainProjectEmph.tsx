@@ -24,8 +24,8 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
     return (
         <Card style={{ marginTop: '20px' }}>
             <FloatingCardContent>
-                <ColumnBox style={{backgroundColor: 'black', width: '30px'}}>
-                    <img src={props.image} alt={props.imageAlt}/>
+                <ColumnBox style={{backgroundColor: 'black', width: '30px', height: '1fr', overflow: 'hidden', position:'relative', top:0}}>
+                    <img src={props.image} alt={props.imageAlt} style={{margin: 'auto'}}/>
                 </ColumnBox>
                 <ColumnBox>
                     <Box>
