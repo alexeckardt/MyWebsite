@@ -1,7 +1,7 @@
 
-import { Box, Button, Card, CardActions, CardContent, Link, styled, Typography } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Collapse, IconButton, IconButtonProps, Link, styled, Typography, useTheme } from '@mui/material';
 import React, { CSSProperties } from 'react';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 type ProjectEmphProps = {
     title: string,
@@ -11,65 +11,58 @@ type ProjectEmphProps = {
     children: React.ReactNode,
     image?: string,
     imageAlt?: string,
-    
+
     imageX?: number,
     imageY?: number
 };
-
-const ColumnBox = styled(Box)({
-    // display: 'flex',
-    // float: 'left',
-    // flexFlow: 'row nowrap',
-    // height: '100%',
-    // border: '1px solid red'
-});
 
 const CustomLink = styled(Link)(({ theme }) => ({
     color: 'inherit',
     textDecoration: 'none',
     '&:hover': {
-      color: theme.palette.primary.main,
+        color: theme.palette.primary.main,
     },
-  }));
+}));
+
+
+interface ExpandMoreProps extends IconButtonProps {
+    expand: boolean;
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+    }),
+}));
+
 
 const MainProjectEmph = (props: ProjectEmphProps) => {
 
-    const imageWidth = '80px'
-    const paddingFromCard = '18px'
+    const [expanded, setExpanded] = React.useState(false);
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
 
-    const imageX = (props.imageX) ? props.imageX : 0;
-    const imageY = (props.imageY) ? props.imageY : 0;
-
-    const imageLineStyle: CSSProperties = {
-
-        position:'absolute',
-        gridArea: '1 / 1 / 2 / 2',
-        // backgroundColor: 'black', 
-        width: imageWidth, 
-        height: `calc(100% + 4*${paddingFromCard})`, 
-        transform: `translateX(-${paddingFromCard}) translateY(-${paddingFromCard})`,
-
-        overflow: 'hidden', 
-        backgroundImage: `url(${props.image})`,
-        backgroundSize: 'cover',
-
-        backgroundPosition: `${imageX}% ${imageY}%`,
-        // WebkitBackgroundSize: '100%'
-        // border: '1px solid red'
-        
-    }
+    const imageWidth = '80px';
 
     return (
-        <Card 
-        style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
-           
-            <CardContent style={{position: 'relative', display: 'grid', paddingBottom: '0'}}>
-                <ColumnBox style={imageLineStyle}>
-                    {/* <img src={props.image} alt={props.imageAlt} style={{objectFit: 'fill'}}/> */}
-                </ColumnBox>
+        <Card sx={{ marginTop: '5px', width: '60%', minWidth: '300px' }}>
+            
+            <Box sx={{display: 'flex' }}>
+                <CardMedia
+                    component="img"
+                    sx={{ width: imageWidth }}
+                    image={props.image}
+                    alt="Live from space album cover"
+                />
 
-                <ColumnBox style={{marginLeft: imageWidth}}>
-                    <Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', paddingRight: '5px' }}>
+                    <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography variant="h5" fontWeight='bold' component="div">
                             <CustomLink href={props.titlehref} target='_blank' rel="noreferrer">
                                 {props.title}
@@ -80,27 +73,76 @@ const MainProjectEmph = (props: ProjectEmphProps) => {
                         </Typography>
 
                         <br></br>
+                        {props.desc}
 
-                        {/* Body */}
-                        <Typography variant="body2" color="text.secondary" sx={{ width: '100%' }}>
-                            {props.desc}
-                        </Typography>
+                    </CardContent>
+                    <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1, width: '100%' }}>
+                        {/* <IconButton aria-label="previous">
+                            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                            </IconButton>
+                            <IconButton aria-label="play/pause">
+                            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+                            </IconButton>
+                            <IconButton aria-label="next">
+                            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                            </IconButton> */}
+                        {props.children}
 
-                        <CardActions>
-                            {props.children}
-                        </CardActions>
+                        {/* <ExpandMore
+                        expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore> */}
                     </Box>
-                </ColumnBox>
-
-                <ColumnBox>
-                {/* Hello. */}
-                </ColumnBox>
-
-            </ CardContent>
-            
+                </Box>
+            </Box>
         </Card>
+
+        // <Card 
+        // style={{ marginTop: '20px', width: '60%', minWidth: '300px'}}>
+
+        //     <CardContent style={{position: 'relative', display: 'grid', paddingBottom: '0'}}>
+        //         <ColumnBox style={imageLineStyle}>
+        //             {/* <img src={props.image} alt={props.imageAlt} style={{objectFit: 'fill'}}/> */}
+        //         </ColumnBox>
+
+        //         <ColumnBox style={{marginLeft: imageWidth}}>
+        //             <Box>
+        //                 <Typography variant="h5" fontWeight='bold' component="div">
+        //                     <CustomLink href={props.titlehref} target='_blank' rel="noreferrer">
+        //                         {props.title}
+        //                     </CustomLink>
+        //                 </Typography>
+        //                 <Typography variant="body2" color="secondary">
+        //                     {props.subheader}
+        //                 </Typography>
+
+        //                 <br></br>
+
+        //                 {/* Body */}
+        //                 <Typography variant="body2" color="text.secondary" sx={{ width: '100%' }}>
+        //                     {props.desc}
+        //                 </Typography>
+
+        //                 <CardActions>
+        //                     {props.children}
+        //                 </CardActions>
+        //             </Box>
+        //         </ColumnBox>
+
+        //         <ColumnBox>
+        //         {/* Hello. */}
+        //         </ColumnBox>
+
+        //     </ CardContent>
+
+        // </Card>
     );
 };
 
 export default MainProjectEmph;
+
 
