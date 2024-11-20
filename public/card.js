@@ -23,6 +23,7 @@ $(".card_wrapper").mousemove(function (e) {
   //Reset Duration -- Instant
   cardChild.style.transitionDuration  = "20ms";
   charChild.style.transitionDuration  = "20ms";
+  glowChild.style.transitionDuration  = "20ms";
 
   // console.log(children, cardChild, charChild);
 
@@ -87,6 +88,7 @@ $(".card_wrapper").mousemove(function (e) {
     )`;
 
   glowChild.style.mixBlendMode = "hard-light";
+  glowChild.style.opacity = 1;
 
   // var glarePos = rotateX + rotateY + 90;
   // $(this)
@@ -110,6 +112,9 @@ $(".card_wrapper").mouseleave(function (e) {
 
   cardChild.style.transitionDuration  = transitionDur;
   charChild.style.transitionDuration  = transitionDur;
+  glowChild.style.transitionDuration  = transitionDur;
+
+  glowChild.style.opacity = 0;
 
   $(".card_wrapper").css({"transform": "rotateX(0)"});
 });
