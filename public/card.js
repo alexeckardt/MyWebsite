@@ -21,8 +21,8 @@ $(".card_wrapper").mousemove(function (e) {
   let charChild = children[char_ind];
 
   //Reset Duration -- Instant
-  cardChild.style.transitionDuration  = "0ms";
-  charChild.style.transitionDuration  = "0ms";
+  cardChild.style.transitionDuration  = "20ms";
+  charChild.style.transitionDuration  = "20ms";
 
   // console.log(children, cardChild, charChild);
 
