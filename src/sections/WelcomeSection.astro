@@ -7,7 +7,6 @@ import SocialIcon from "../components/SocialIcon.astro";
     <div class="linesection">
         <center>
             
-
             <div class="title">
                 <h1>
                     alex eckardt
@@ -37,12 +36,13 @@ import SocialIcon from "../components/SocialIcon.astro";
 </div>
 
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Kumbh+Sans:wght@100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 
     .section {
         background-color: var(--backgroundcol);
         buffer: 2rem;
-        color: white;
+        color: rgb(230, 243, 255);
         /* border-top: 1px solid red; */
 
         width: 100vw;
@@ -54,12 +54,31 @@ import SocialIcon from "../components/SocialIcon.astro";
         justify-content: center;
         align-items: center;
 
+        position: relative;
         overflow: hidden;
 
-        /* Mix so We can see the effect under */
-        mix-blend-mode: multiply;
-
     }
+
+    .section::before {
+        
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        /* Mix so We can see the effect under */
+        background-image: url('header-dark.png');
+        background-size: cover; /* Ensures the image covers the entire div */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+
+        filter: blur(100px);
+    }
+
+
+
     .linesection {
         margin: 2rem;
         border-left: 2px solid var(--vlinecol);
@@ -77,8 +96,11 @@ import SocialIcon from "../components/SocialIcon.astro";
         padding: 4rem;
         
         /* border: 1px solid white; */
-        font-family: "Inter", "DM Sans", Arial, sans-serif;
-        text-shadow: 0px 0px 30px rgb(168, 168, 168);
+        /* font-family: "Inter", "DM Sans", Arial, sans-serif; */
+        font-family: "Funnel Display", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
 
         /* mix-blend-mode: screen; */
         /* addition basically */
@@ -97,13 +119,16 @@ import SocialIcon from "../components/SocialIcon.astro";
     h1 {
         font-size: 18vh;
         font-weight: 800;
+        text-shadow: 0px 0px 30px rgb(109, 109, 109);
+        mix-blend-mode: color-dodge;
         /* animation: startup-fade 6s ease-in-out forwards; */
     }
 
     h2 {
-        font-size: 5vh;
-        font-weight: 10;
-        color: rgb(179, 179, 179);
+        font-size: 2rem;
+        font-weight: 100;
+        color: rgb(156, 156, 156);
+        font-family: "Kuhmb Sans", Arial, sans-serif;
         /* animation: startup-fade-1 6s ease-in-out forwards; */
     }
 
