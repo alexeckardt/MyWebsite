@@ -28,7 +28,7 @@ import SocialIcon from "../components/SocialIcon.astro";
                 </div>
 
 
-
+                <div class="hidden_section"></div>
             </div>
 
         </center>
@@ -78,6 +78,12 @@ import SocialIcon from "../components/SocialIcon.astro";
         /* //Send the background behind the content */
     }
 
+
+    .hidden_section {
+      display:none;
+      background-image: url('images/backgrounds/header-dark.png');
+      /* used because the bkg image isn't bundled otherweise */
+    }
 
 
     .linesection {
