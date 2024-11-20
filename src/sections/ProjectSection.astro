@@ -39,6 +39,10 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
                 
                 <div class="card_text">
+
+                    
+                    <div class="mobile_banner" style=`background-image:url(/images/projects/soulflame_bkg.png);`></div>
+
                     <a href="https://alexeckardt.itch.io/soulflamealpha" target="_blank">
                         <div class="card_title">Soulflame (Alpha)</div>
                     </a>
@@ -75,10 +79,13 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             <!-- 
                 Pinball
                 SECTION 
-             -->
-             <div class="card_section">
+                -->
+                <div class="card_section">
+                    
+                    <div class="card_text">
 
-                <div class="card_text">
+                    <div class="mobile_banner" style=`background-image:url(/images/projects/pinball_bkg.png);`></div>
+
                     <a href="https://alexeckardt.itch.io/pinball-pioneer" target="_blank">
                         <div class="card_title blue">Pinball Pioneer</div>
                     </a>
@@ -135,8 +142,11 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
                 <!-- Card End -->
 
 
-
                 <div class="card_text">
+
+                    <div class="mobile_banner" style=`background-image:url(/images/projects/gotransitviewer.png);`>
+                    </div>
+
                     <a href="https://alexeckardt.github.io/GO-Transit-Visualizer/" target="_blank">
                         <div class="card_title">GO Transit Viewer</div>
                     </a>
@@ -177,7 +187,6 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         /* border: 3px solid #00000000; */
         /* border: 2px solid magenta; */
         overflow: hidden;
-        width: 100vw;
         padding-bottom: 5rem;
     }
 
@@ -185,7 +194,6 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
         /* margin: 2rem; */
         overflow: hidden;
-        width: 100vw;
     }
     
     a {
@@ -199,11 +207,21 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         display: flex;
         gap: 5vw;
 
-        padding-left: 10vw;
-        padding-right: 10vw;
-        padding-top: 3vw;
-        padding-bottom: 2vw;
+        justify-self: start;
+        justify-content: center;
+        align-items: center;
+
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 3vw;
+        margin-bottom: 2vw;
+
+        padding: 40px;
         /* width: 100%; */
+
+        background: var(--background-card-bkg);
+        border: 1px solid var(--background-card-border);
+        border-radius: 16px;
 
     }
 
@@ -219,6 +237,17 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
     .card_wrapper:hover {
         transition-duration: 0ms;
+    }
+
+    .mobile_banner {
+        display: none;
+
+        max-width: 300px;
+        height: 260px;
+        border-radius: 16px;
+        background-size: cover;
+
+        margin-bottom: 10px;
     }
 
 
@@ -285,13 +314,13 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     }
 
     .card_title {
-        font-size: 10vh;
+        font-size: 8vh;
         font-weight: 800;
         color: white;
     }   
     
     .card_tag {
-        font-size: 5vh;
+        font-size: 4vh;
         font-weight: 200;
         margin-top: -1rem;
         padding-bottom: 1rem;
@@ -332,16 +361,39 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     
     .card_text {
          padding: 0px;   
+         /* border: 1px solid red; */
     }
 
     .cards {
         padding: 0px;
     }
 
+    @media (max-width: 1100px) {
+        .card_section {
+            flex-direction: column;
+        }
+
+        .card {
+            order: 1;
+        }
+
+        .card_text {
+            order: 2;
+        }
+    }
+
+
     @media (max-width: 780px) {
 		.card_section {
-            display: inline;
-            justify-content: center;
+            display: flex;
+
+            background: none;
+            border: none;
+            /* border: 1px solid red; */
+
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .cards {
@@ -350,6 +402,13 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
         .card_wrapper {
             display: none;
+        }
+
+        .mobile_banner {
+
+            display: flex;
+            width: 100%;
+            /* border: 1px solid red; */
         }
 
         .desc {
@@ -362,7 +421,33 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
         .card_title {
             padding-bottom: 1rem;
+            font-size: 8vh;
         }
+
+        .card_text {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
   	}
+
+      @media (max-width: 375px) {
+        .card_title {
+            padding-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .card_tag {
+            padding-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .desc {
+            font-size: 1rem;
+        }
+      }
 
 </style>
