@@ -13,14 +13,15 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         <SectionBanner id="p3" 
             bkgimg="images/backgrounds/valley.png" 
             header="Projects"
-            desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."/>
+            desc="Main projects that I've put a ton of time and effort into. Useable by you, right now."
+        />
 
-            <div class="cards">
+        <div class="cards">
 
             <!-- 
                 SOULFLAME
                 SECTION 
-             -->
+            -->
             <div class="card_section">
 
                 <!-- Card Start -->
@@ -55,10 +56,10 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
                     </div>
                     <div class="desc purple">
                         The game boasts a captivating Metroidvania-style gameplay,
-                         allowing players to freely explore an expansive 2D environment. 
-                         As players delve into the game, they will navigate through 
-                         different areas teeming with enemies, 
-                         while unraveling the mysteries of the main charachters backstory.
+                        allowing players to freely explore an expansive 2D environment. 
+                        As players delve into the game, they will navigate through 
+                        different areas teeming with enemies, 
+                        while unraveling the mysteries of the main charachters backstory.
                     </div>
                     
                     <div class="desc purple">
@@ -125,8 +126,8 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             <!-- 
                 GO TRANSIT
                 SECTION 
-             -->
-             <div class="card_section">
+            -->
+            <div class="card_section">
 
                 <!-- Card Start -->
                 <a href="https://alexeckardt.github.io/GO-Transit-Visualizer/" target="_blank">
@@ -153,27 +154,73 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
                     <div class="card_tag green">GTA Transit Network Visualizer</div>
                     
                     <div class="desc green">
-                        GO Transit viewer is a visualizer of all Bus and Train routes handeld by GO Transit in Southern Ontario.
+                        GO Transit Viewer is an interactive visual tool I developed to map all bus and train routes operated by GO Transit across Southern Ontario. My goal was to create an intuitive and user-friendly way for people to explore the region's extensive transit network.
                     </div>
-
-
+                    
                     <div class="desc green">
-                        Using the same public data used by other companies like Google and Apple, I create a visual network using JS and HTML and displayed it geographically.
+                        Using JavaScript and HTML, I built the viewer by leveraging the same public data sources utilized by companies like Google and Apple. This allowed me to create a geographically accurate representation of GO Transit's network, ensuring both precision and reliability in how routes and connections are displayed.
                     </div>
-
+                    
                     <div class="desc green">
-                        By clicking on different stations, you can see every line that goes there, as well as every other station directly accessable from there.
+                        I'm very proud of how this prototype turned out, and hope to revisit this project again in the future and utilize what I've learned since making this first version.
                     </div>
+                    
 
                 </div>
 
             </div>
             <!-- End Card Section -->
 
+            <!-- 
+                TITAN QUEST
+            -->
+            <div class="card_section">
+
+                <div class="card_text">
+
+                    <div class="mobile_banner" style=`background-image:url(/images/projects/spaceapps_bkg.png);`>
+                    </div>
+
+                    <a href="https://gx.games/games/s3zosx/titanquest/" target="_blank">
+                        <div class="card_title">Titan Quest</div>
+                    </a>
+                    <div class="card_tag purple">Submission for NASA Space-Apps 2023</div>
+                    
+                    <div class="desc purple">
+                        Titan Quest is an innovative project submitted to the NASA Space-Apps 2023 hackathon in the category of interactive learning applications for children. 
+                    </div>
+
+
+                    <div class="desc purple">
+                        As the team lead, I managed a cross-functional group of six developers and designers to create an interactive learning application for children within a challenging 48-hour timeframe. I took charge of defining the project scope, allocating resources, and overseeing the entire software development process to ensure we met all submission requirements. 
+                    </div>
+
+                    <div class="desc purple">
+                        One of the highlights was presenting our product to the hackathon committee and producing a showcase video to highlight its features. Using tools like Git, React, JavaScript, GML, and applying video and audio editing skills, I helped bring this project to life, combining creativity and technical expertise to deliver a meaningful educational solution.
+                    </div>
+
+                </div>
+
+                <!-- Card Start -->
+                <a href="https://gx.games/games/s3zosx/titanquest/" target="_blank">
+                    
+                    <div class="card_wrapper">
+                        <div class="card purple" style=`background-image:url(/images/projects/spaceapps_bkg.png);`>
+                            <div class="glow"></div>
+                        </div>
+                        <div class="card_char"></div>
+                    </div>
+                    
+                </a>
+                <!-- Card End -->
+
+            </div>
+            <!-- End Card Section -->
+
         </div>
 
+        <!--  -->
         <script is:inline src="/card.js"></script>
-
     </div>
 </div>
 
