@@ -1,0 +1,80 @@
+---
+// import ImageCardPurple from "../components/ImageCardPurple.astro";
+import SectionBanner from "../components/SectionBanner.astro";
+import ThreeDeeCard from "../components/ThreeDeeCard.astro";
+import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
+---
+
+<!-- Section W Buttons -->
+<div class="section">
+
+    <SectionBanner id="p3" 
+        bkgimg="images/backgrounds/valley.png" 
+        header="Work Experience"
+    />
+
+    <div class="cards">
+
+        <div class="card_container">
+
+            <div class="card">Hi</div>
+            <div class="card">Hi</div>
+            <div class="card">Hi</div>
+            <div class="card">Hi</div>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<style>
+
+.section {
+        background-color: var(--backgroundcol);
+        color: white;
+        /* border: 3px solid #00000000; */
+        /* border: 2px solid magenta; */
+        overflow: hidden;
+        padding-bottom: 5rem;
+    }
+
+    .cards {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .card_container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 30px;
+
+        width: 90%;
+        max-width: 1800px;
+
+        border: 1px solid red;
+
+    }
+
+    .card {
+        width: 384px;
+        height: 216px;
+        background-color: var(--background-card-bkg);
+        border: 1px solid var(--background-card-border);
+        border-radius: 10px;
+    }
+
+
+</style>
