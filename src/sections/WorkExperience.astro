@@ -3,6 +3,7 @@
 import SectionBanner from "../components/SectionBanner.astro";
 import ThreeDeeCard from "../components/ThreeDeeCard.astro";
 import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
+import WorkExperienceCard from "../components/WorkExperienceCard.astro";
 ---
 
 <!-- Section W Buttons -->
@@ -17,10 +18,15 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
         <div class="card_container">
 
+            <!-- <div class="card">Hi</div>
             <div class="card">Hi</div>
             <div class="card">Hi</div>
-            <div class="card">Hi</div>
-            <div class="card">Hi</div>
+            <div class="card">Hi</div> -->
+
+            <WorkExperienceCard />
+            <WorkExperienceCard />
+            <WorkExperienceCard />
+            <WorkExperienceCard />
 
         </div>
 
@@ -67,14 +73,5 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
         border: 1px solid red;
 
     }
-
-    .card {
-        width: 384px;
-        height: 216px;
-        background-color: var(--background-card-bkg);
-        border: 1px solid var(--background-card-border);
-        border-radius: 10px;
-    }
-
 
 </style>

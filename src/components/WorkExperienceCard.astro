@@ -1,0 +1,94 @@
+---
+// import ImageCardPurple from "../components/ImageCardPurple.astro";
+import SectionBanner from "../components/SectionBanner.astro";
+import ThreeDeeCard from "../components/ThreeDeeCard.astro";
+import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
+import WorkExperienceTag from "./WorkExperienceTag.astro";
+---
+
+<!-- Section W Buttons -->
+<div class="card">
+
+    <div class="dynamic_buffer">
+        <div class="card-content">
+            <p>Dates</p>
+
+            <div class="logo-row">
+                
+                <!-- Display the Logo -->
+                <div class="logo"></div>
+
+                <!-- Other Stuff -->
+                <div class="position">
+                    <h1>Position</h1>
+                    <h4>Company</h4>
+                </div>
+            </div>
+
+            <p>Short Description of What I did here</p>
+        </div>
+
+        <div class="tag-container">
+            <WorkExperienceTag />
+            <WorkExperienceTag />
+            <WorkExperienceTag />
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+.card {
+    width: 384px;
+    height: 216px;
+    background-color: var(--background-card-bkg);
+    border: 1px solid var(--background-card-border);
+    border-radius: 10px;
+}
+
+.dynamic_buffer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tag-container {
+    display: flex;
+    gap: 5px;
+}
+
+.logo-row {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+}
+
+.position {
+
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--textcol);
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcol-off);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcol-dark);
+}
+</style>
