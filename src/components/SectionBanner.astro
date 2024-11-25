@@ -113,6 +113,22 @@ const { bkgimg, header, desc } = Astro.props;
         h1 {
             font-size: 4rem;
         }
+
+        .backgroundimg {
+            height: var(--section-height);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            
+            background-size: cover;
+            image-rendering: pixelated;
+            
+            overflow: hidden;
+            background-position-y: 0;
+
+            /* border: 1px solid red; */
+        }
     }
 
 
@@ -143,56 +159,58 @@ const { bkgimg, header, desc } = Astro.props;
 
 <script>
 
-    let isScrolling = false;
+    // let isScrolling = false;
 
-    function isTouchScreenDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.maxTouchPoints > 0;
-    }
+    // function isTouchScreenDevice() {
+    //     return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.maxTouchPoints > 0;
+    // }
 
-    //Constant
-    function updateScrolls() {
+    // //Constant
+    // function updateScrolls() {
 
-        if (!isScrolling) {
-            isScrolling = true;
-            //Loop
-            let elements = document.querySelectorAll(".backgroundimg")
-            for (let i = 0; elements[i]; i++) {
+    //     if (!isScrolling) {
+    //         isScrolling = true;
+    //         //Loop
+    //         let elements = document.querySelectorAll(".backgroundimg")
+    //         for (let i = 0; elements[i]; i++) {
 
-                let el = elements[i];
-                updateBanner((el as HTMLElement));
-            }
-            window.requestAnimationFrame(() => {
-                isScrolling = false;
-            });
-        }
-    }
+    //             let el = elements[i];
+    //             updateBanner((el as HTMLElement));
+    //         }
+    //         window.requestAnimationFrame(() => {
+    //             isScrolling = false;
+    //         });
+    //     }
+    // }
 
-    //B
-    function updateBanner(el : HTMLElement) {
+    // //B
+    // function updateBanner(el : HTMLElement) {
 
-        //Get Top Position
-        let top = el.getBoundingClientRect().top;
-        let depth = .5;
-        let off = depth*top;
+    //     //Get Top Position
+    //     let top = el.getBoundingClientRect().top;
+    //     let depth = .5;
+    //     let off = depth*top;
 
-        if (isTouchScreenDevice()) {
-            return;
-        }
+    //     if (isTouchScreenDevice()) {
+    //         return;
+    //     }
 
 
-        //Update Bkg Position
-        el.style.backgroundPositionY = `${off}px`;
+    //     //Update Bkg Position
+    //     el.style.backgroundPositionY = `${off}px`;
 
-    }
+    // }
 
-    //Auto Update
-    updateScrolls();
+    // //Auto Update
+    // // updateScrolls();
 
-    //Repeat on Scroll Update
-    window.addEventListener("scroll", () => {
+    // //Repeat on Scroll Update
+    // window.addEventListener("scroll", () => {
 
-        updateScrolls();
+    //     // if (window.innerWidth > 840) {
+    //         // updateScrolls();
+    //     // }
 
-    });
+    // });
 
 </script>
