@@ -3,11 +3,14 @@
 import SectionBanner from "../components/SectionBanner.astro";
 import ThreeDeeCard from "../components/ThreeDeeCard.astro";
 import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
+
+
+const { item } = Astro.props;
 ---
 
 <!-- Section W Buttons -->
 <div class="tag">
-    Hi
+    {item}
 </div>
 
 <style>
@@ -15,7 +18,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
     display: flex;
     width: fit-content;
-    min-width: 30px;
+    min-width: 0px;
 
     padding: 0px;
     padding-left: 10px;
@@ -23,9 +26,10 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     padding-bottom: 2px;
 
     color: var(--primary-p);
-    border: 1px solid var(--primary-p);
+    border: 1px solid var(--primary-p); 
+    background-color: transparent;
 
-
+    transition: 0.3s;
 
     border-radius: 50px;
     font-size: 0.8rem;
@@ -33,6 +37,17 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
     text-align: center;
     justify-content: center;
     text-align: center;
+
+    /* pointer-events: none; */
+    user-select: none;
+
+}
+
+.tag:hover {
+
+    /* border: 1px solid var(--primary-p);  */
+    background-color: var(--primary-p);
+    color: var(--secondary-p);
 
 }
 </style>

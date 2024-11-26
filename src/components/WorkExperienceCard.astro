@@ -4,6 +4,8 @@ import SectionBanner from "../components/SectionBanner.astro";
 import ThreeDeeCard from "../components/ThreeDeeCard.astro";
 import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 import WorkExperienceTag from "./WorkExperienceTag.astro";
+
+const { dates, logourl, position_name, company, desc, tags, companyhref } = Astro.props;
 ---
 
 <!-- Section W Buttons -->
@@ -11,27 +13,33 @@ import WorkExperienceTag from "./WorkExperienceTag.astro";
 
     <div class="dynamic_buffer">
         <div class="card-content">
-            <p>Dates</p>
+            <p>{dates}</p>
 
             <div class="logo-row">
                 
                 <!-- Display the Logo -->
-                <div class="logo"></div>
+                <div class="logo" style={`background-image:url(${logourl})`}></div>
 
                 <!-- Other Stuff -->
-                <div class="position">
-                    <h1>Position</h1>
-                    <h4>Company</h4>
-                </div>
+                <a class="position" href={companyhref}>
+                    <h1>{position_name}</h1>
+                    <h4>{company}</h4>
+                </a>
             </div>
 
-            <p>Short Description of What I did here</p>
+            <p>{desc}</p>
         </div>
 
         <div class="tag-container">
+            <!-- <WorkExperienceTag />
             <WorkExperienceTag />
-            <WorkExperienceTag />
-            <WorkExperienceTag />
+            <WorkExperienceTag /> -->
+            {tags &&
+                tags.map((item) => (
+                    <WorkExperienceTag 
+                        item={item}/>
+                ))
+            }
         </div>
     </div>
 </div>
@@ -45,6 +53,8 @@ import WorkExperienceTag from "./WorkExperienceTag.astro";
     background-color: var(--background-card-bkg);
     border: 1px solid var(--background-card-border);
     border-radius: 10px;
+
+    padding: 15px;
 }
 
 .dynamic_buffer {
@@ -56,18 +66,29 @@ import WorkExperienceTag from "./WorkExperienceTag.astro";
 
 .tag-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .logo-row {
     display: flex;
     align-items: center;
+
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .logo {
     background-color: black;
     width: 50px;
     height: 50px;
+    background-size: cover;
+    border-radius: 8px;
 }
 
 .position {
@@ -75,20 +96,36 @@ import WorkExperienceTag from "./WorkExperienceTag.astro";
 }
 
 h1 {
-    font-size: 1.2rem;
+    font-family: var(--title_font_family);
     font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    
     color: var(--textcol);
 }
 
+a:hover > h1 {
+    color: var(--primary-p);
+}
+
 h4 {
+    font-family: var(--title_font_family);
     font-size: 1rem;
     font-weight: 400;
     color: var(--textcol-off);
 }
 
+a:hover > h4 {
+    color: var(--primary-p);
+}
+
 p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-family: var(--title_font_family);
     font-weight: 400;
     color: var(--textcol-dark);
+
+    margin-bottom: 10px;
 }
 </style>
