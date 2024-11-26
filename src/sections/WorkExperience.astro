@@ -1,0 +1,113 @@
+---
+// import ImageCardPurple from "../components/ImageCardPurple.astro";
+import SectionBanner from "../components/SectionBanner.astro";
+import ThreeDeeCard from "../components/ThreeDeeCard.astro";
+import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
+import WorkExperienceCard from "../components/WorkExperienceCard.astro";
+---
+
+<!-- Section W Buttons -->
+<div class="section">
+
+    <SectionBanner id="p3" 
+        bkgimg="images/backgrounds/valley.png" 
+        header="Work Experience"
+    />
+
+    <div class="cards">
+
+        <div class="card_container">
+
+            <!-- <div class="card">Hi</div>
+            <div class="card">Hi</div>
+            <div class="card">Hi</div>
+            <div class="card">Hi</div> -->
+
+            <WorkExperienceCard 
+                company='Samos Insurance Solutions' 
+                position_name='Business Data Analyist Intern' 
+                desc="Developed Fullstack Software Development and Business Insight discovery skills in an Agile environment." 
+                dates='Summer 2024 (Co-op)' 
+                logourl='/images/work/samosinsure_cover.jpg'
+                companyhref="https://samos.com" 
+                tags={['React', 'UX/UI', 'Jira', 'Google Analytics']}
+                />
+
+                <WorkExperienceCard 
+                company='McMaster University' 
+                position_name='Teaching Assistant' 
+                desc="Taught an Intermediate Third-Year Software Engineering Course and an Introductory First-Year Python Course." 
+                dates='Fall 2023' 
+                logourl='/images/work/mcmaster.jpg'
+                companyhref="https://www.eng.mcmaster.ca/" 
+                tags={['Python', 'Data Structures', 'Dynamic Programming']}
+                />
+
+                <WorkExperienceCard 
+                company='Orbital Quantum' 
+                position_name='Operations Lead' 
+                desc="Honed Backend Software Development skills while learning the fundamentals of startup business systems and operations." 
+                dates='Summer 2023 (Co-op)' 
+                logourl='/images/work/oquantum.png'
+                companyhref="https://orbitalquantum.com" 
+                tags={['Backend', 'Java', 'JS', 'Bookkeeping', 'Patent Creation']}
+                />
+
+                <WorkExperienceCard 
+                company='Yarowa' 
+                position_name='Junior Software Developer' 
+                desc="Backend Software Development for the pre-processing of client data for Machine Learning Applications using Microsoft Azure." 
+                dates='Summer 2022 (Co-op)' 
+                logourl='/images/work/jarowa_logo.jpg'
+                companyhref="https://www.yarowa.com/english/home/"
+                tags={['Anonymization', 'SVM', 'Linear Regression']}
+                />
+            
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<style>
+
+.section {
+        background-color: var(--backgroundcol);
+        color: white;
+        /* border: 3px solid #00000000; */
+        /* border: 2px solid magenta; */
+        overflow: hidden;
+        padding-bottom: 5rem;
+    }
+
+    .cards {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .card_container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 30px;
+
+        width: 90%;
+        max-width: 1800px;
+
+        /* border: 1px solid red; */
+
+    }
+
+</style>
