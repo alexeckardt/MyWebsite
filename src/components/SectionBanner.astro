@@ -41,34 +41,6 @@ const { bkgimg, header, desc } = Astro.props;
         /* border: 1px solid red; */
     }
 
-    .backgroundimg {
-
-        height: var(--section-height);
-        width: 100vw;
-        position: absolute;
-        overflow: hidden;
-        left: 0;
-
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-position-y: 0px;
-        background-size: cover;
-        background-attachment: fixed;
-
-        background-color: var(--backgroundcol);
-        /* border-top: 1px solid var(--textcol); */
-        /* border-bottom: 1px solid var(--textcol); */
-        /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.377); */
-        
-        margin-left: auto;
-        margin-right: auto;
-        image-rendering: pixelated;
-        
-        overflow: hidden;
-
-        /* border: 1px solid red; */
-    }
-
     .subcontainer {
         display: flex;
         flex-direction: column;
@@ -159,62 +131,3 @@ const { bkgimg, header, desc } = Astro.props;
     }
 
 </style>
-
-
-<script>
-
-    // let isScrolling = false;
-
-    // function isTouchScreenDevice() {
-    //     return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.maxTouchPoints > 0;
-    // }
-
-    // //Constant
-    // function updateScrolls() {
-
-    //     if (!isScrolling) {
-    //         isScrolling = true;
-    //         //Loop
-    //         let elements = document.querySelectorAll(".backgroundimg")
-    //         for (let i = 0; elements[i]; i++) {
-
-    //             let el = elements[i];
-    //             updateBanner((el as HTMLElement));
-    //         }
-    //         window.requestAnimationFrame(() => {
-    //             isScrolling = false;
-    //         });
-    //     }
-    // }
-
-    // //B
-    // function updateBanner(el : HTMLElement) {
-
-    //     //Get Top Position
-    //     let top = el.getBoundingClientRect().top;
-    //     let depth = .5;
-    //     let off = depth*top;
-
-    //     if (isTouchScreenDevice()) {
-    //         return;
-    //     }
-
-
-    //     //Update Bkg Position
-    //     el.style.backgroundPositionY = `${off}px`;
-
-    // }
-
-    // //Auto Update
-    // // updateScrolls();
-
-    // //Repeat on Scroll Update
-    // window.addEventListener("scroll", () => {
-
-    //     // if (window.innerWidth > 840) {
-    //         // updateScrolls();
-    //     // }
-
-    // });
-
-</script>
