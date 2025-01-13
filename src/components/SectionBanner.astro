@@ -30,7 +30,7 @@ const { bkgimg, header, desc } = Astro.props;
 
 
     :root {
-        --section-height: 25rem;
+        --section-height: 100px;
     }
 
     .container {
@@ -57,7 +57,7 @@ const { bkgimg, header, desc } = Astro.props;
 
     h1 {
         font-family: "Funnel Display", "Inter", "DM Sans", Arial, sans-serif;
-        font-size: 6rem;
+        font-size: 4rem;
         font-weight: 600;
         /* text-shadow: 0px 0px 30px black; */
 
@@ -87,32 +87,14 @@ const { bkgimg, header, desc } = Astro.props;
 
     @media (max-width: 840px) {
         h1 {
-            font-size: 4rem;
-        }
-
-        .backgroundimg {
-            /* height: var(--section-height);
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            
-            background-size: cover;
-            image-rendering: pixelated;
-            
-            overflow: hidden;
-            background-position-y: 0;
-
-            border: 1px solid red; */
+            font-size: 3rem;
         }
     }
-
-
 
      /* Media query for smaller screens */
      @media (max-width: 640px) {
         h1 {
-            font-size: 4rem;
+            font-size: 2rem;
         }
 
         h2 {
