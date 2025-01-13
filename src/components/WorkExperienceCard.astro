@@ -53,8 +53,14 @@ const { dates, logourl, position_name, company, desc, tags, companyhref } = Astr
     background-color: var(--background-card-bkg);
     border: 1px solid var(--background-card-border);
     border-radius: 10px;
+    transition: 0.2s;
 
     padding: 15px;
+}
+
+.card:hover {
+    background-color: var(--background-card-bkg-hover);
+
 }
 
 .dynamic_buffer {
@@ -72,6 +78,7 @@ const { dates, logourl, position_name, company, desc, tags, companyhref } = Astr
 
 a {
     text-decoration: none;
+    transition: 0.1s;
 }
 
 .logo-row {
@@ -103,10 +110,12 @@ h1 {
     padding-bottom: 0px;
     
     color: var(--textcol);
+    transition: 0.1s;
 }
 
 a:hover > h1 {
     color: var(--primary-p);
+    transition: 0.1s;
 }
 
 h4 {
@@ -114,10 +123,12 @@ h4 {
     font-size: 1rem;
     font-weight: 400;
     color: var(--textcol-off);
+    transition: 0.1s;
 }
 
 a:hover > h4 {
     color: var(--primary-p);
+    transition: 0.1s;
 }
 
 p {
@@ -128,4 +139,6 @@ p {
 
     margin-bottom: 10px;
 }
+
+
 </style>
