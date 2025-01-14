@@ -12,66 +12,66 @@ import ExperimentCard from "../components/ExperimentCard.astro";
 <div class="section">
 
     <!-- <SectionBanner id="p3" 
-    bkgimg="images/backgrounds/valley.png" 
-    header="Experiments"
-    desc="Technical Side Projects that are cool to use and see, but aren't as user friendly."/> -->
+        bkgimg="images/backgrounds/valley.png" 
+        header="Additional Projects"
+    /> -->
 
-        <center>
 
+    <div class="cards">
+
+        <div class="card_container">
             
-        <!-- Pixel Tile Set -->
-        <ExperimentCard
+            <!-- Chess -->
+            <ExperimentCard
             href="https://github.com/alexeckardt/ChessOpenings"
             title="Chess Opening Explorer"
             body="Simple Puzzle Game that makes you choose the best move from a variety of chess openings." 
             imgsrc="/images/projects/chessers.png"
             year="2023"
-        />
-
-        <ExperimentCard
-            href="https://github.com/alexeckardt/ChessOpenings"
-            title="Chess Opening Explorer"
-            body="Simple Puzzle Game that makes you choose the best move from a variety of chess openings." 
-            imgsrc="/images/projects/chessers.png"
-            year="2023"
-        />
-
-        <ExperimentCard
-            href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
-            title="Pixel Art Tile-Set Extrapolator"
-            body="Python Command Line Tool to extrapolate a tile-set from Source Images" 
-            imgsrc="/images/projects/patsc.png"
-            year="2023"
-        />
-
+            tags={['GML', 'Stockfish', 'Algorithms', 'Big Data', 'Pixel Art']}
+            />
             
-        <!-- IOS App -->
-        <ExperimentCard
-            href="https://github.com/alexeckardt/iOS-Speedrun-Timer/"
-            title="iOS Speedrun Timer"
-            body="iOS App, writen in XCode, to act as a timer to store and compare speedruns time to one another" 
-            imgsrc="/images/projects/ios_speedrun.png"
-            year="2022"
-        />
+            <!-- Pixel Tile Set -->
+            <ExperimentCard
+                href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
+                title="Pixel Art Tile-Set Extrapolator"
+                body="Python Command Line Tool to extrapolate a tile-set from source image(s)." 
+                imgsrc="/images/projects/patsc.png"
+                year="2023"
+                tags={['Python', 'Bash']}
+            />
 
+            <!-- IOS App -->
+            <ExperimentCard
+                href="https://github.com/alexeckardt/iOS-Speedrun-Timer/"
+                title="iOS Speedrun Timer"
+                body="iOS App, written in XCode & SwiftUI, to act as a timer to store and compare speedruns time to one another." 
+                imgsrc="/images/projects/ios_speedrun.png"
+                year="2022"
+                tags={['SwiftUI', 'XCode', 'iOS Emulator']}
+            />
 
-        <!-- Dungeon -->
-        <ExperimentCard
-            href="https://github.com/alexeckardt/RougelikeDungeon"
-            title="Rougelike Dungeon C# Game"
-            body="An simple, randomly generated bullet hell video game, created using C# using the MonoGame Game Framework." 
-            imgsrc="/images/projects/rougelikedungeon.png"
-            year="2023"
-        />
+            <!-- Dungeon -->
+            <ExperimentCard
+                href="https://github.com/alexeckardt/RougelikeDungeon"
+                title="Rougelike Dungeon C# Game"
+                body="An simple, randomly generated bullet hell video game, created using C# using the MonoGame Framework." 
+                imgsrc="/images/projects/rougelikedungeon.png"
+                year="2023"
+                tags={['C#', 'XML', 'MonoGame']}
+            />
 
-    <div class="linkdiv">
-        <a href="https://github.com/alexeckardt/MyWebsite" target="_blank" rel="noopener noreferrer">
-            See the source code for this website!
-        </a>
+            <ExperimentCard
+                href="https://github.com/alexeckardt/MyWebsite"
+                title="Portfolio Website"
+                body="Inception! See the source code for this website." 
+                imgsrc="/images/backgrounds/header_dark.png"
+                year="2025"
+                allowZoom="true"
+                tags={['Astro', 'HTML', 'CSS', 'JS']}
+            />
+        </div>
     </div>
-
-    </center>
-
 </div>
 
 
@@ -116,5 +116,28 @@ import ExperimentCard from "../components/ExperimentCard.astro";
             /* padding-bottom: 5rem; */
         }
   	}
+
+    
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card_container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 30px;
+
+        width: 90%;
+        max-width: 1800px;
+
+        /* border: 1px solid red; */
+
+    }
 
 </style>

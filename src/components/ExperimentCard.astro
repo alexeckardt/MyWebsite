@@ -2,41 +2,44 @@
 import WorkExperienceTag from "./WorkExperienceTag.astro";
 
 // const { dates, logourl, position_name, company, desc, tags, companyhref } = Astro.props;
-const { href, title, body, imgsrc, year, tags } = Astro.props;
+const { href, title, body, imgsrc, year, tags, allowZoom } = Astro.props;
+
+// No Zoom if necessary
+const cName = allowZoom != 'true' ? 'logo' : 'logo-no-zoom'
 ---
 
 <!-- Section W Buttons -->
 <div class="card">
 
     <!-- Display the Logo -->
-    <div class="logo" style={`background-image:url(${imgsrc})`}></div>
+    <div class={cName} style={`background-image:url(${imgsrc})`}></div>
 
-    <div class="dynamic_buffer">
-        <div class="card-content">
-            <div class="logo-row">
-    
-                <!-- Other Stuff -->
-                <a class="position" href={href}>
-                    <h1>{title}</h1>
-                </a>
-                <div class="year"> | {year}</div>
+    <div class="dynamic-holder">
+        <div class="dynamic_buffer">
+            <div class="card-content">
+                <div class="logo-row">
+                    <!-- Other Stuff -->
+                    <a class="position" href={href}>
+                        <h1>{title}</h1>
+                    </a>
+                    <div class="year">{year}</div>
+                </div>
+                
+                <p>{body}</p>
+
             </div>
 
-            <p>{body}</p>
-        </div>
-
-        <div class="tag-container">
-            <!-- <WorkExperienceTag />
-            <WorkExperienceTag />
-            <WorkExperienceTag /> -->
-            {tags &&
-                tags.map((item) => (
-                    <WorkExperienceTag 
-                        item={item}/>
-                ))
-            }
+            <div class="tag-container">
+                {tags &&
+                    tags.map((item) => (
+                        <WorkExperienceTag 
+                            item={item}/>
+                    ))
+                }
+            </div>
         </div>
     </div>
+    
 </div>
 
 
@@ -44,7 +47,7 @@ const { href, title, body, imgsrc, year, tags } = Astro.props;
 <style>
 .card {
     width: 384px;
-    height: 216px;
+    min-height: 256px;
     background-color: var(--background-card-bkg);
     border: 1px solid var(--background-card-border);
     border-radius: 10px;
@@ -58,10 +61,29 @@ const { href, title, body, imgsrc, year, tags } = Astro.props;
 
 }
 
+/* On Hover, zoom out of image -- unless smal lscreen -- don't. */
+.card:hover > .logo  {
+    background-size: 90%;
+}
+@media screen and (max-width: 800px) {
+    .card:hover > .logo  {
+        background-size: cover;
+    }
+    .logo  {
+        background-size: cover;
+    }
+}
+
+.dynamic-holder {
+    /* border: 1px solid red; */
+    height: calc(256px - 75px);
+}
+
 .dynamic_buffer {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    /* border: 1px solid red; */
     height: 100%;
 }
 
@@ -69,6 +91,8 @@ const { href, title, body, imgsrc, year, tags } = Astro.props;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    /* height: ; */
+    /* border: 1px solid red; */
 }
 
 a {
@@ -87,18 +111,23 @@ a {
     /* border: 1px solid red; */
 }
 
-.logo {
+.logo, .logo-no-zoom {
     background-color: black;
     width: 100%;
     height: 80px;
-    background-size: cover;
+    background-size: 100%;
     border-radius: 8px;
+
+    background-position: center;
+    transition: 0.1s;
 }
+
 
 .position {
 
     display: flex;
     align-items: center;
+    flex: 1;
 
     /* border: 1px solid rgb(0, 119, 255); */
     
@@ -110,6 +139,7 @@ a {
     font-weight: 200;
     color: var(--textcol-dark);
     height: 100%;
+    flex: 0.2;
     /* border: 1px solid rgb(0, 119, 255); */
 }
 
@@ -122,6 +152,9 @@ h1 {
     
     color: var(--textcol);
     transition: 0.1s;
+
+    max-width: 90%;
+    /* border: 1px solid red; */
 }
 
 a:hover > h1 {
