@@ -43,7 +43,7 @@ import SocialIcon from "../components/SocialIcon.astro";
         /* background-color: var(--backgroundcol); */
         buffer: 2rem;
         color: rgb(230, 243, 255);
-        /* border-top: 1px solid red; */
+        /* border: 1px solid red; */
 
         width: 100vw;
         height: 100vh;
@@ -69,14 +69,21 @@ import SocialIcon from "../components/SocialIcon.astro";
 
         /* Mix so We can see the effect under */
         background-image: url('/images/backgrounds/header_dark.png');
-        background-size: 150%; /* Ensures the image covers the entire div */
+        /* background-size: 150%; Ensures the image covers the entire div */
+        background-size: cover;
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents the image from repeating */
 
 
-        filter: blur(30px);
+        /* filter: blur(30px); */
         z-index: -1; 
         /* //Send the background behind the content */
+    }
+
+    @media (max-width: 1000px) {
+      .section::before {
+        background-size: cover;
+      }
     }
 
 

@@ -5,21 +5,22 @@ import ImageCardGreen from "../components/ImageCardGreen.astro";
 import SectionBanner from "../components/SectionBanner.astro";
 import ThreeDeeCard from "../components/ThreeDeeCard.astro";
 import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
+import ExperimentCard from "../components/ExperimentCard.astro";
 ---
 
 <!-- Section W Buttons -->
 <div class="section">
 
-    <SectionBanner id="p3" 
+    <!-- <SectionBanner id="p3" 
     bkgimg="images/backgrounds/valley.png" 
     header="Experiments"
-    desc="Technical Side Projects that are cool to use and see, but aren't as user friendly."/>
+    desc="Technical Side Projects that are cool to use and see, but aren't as user friendly."/> -->
 
         <center>
 
             
         <!-- Pixel Tile Set -->
-        <ImageCardPurple
+        <ExperimentCard
             href="https://github.com/alexeckardt/ChessOpenings"
             title="Chess Opening Explorer"
             body="Simple Puzzle Game that makes you choose the best move from a variety of chess openings." 
@@ -27,7 +28,15 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
             year="2023"
         />
 
-        <ImageCardGreen
+        <ExperimentCard
+            href="https://github.com/alexeckardt/ChessOpenings"
+            title="Chess Opening Explorer"
+            body="Simple Puzzle Game that makes you choose the best move from a variety of chess openings." 
+            imgsrc="/images/projects/chessers.png"
+            year="2023"
+        />
+
+        <ExperimentCard
             href="https://github.com/alexeckardt/Pixel-Art-Tile-Set-Completer"
             title="Pixel Art Tile-Set Extrapolator"
             body="Python Command Line Tool to extrapolate a tile-set from Source Images" 
@@ -37,7 +46,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
             
         <!-- IOS App -->
-        <ImageCardBlue
+        <ExperimentCard
             href="https://github.com/alexeckardt/iOS-Speedrun-Timer/"
             title="iOS Speedrun Timer"
             body="iOS App, writen in XCode, to act as a timer to store and compare speedruns time to one another" 
@@ -47,7 +56,7 @@ import ThreeDeeCardTextLogo from "../components/ThreeDeeCardTextLogo.astro";
 
 
         <!-- Dungeon -->
-        <ImageCardPurple
+        <ExperimentCard
             href="https://github.com/alexeckardt/RougelikeDungeon"
             title="Rougelike Dungeon C# Game"
             body="An simple, randomly generated bullet hell video game, created using C# using the MonoGame Game Framework." 
