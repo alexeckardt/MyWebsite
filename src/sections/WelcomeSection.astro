@@ -23,6 +23,7 @@ import SocialIcon from "../components/SocialIcon.astro";
                   <SocialIcon website="github.com/alexeckardt" icon="akar-icons:github-fill"/>
                   <SocialIcon website="linkedin.com/in/alex-eckardt" icon="akar-icons:linkedin-v1-fill"/>
                   <SocialIcon website="alexeckardt.itch.io/" icon="cib:itch-io"/>
+                  <div class="social-spacing"></div>
                   <SocialIcon website="alexeckardt.ca/Alexander_Eckardt_Website_Resume.pdf" icon="mingcute:document-3-fill"/>
                   <!-- <SocialIcon website="instagram.com/soulflamegame" icon="ant-design:instagram-filled"/> -->
                 </div>
@@ -131,6 +132,12 @@ import SocialIcon from "../components/SocialIcon.astro";
     }
 
 
+    .social-spacing {
+      width: 0;
+      border: 1px solid rgb(154, 161, 168);
+      border-radius: 5px;
+    }
+
     h1 {
         font-size: 18vh;
         font-weight: 800;
@@ -140,10 +147,10 @@ import SocialIcon from "../components/SocialIcon.astro";
     }
 
     h2 {
-        font-size: 2rem;
-        font-weight: 100;
+        font-size: 1.5rem;
+        font-weight: 200;
         color: rgb(156, 156, 156);
-        font-family: "Kuhmb Sans", Arial, sans-serif;
+        font-family: "Funnel Display", "Inter", "DM Sans", Arial, sans-serif;
         /* animation: startup-fade-1 6s ease-in-out forwards; */
     }
 
