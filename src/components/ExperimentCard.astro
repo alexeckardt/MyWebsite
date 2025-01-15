@@ -4,39 +4,38 @@ import WorkExperienceTag from "./WorkExperienceTag.astro";
 // const { dates, logourl, position_name, company, desc, tags, companyhref } = Astro.props;
 const { href, title, body, imgsrc, year, tags, allowZoom } = Astro.props;
 
+const imgPath = imgsrc ? imgsrc : "/images/backgrounds/header_dark.png";
+
 // No Zoom if necessary
-const cName = allowZoom != 'true' ? 'logo' : 'logo-no-zoom'
+const cName = allowZoom != 'true' && imgsrc ? 'logo' : 'logo-no-zoom'
 ---
 
 <!-- Section W Buttons -->
 <div class="card">
 
     <!-- Display the Logo -->
-    <div class={cName} style={`background-image:url(${imgsrc})`}></div>
+    <div class={cName} style={`background-image:url(${imgPath})`}></div>
 
     <div class="dynamic-holder">
-        <div class="dynamic_buffer">
-            <div class="card-content">
-                <div class="logo-row">
-                    <!-- Other Stuff -->
-                    <a class="position" href={href}>
-                        <h1>{title}</h1>
-                    </a>
-                    <div class="year">{year}</div>
-                </div>
-                
-                <p>{body}</p>
+        
+        <div class="card-content">
 
+            <div class="logo-row">
+                <a class="position" href={href}>
+                    <h1>{title}</h1>
+                </a>
             </div>
+            
+            <p>{body}</p>
+        </div>
 
-            <div class="tag-container">
-                {tags &&
-                    tags.map((item) => (
-                        <WorkExperienceTag 
-                            item={item}/>
-                    ))
-                }
-            </div>
+        <div class="tag-container">
+            {tags &&
+                tags.map((item) => (
+                    <WorkExperienceTag 
+                        item={item}/>
+                ))
+            }
         </div>
     </div>
     
@@ -47,7 +46,6 @@ const cName = allowZoom != 'true' ? 'logo' : 'logo-no-zoom'
 <style>
 .card {
     width: 384px;
-    min-height: 256px;
     background-color: var(--background-card-bkg);
     border: 1px solid var(--background-card-border);
     border-radius: 10px;
@@ -74,23 +72,21 @@ const cName = allowZoom != 'true' ? 'logo' : 'logo-no-zoom'
     }
 }
 
-.dynamic-holder {
-    /* border: 1px solid red; */
-    height: calc(256px - 75px);
-}
 
-.dynamic_buffer {
+.dynamic-holder {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    /* border: 1px solid red; */
-    height: 100%;
+
+    min-height: 150px;
 }
 
 .tag-container {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+
+    float: 1;
     /* height: ; */
     /* border: 1px solid red; */
 }
@@ -106,10 +102,11 @@ a {
 
     gap: 5px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 
     /* border: 1px solid red; */
 }
+
 
 .logo, .logo-no-zoom {
     background-color: black;
