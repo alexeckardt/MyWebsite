@@ -59,6 +59,8 @@ import '../style/trainer_card.css';
         --space: 5%;
         --angle: -22deg;
         --imgsize: 300% 400%;
+        --foil: url('/images/trainerbg.png');
+        --foilimgsize: 25% 25%;
 
         --pointer-from-center: 0;
         --background-y: 0;
@@ -71,7 +73,8 @@ import '../style/trainer_card.css';
         top: 0;
         
         background-image:
-            repeating-linear-gradient( var(--angle),  
+            var(--foil)
+            /* repeating-linear-gradient( var(--angle),  
                 hsla(283, 49%, 60%, 0.75) calc(var(--space)*1),
                 hsla(2, 74%, 59%, 0.75) calc(var(--space)*2), 
                 hsla(53, 67%, 53%, 0.75) calc(var(--space)*3),  
@@ -79,11 +82,12 @@ import '../style/trainer_card.css';
                 hsla(176, 38%, 50%, 0.75) calc(var(--space)*5),  
                 hsla(228, 100%, 77%, 0.75) calc(var(--space)*6), 
                 hsla(283, 49%, 61%, 0.75) calc(var(--space)*7)
-            );
+            ) */
+        ;
         
-        background-blend-mode: color-dodge;
-        background-size: var(--imgsize);
-        background-position: 0% calc(var(--background-y) * 1), var(--background-x) var(--background-y);
+        background-blend-mode: soft-light;
+        background-size: var(--foilimgsize), var(--imgsize);
+        background-position: center center, var(--background-x) var(--background-y);
         
         filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.5)) contrast(2.3) saturate(1);
 

@@ -82,10 +82,11 @@ $(".card_wrapper").mousemove(function (e) {
 
   // console.log(colRGB);
   
-  const strength = clamp(distance / 50, 0, 1);
+  const strength = clamp((distance / 150) - 0.7, 0, 1);
+  const strength2 = strength*strength;
   const glowScrollSpeed = 500;
-  console.log('glowstr', offsetX);
-  glowChild.style.setProperty('--pointer-from-center', `${strength}`);
+  // console.log('glowstr', offsetX);
+  glowChild.style.setProperty('--pointer-from-center', `${strength2}`);
   glowChild.style.setProperty('--background-x', `-${offsetX*glowScrollSpeed}px`);
   glowChild.style.setProperty('--background-y', `-${offsetY*glowScrollSpeed}px`);
   
