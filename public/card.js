@@ -31,7 +31,7 @@ $(".card_wrapper").mousemove(function (e) {
   let charChild = children[char_ind];
 
   //Reset Duration -- Instant
-  console.log(transitionSpeed)
+  // console.log(transitionSpeed)
   transitionSpeed -= (transitionSpeed - minTransitionSpeed) * 0.1;
   let transitionDur = `${transitionSpeed}ms`;
   cardChild.style.transitionDuration  = transitionDur;
@@ -157,7 +157,6 @@ $(".card_wrapper").mouseleave(function (e) {
   glowChild.style.setProperty('--background-y', `${0}`);
   glowChild.style.setProperty('--background-x', `${0}`);
   
-  glowChild.style.setProperty('--angle', `-22deg`);
   glowChild.style.setProperty('--rainbow-angle', `0deg`);
 
   // glowChild.style.opacity = 0;
