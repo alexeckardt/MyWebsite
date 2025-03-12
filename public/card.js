@@ -2,6 +2,7 @@ var limits = 15.0;
 
 const card_ind = 0;
 const char_ind = 1;
+const glow_ind = 1;
 
 const HSLToRGB = (h, s, l) => {
   s /= 100;
@@ -13,11 +14,15 @@ const HSLToRGB = (h, s, l) => {
   return [255 * f(0), 255 * f(8), 255 * f(4)];
 };
 
+const clamp = (val, minval, maxval) => {
+  return Math.min(Math.max(val, minval), maxval);
+}
+
 $(".card_wrapper").mousemove(function (e) {
 
   let children = $(this).children();
   let cardChild = children[card_ind];
-  let glowChild = cardChild.childNodes[1];
+  let glowChild = cardChild.childNodes[glow_ind]; //the first child
   let charChild = children[char_ind];
 
   //Reset Duration -- Instant
@@ -52,7 +57,7 @@ $(".card_wrapper").mousemove(function (e) {
   const startLogScale = 10;
   if (scaleScale > startLogScale) {
     scaleScale = startLogScale + Math.log(scaleScale-startLogScale + 1);
-    console.log("SC", scaleScale);
+    // console.log("SC", scaleScale);
   }
 
   let glowScale = 136 - scaleScale * 7;
@@ -63,10 +68,10 @@ $(".card_wrapper").mousemove(function (e) {
   var hue = angleDeg / 360 * 360;
 
   var colRGB = HSLToRGB(hue, 80, 50);
-  console.log(colRGB);
+  // console.log(colRGB);
 
   let mix = Math.log(distance + 2) / 60;
-  console.log(mix);
+  // console.log(mix);
   const light = 170;
   let med = 120;
   const dark = 100;
@@ -76,19 +81,26 @@ $(".card_wrapper").mousemove(function (e) {
   let lB = (1-mix) * light + mix*colRGB[2];
 
   // console.log(colRGB);
+  
+  const strength = clamp(distance / 50, 0, 1);
+  const glowScrollSpeed = 500;
+  console.log('glowstr', offsetX);
+  glowChild.style.setProperty('--pointer-from-center', `${strength}`);
+  glowChild.style.setProperty('--background-x', `-${offsetX*glowScrollSpeed}px`);
+  glowChild.style.setProperty('--background-y', `-${offsetY*glowScrollSpeed}px`);
+  
+  // glowChild.style.backgroundImage = `
+  //   radial-gradient(
+  //     circle at
+  //     ${sw*2 - x}px
+  //     ${sh*2 - y}px,
+  //     rgba(${lR},${lG},${lB},1) 0%, 
+  //     rgba(${med},${med},${med},1) ${glowScale}%, 
+  //     rgba(${dark},${dark},${dark},1) 100%
+  //   )`;
 
-  glowChild.style.backgroundImage = `
-    radial-gradient(
-      circle at
-      ${sw*2 - x}px
-      ${sh*2 - y}px,
-      rgba(${lR},${lG},${lB},1) 0%, 
-      rgba(${med},${med},${med},1) ${glowScale}%, 
-      rgba(${dark},${dark},${dark},1) 100%
-    )`;
-
-  glowChild.style.mixBlendMode = "hard-light";
-  glowChild.style.opacity = 1;
+  // glowChild.style.mixBlendMode = "hard-light";
+  // glowChild.style.opacity = 1;
 
   // var glarePos = rotateX + rotateY + 90;
   // $(this)
@@ -114,7 +126,12 @@ $(".card_wrapper").mouseleave(function (e) {
   charChild.style.transitionDuration  = transitionDur;
   glowChild.style.transitionDuration  = transitionDur;
 
-  glowChild.style.opacity = 0;
+  
+  glowChild.style.setProperty('--pointer-from-center', `${0}`);
+  glowChild.style.setProperty('--background-y', `${0}`);
+  glowChild.style.setProperty('--background-x', `${0}`);
+
+  // glowChild.style.opacity = 0;
 
   $(".card_wrapper").css({"transform": "rotateX(0)"});
 });

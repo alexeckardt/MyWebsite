@@ -1,0 +1,147 @@
+---
+import '../style/trainer_card.css';
+---
+
+<div class="card_wrapper">
+    <div class="card" style=`background-image:url(/images/projects/gotransitviewer.png);`>
+        <div class="glow"></div>
+        <!-- <div class="card__shine"></div> -->
+    </div>
+    <div class="card_char"></div>
+</div>
+
+<style>
+    .card_wrapper {
+        width: 35vh;
+        height: 55vh;
+        /* border: 1px solid red; */
+        position: relative;
+
+        transition-duration: 1000ms;
+        transition-property: transform;
+    }
+
+    .card_wrapper:hover {
+        transition-duration: 0ms;
+    }
+
+    .card_char {
+        top: 0;
+        left: 0;
+        width: 35vh;
+        height: 55vh;
+        position: absolute;
+
+        transform: translateZ(100px) rotateY(5deg) perspective(10000px);
+
+        image-rendering: pixelated;
+        background-repeat: no-repeat;
+        background-size:cover;
+        z-index: 5;
+    }
+
+    .card {
+        width: 35vh;
+        height: 55vh;
+        top: 0;
+        left: 0;
+        
+        border-radius: 10px;
+        background-color: black;
+        background-size: cover;
+
+        transform: translateZ(100px) rotateY(5deg) perspective(1000px);
+    }
+
+    .glow {
+
+        
+        --space: 5%;
+        --angle: -22deg;
+        --imgsize: 300% 400%;
+
+        --pointer-from-center: 0;
+        --background-y: 0;
+        --background-x: 0;
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        
+        background-image:
+            repeating-linear-gradient( var(--angle),  
+                hsla(283, 49%, 60%, 0.75) calc(var(--space)*1),
+                hsla(2, 74%, 59%, 0.75) calc(var(--space)*2), 
+                hsla(53, 67%, 53%, 0.75) calc(var(--space)*3),  
+                hsla(93, 56%, 52%, 0.75) calc(var(--space)*4),  
+                hsla(176, 38%, 50%, 0.75) calc(var(--space)*5),  
+                hsla(228, 100%, 77%, 0.75) calc(var(--space)*6), 
+                hsla(283, 49%, 61%, 0.75) calc(var(--space)*7)
+            );
+        
+        background-blend-mode: color-dodge;
+        background-size: var(--imgsize);
+        background-position: 0% calc(var(--background-y) * 1), var(--background-x) var(--background-y);
+        
+        filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.5)) contrast(2.3) saturate(1);
+
+    }
+
+        
+    .card .card__shine {
+
+        --space: 5%;
+        --angle: -22deg;
+        --imgsize: 300% 400%;
+
+        /* clip-path: var(--clip-borders); */
+
+        background-image:
+        repeating-linear-gradient( var(--angle),  
+            hsla(283, 49%, 60%, 0.75) calc(var(--space)*1),
+            hsla(2, 74%, 59%, 0.75) calc(var(--space)*2), 
+            hsla(53, 67%, 53%, 0.75) calc(var(--space)*3),  
+            hsla(93, 56%, 52%, 0.75) calc(var(--space)*4),  
+            hsla(176, 38%, 50%, 0.75) calc(var(--space)*5),  
+            hsla(228, 100%, 77%, 0.75) calc(var(--space)*6), 
+            hsla(283, 49%, 61%, 0.75) calc(var(--space)*7)
+        );
+        
+        background-blend-mode: color-dodge;
+        background-size: var(--imgsize);
+        background-position: 0% calc(var(--background-y) * 1), var(--background-x) var(--background-y);
+        
+        filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.5)) contrast(2.3) saturate(1);
+
+    }
+
+    .card.card__shine:after {
+
+        content: "";
+
+        background-image: 
+        radial-gradient( 
+            farthest-corner ellipse 
+            at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
+            hsl(0, 0%, 100%) 5%, 
+            hsla(300, 100%, 11%, 0.6) 40%, 
+            hsl(0, 0%, 22%) 120% 
+        );
+
+        background-position: center center;
+        background-size: 400% 500%;
+
+        filter: brightness(calc((var(--pointer-from-center)*0.2) + 0.4)) contrast(.85) saturate(1.1);
+        mix-blend-mode: hard-light;
+
+    }
+
+    .card .card__shine:before {
+        content: none;
+        display: none;
+    }
+
+    
+</style>

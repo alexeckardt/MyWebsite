@@ -1,14 +1,18 @@
 ---
 const { href, body, logoSprite, backgroundSprite, characterSprite } = Astro.props;
+import '../styles/trainer_card.css';
 ---
 
 <div class="group">
 <a href={href} target="_blank">   
     <div class="card">
         <div class="wrapper">
-            <img src={backgroundSprite} class="cover-image" />
+          <img src={backgroundSprite} class="cover-image" />
+          
+            <div class="card__shine">Red</div>
+            <div class="card__glare"></div>
         </div>
-      
+
         <img src={logoSprite} class="title" />
         <img src={characterSprite} class="character" />
     </div>
