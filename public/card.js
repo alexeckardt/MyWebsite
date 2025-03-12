@@ -4,6 +4,8 @@ const card_ind = 0;
 const char_ind = 1;
 const glow_ind = 1;
 
+const min_str = 0.1;
+
 const HSLToRGB = (h, s, l) => {
   s /= 100;
   l /= 100;
@@ -51,6 +53,9 @@ $(".card_wrapper").mousemove(function (e) {
   let sw = rect.width / 2;
   let sh = rect.height / 2;
 
+  const centerX = x -sw*2;
+  const centerY = y -sh*2;
+
   let distance = Math.sqrt((x - sw)*(x - sw) + (y - sh)*(y-sh))
   let scaleScale = (distance / 15);
 
@@ -81,15 +86,23 @@ $(".card_wrapper").mousemove(function (e) {
   let lB = (1-mix) * light + mix*colRGB[2];
 
   // console.log(colRGB);
+
+  const aspect = 1.5;
+  const aspectdistance = Math.sqrt((x - sw)*(x - sw)*aspect + (y - sh)*(y-sh))
   
-  const strength = clamp((distance / 150) - 0.7, 0, 1);
-  const strength2 = strength*strength;
-  const glowScrollSpeed = 500;
+  const strength = clamp((aspectdistance / 250), min_str, 1);
+  const strength2 = Math.max(min_str, strength);
+  const glowScrollSpeed = 0.7;
   // console.log('glowstr', offsetX);
   glowChild.style.setProperty('--pointer-from-center', `${strength2}`);
-  glowChild.style.setProperty('--background-x', `-${offsetX*glowScrollSpeed}px`);
-  glowChild.style.setProperty('--background-y', `-${offsetY*glowScrollSpeed}px`);
+  glowChild.style.setProperty('--background-x', `${centerX*glowScrollSpeed}px`);
+  glowChild.style.setProperty('--background-y', `${centerY*glowScrollSpeed}px`);
   
+  glowChild.style.setProperty('--pointer-x', `${x}px`);
+  glowChild.style.setProperty('--pointer-y', `${y}px`);
+
+  console.log('angle', rotateY);
+  glowChild.style.setProperty('--rainbow-angle', `${rotateY*4}deg`);
   // glowChild.style.backgroundImage = `
   //   radial-gradient(
   //     circle at
@@ -128,9 +141,12 @@ $(".card_wrapper").mouseleave(function (e) {
   glowChild.style.transitionDuration  = transitionDur;
 
   
-  glowChild.style.setProperty('--pointer-from-center', `${0}`);
+  glowChild.style.setProperty('--pointer-from-center', `${min_str}`);
   glowChild.style.setProperty('--background-y', `${0}`);
   glowChild.style.setProperty('--background-x', `${0}`);
+  
+  glowChild.style.setProperty('--angle', `-22deg`);
+  glowChild.style.setProperty('--rainbow-angle', `0deg`);
 
   // glowChild.style.opacity = 0;
 
