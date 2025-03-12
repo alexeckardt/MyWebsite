@@ -12,10 +12,14 @@ import '../style/trainer_card.css';
 
 <style>
     .card_wrapper {
-        width: 35vh;
-        height: 55vh;
-        /* border: 1px solid red; */
+        width: 45vh;
+        height: 60vh;
+        border: 1px solid red;
         position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         transition-duration: 1000ms;
         transition-property: transform;
@@ -49,6 +53,8 @@ import '../style/trainer_card.css';
         border-radius: 10px;
         background-color: black;
         background-size: cover;
+
+        pointer-events: none;
         
         transform: translateZ(100px) rotateY(5deg) perspective(1000px);
     }
