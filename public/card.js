@@ -3,8 +3,11 @@ var limits = 15.0;
 const card_ind = 0;
 const char_ind = 1;
 const glow_ind = 1;
-
 const min_str = 0.1;
+
+let transitionSpeed = 1000;
+const minTransitionSpeed = 20;
+const maxTransitionSpeed = 1000;
 
 const HSLToRGB = (h, s, l) => {
   s /= 100;
@@ -28,13 +31,16 @@ $(".card_wrapper").mousemove(function (e) {
   let charChild = children[char_ind];
 
   //Reset Duration -- Instant
-  cardChild.style.transitionDuration  = "20ms";
-  charChild.style.transitionDuration  = "20ms";
-  glowChild.style.transitionDuration  = "20ms";
+  console.log(transitionSpeed)
+  transitionSpeed -= (transitionSpeed - minTransitionSpeed) * 0.1;
+  let transitionDur = `${transitionSpeed}ms`;
+  cardChild.style.transitionDuration  = transitionDur;
+  charChild.style.transitionDuration  = transitionDur;
+  glowChild.style.transitionDuration  = transitionDur;
 
   // console.log(children, cardChild, charChild);
 
-  var rect = e.target.getBoundingClientRect();
+  var rect = $(this)[0].getBoundingClientRect();
   var x = e.clientX - rect.left; //x position within the element.
   var y = e.clientY - rect.top; //y position within the element.
   var offsetX = x / rect.width;
@@ -53,8 +59,11 @@ $(".card_wrapper").mousemove(function (e) {
   let sw = rect.width / 2;
   let sh = rect.height / 2;
 
-  const centerX = x -sw*2;
-  const centerY = y -sh*2;
+  // console.log('=======')
+  // console.log('dims', sw, sh)
+  // console.log(x, y)
+  const centerX = x - sw*2;
+  const centerY = y - sh*2;
 
   let distance = Math.sqrt((x - sw)*(x - sw) + (y - sh)*(y-sh))
   let scaleScale = (distance / 15);
@@ -93,6 +102,8 @@ $(".card_wrapper").mousemove(function (e) {
   const strength = clamp((aspectdistance / 250), min_str, 1);
   const strength2 = Math.max(min_str, strength);
   const glowScrollSpeed = 0.7;
+
+  // console.log(strength2, centerX, centerY);
   // console.log('glowstr', offsetX);
   glowChild.style.setProperty('--pointer-from-center', `${strength2}`);
   glowChild.style.setProperty('--background-x', `${centerX*glowScrollSpeed}px`);
@@ -101,7 +112,7 @@ $(".card_wrapper").mousemove(function (e) {
   glowChild.style.setProperty('--pointer-x', `${x}px`);
   glowChild.style.setProperty('--pointer-y', `${y}px`);
 
-  console.log('angle', rotateY);
+  // console.log('angle', rotateY);
   glowChild.style.setProperty('--rainbow-angle', `${rotateY*4}deg`);
   // glowChild.style.backgroundImage = `
   //   radial-gradient(
@@ -131,7 +142,8 @@ $(".card_wrapper").mouseleave(function (e) {
   let glowChild = cardChild.childNodes[1];
   let charChild = children[char_ind];
 
-  let transitionDur = "1000ms";
+  transitionSpeed = maxTransitionSpeed;
+  let transitionDur = `${transitionSpeed}ms`;
 
   cardChild.style.transform = "rotateX(0)";
   charChild.style.transform = "rotateX(0)";
