@@ -1,20 +1,29 @@
 ---
 import '../style/trainer_card.css';
----
+let { texture, shine, background, character } = Astro.props;
 
+// Ensure
+if (!texture) texture = 'vmax';
+if (!shine) shine = 'rainbow_shine';
+
+---
 <div class="card_wrapper">
-    <div class="card" style=`background-image:url(/images/projects/gotransitviewer.png);`>
-        <div class="glow"></div>
-        <!-- <div class="card__shine"></div> -->
+    <div class="card" style=`background-image:url(${background});`>
+        <div class={`glow ${texture} ${shine}`}></div>
     </div>
-    <div class="card_char"></div>
+    {character 
+        ? 
+        <div class="card_char" style={`background-image:url(${character});`}></div>
+        :
+        <div class="card_char"></div>
+    }
 </div>
 
 <style>
     .card_wrapper {
-        width: 45vh;
-        height: 60vh;
-        border: 1px solid red;
+        width: 35vh;
+        height: 55vh;
+        /* border: 1px solid red; */
         position: relative;
 
         display: flex;
@@ -30,11 +39,16 @@ import '../style/trainer_card.css';
     }
 
     .card_char {
-        top: 0;
-        left: 0;
+        
+        pointer-events: none;
+
         width: 35vh;
         height: 55vh;
+        left: 0; /* 40 - 35 / 2 */
+        top: 0; /* 60 - 55 / 2 */
+        
         position: absolute;
+        /* border: 1px solid red; */
 
         transform: translateZ(100px) rotateY(5deg) perspective(10000px);
 
@@ -64,12 +78,12 @@ import '../style/trainer_card.css';
         pointer-events: none;
         
         --space: 5%;
-        --angle: -22deg;
+        --angle: -45deg;
         --rainbow-angle: 10deg;
         
         --imgsize: 300% 400%;
-        --foil: url('/images/trainerbg.png');
-        --stripessize: 500% 200%;
+        /* --foil: url('/images/cards/metal.png'); */
+        --stripessize: 300% 200%;
 
         --pointer-from-center: 0;
         --background-y: 0;
@@ -84,6 +98,12 @@ import '../style/trainer_card.css';
         left: 0;
         top: 0;
 
+        mix-blend-mode:color-dodge;
+    }       
+
+    /* Shine */
+
+    .rainbow_shine {
         background-image:
             var(--foil),
             repeating-linear-gradient( var(--rainbow-angle), 
@@ -103,87 +123,142 @@ import '../style/trainer_card.css';
                 hsl(180, 10%, 60%) 5.2%, 
                 #0e152e 10% , 
                 #0e152e 12% 
+            ),
+            radial-gradient( 
+                farthest-corner ellipse 
+                at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
+                hsl(0, 0%, 100%) 5%, 
+                hsla(300, 100%, 11%, 0.6) 40%, 
+                hsl(0, 0%, 22%) 120% 
             );
+
+        background-blend-mode: soft-light, hue, hard-light;
+        background-size: 25% 25%, var(--stripessize), var(--stripessize), 100% 100%;
+        background-position: center center, 0% var(--background-x), var(--background-y) var(--background-x);
         
-
-            background-blend-mode: soft-light, hue, hard-light;
-            background-size: 25% 25%, var(--stripessize), var(--stripessize);
-            background-position: center center, 0% var(--background-x), var(--background-y) var(--background-x);
-            
-            /* opacity: 0; */
-            filter: brightness(calc((var(--pointer-from-center) * .75) + .25)) contrast(2) saturate(1.25);
-
-            mix-blend-mode:color-dodge;
-    }       
-
-    /* .glow:before {
-        content: "";
-        display: none;
-    } */
-    
-    /* .glow:after {
-
-        position: absolute; 
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-
-    } */
-
-/*         
-    .card .card__shine {
-
-        --space: 5%;
-        --angle: -22deg;
-        --imgsize: 300% 400%;
-
-        /* clip-path: var(--clip-borders); 
-
-        background-image:
-        repeating-linear-gradient( var(--angle),  
-            hsla(283, 49%, 60%, 0.75) calc(var(--space)*1),
-            hsla(2, 74%, 59%, 0.75) calc(var(--space)*2), 
-            hsla(53, 67%, 53%, 0.75) calc(var(--space)*3),  
-            hsla(93, 56%, 52%, 0.75) calc(var(--space)*4),  
-            hsla(176, 38%, 50%, 0.75) calc(var(--space)*5),  
-            hsla(228, 100%, 77%, 0.75) calc(var(--space)*6), 
-            hsla(283, 49%, 61%, 0.75) calc(var(--space)*7)
-        );
-        
-        background-blend-mode: color-dodge;
-        background-size: var(--imgsize);
-        background-position: 0% calc(var(--background-y) * 1), var(--background-x) var(--background-y);
-        
-        filter: brightness(calc((var(--pointer-from-center)*0.3) + 0.5)) contrast(2.3) saturate(1);
-
+        /* opacity: 0; */
+        filter: brightness(calc((var(--pointer-from-center) * .75) + .25)) contrast(2) saturate(1.25);
     }
 
-    .card.card__shine:after {
 
-        content: "";
+    .wide_rainbow_shine {
+        background-image:
+            var(--foil),
+            repeating-linear-gradient( var(--rainbow-angle), 
+                var(--sunpillar-1) calc(var(--space)*1), 
+                var(--sunpillar-2) calc(var(--space)*2), 
+                var(--sunpillar-3) calc(var(--space)*3), 
+                var(--sunpillar-4) calc(var(--space)*4), 
+                var(--sunpillar-5) calc(var(--space)*5), 
+                var(--sunpillar-6) calc(var(--space)*6), 
+                var(--sunpillar-1) calc(var(--space)*7)
+            ),
+            repeating-linear-gradient( 
+                var(--angle), 
+                #0e152e 0%, 
+                hsl(180, 10%, 60%) 3.8%, 
+                hsl(180, 29%, 66%) 4.5%, 
+                hsl(180, 10%, 60%) 5.8%, 
+                #0e152e 10% , 
+                #0e152e 12% 
+            ),
+            radial-gradient( 
+                farthest-corner ellipse 
+                at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
+                hsl(0, 0%, 100%) 5%, 
+                hsla(300, 100%, 11%, 0.6) 40%, 
+                hsl(0, 0%, 22%) 120% 
+            );
+
+        background-blend-mode: soft-light, hue, hard-light;
+        background-size: 25% 25%, var(--stripessize), var(--stripessize), 100% 100%;
+        background-position: center center, 0% var(--background-x), var(--background-y) var(--background-x);
+        
+        /* opacity: 0; */
+        filter: brightness(calc((var(--pointer-from-center) * .75) + .25)) contrast(2) saturate(1.25);
+    }
+
+    
+    .blue_shine {
+            
+        --card-opacity: 1;
+        --angle: 20deg;
 
         background-image: 
+        var(--foil), 
         radial-gradient( 
-            farthest-corner ellipse 
-            at calc( ((var(--pointer-x)) * 0.5) + 25% ) calc( ((var(--pointer-y)) * 0.5) + 25% ), 
-            hsl(0, 0%, 100%) 5%, 
-            hsla(300, 100%, 11%, 0.6) 40%, 
-            hsl(0, 0%, 22%) 120% 
+            farthest-corner circle at 
+            var(--pointer-x) var(--pointer-y), 
+            hsl(146, 100%, 92%) 0%, 
+            hsl(162, 5%, 40%), 
+            hsl(0, 0%, 0%) 120%
+        ),
+        repeating-linear-gradient( 
+                var(--angle), 
+                #0e152e 0%, 
+                hsl(180, 10%, 60%) 3.8%, 
+                hsl(180, 29%, 66%) 4.5%, 
+                hsl(180, 10%, 60%) 5.2%, 
+                #0e152e 10% , 
+                #0e152e 12% 
         );
-
-        background-position: center center;
-        background-size: 400% 500%;
-
-        filter: brightness(calc((var(--pointer-from-center)*0.2) + 0.4)) contrast(.85) saturate(1.1);
-        mix-blend-mode: hard-light;
+        
+        background-blend-mode: color-burn, hard-light;
+        background-size: 25% 25%, 100% 100%, 300% 300%;
+        background-position: center, center, var(--background-y) var(--background-x);
+        filter: brightness(1) contrast(1);
+        opacity: calc( var(--card-opacity) * var(--pointer-from-center) * 0.65 + var(--background-x)*0.2);
 
     }
 
-    .card .card__shine:before {
-        content: none;
-        display: none;
-    } */
-
     
+    .rainbow_point {
+        background-image:
+            var(--foil),
+            repeating-linear-gradient( var(--angle), 
+                var(--sunpillar-1) calc(var(--space)*1), 
+                var(--sunpillar-2) calc(var(--space)*2), 
+                var(--sunpillar-3) calc(var(--space)*3), 
+                var(--sunpillar-4) calc(var(--space)*4), 
+                var(--sunpillar-5) calc(var(--space)*5), 
+                var(--sunpillar-6) calc(var(--space)*6), 
+                var(--sunpillar-1) calc(var(--space)*7)
+            ),
+            repeating-linear-gradient( 
+                var(--rainbow-angle), 
+                #0e152e 0%, 
+                hsl(180, 10%, 60%) 3.8%, 
+                hsl(180, 29%, 66%) 4.5%, 
+                hsl(180, 10%, 60%) 5.2%, 
+                #0e152e 10% , 
+                #0e152e 12% 
+            );
+
+        background-blend-mode: soft-light, soft-light, soft-light, hard-light;
+        background-size: 25% 25%, var(--stripessize), 400% 400%, 100% 100%;
+        background-position: center center, 0% var(--background-x), center center, var(--background-y) var(--background-x);
+        
+        /* opacity: 0; */
+        filter: brightness(calc((var(--pointer-from-center) * .75) + .25)) contrast(2) saturate(1.25);
+    }
+
+
+    /* Textures */
+
+    .metal {
+        --foil: url('/images/cards/metal.png');
+    }
+
+    .illusion {
+        --foil: url('/images/cards/illusion2.png');
+    }
+
+    .trainer {
+        --foil: url('/images/cards/trainerbg.png');
+    }
+
+    .vmax {
+        --foil: url('/images/cards/vmaxbg.jpg');
+    }
+
 </style>

@@ -3,7 +3,7 @@ var limits = 15.0;
 const card_ind = 0;
 const char_ind = 1;
 const glow_ind = 1;
-const min_str = 0.1;
+const min_str = 0.6;
 
 let transitionSpeed = 1000;
 const minTransitionSpeed = 20;
@@ -31,7 +31,7 @@ $(".card_wrapper").mousemove(function (e) {
   let charChild = children[char_ind];
 
   //Reset Duration -- Instant
-  console.log(transitionSpeed)
+  // console.log(transitionSpeed)
   transitionSpeed -= (transitionSpeed - minTransitionSpeed) * 0.1;
   let transitionDur = `${transitionSpeed}ms`;
   cardChild.style.transitionDuration  = transitionDur;
@@ -114,6 +114,8 @@ $(".card_wrapper").mousemove(function (e) {
 
   // console.log('angle', rotateY);
   glowChild.style.setProperty('--rainbow-angle', `${rotateY*4}deg`);
+
+  console.log('angle', rotateY, rotateX, strength2);
   // glowChild.style.backgroundImage = `
   //   radial-gradient(
   //     circle at
@@ -145,8 +147,10 @@ $(".card_wrapper").mouseleave(function (e) {
   transitionSpeed = maxTransitionSpeed;
   let transitionDur = `${transitionSpeed}ms`;
 
-  cardChild.style.transform = "rotateX(0)";
-  charChild.style.transform = "rotateX(0)";
+  // cardChild.style.transform = "rotateX(-7deg)";
+  // charChild.style.transform = "rotateX(7deg)";
+  cardChild.style.transform = "perspective(1000px) rotateX(" + 7 + "deg) rotateY(" + 7 + "deg)";
+  charChild.style.transform = "perspective(1000px) rotateX(" + 7 + "deg) rotateY(" + 7 + "deg)";
 
   cardChild.style.transitionDuration  = transitionDur;
   charChild.style.transitionDuration  = transitionDur;
@@ -157,7 +161,6 @@ $(".card_wrapper").mouseleave(function (e) {
   glowChild.style.setProperty('--background-y', `${0}`);
   glowChild.style.setProperty('--background-x', `${0}`);
   
-  glowChild.style.setProperty('--angle', `-22deg`);
   glowChild.style.setProperty('--rainbow-angle', `0deg`);
 
   // glowChild.style.opacity = 0;
