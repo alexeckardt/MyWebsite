@@ -14,7 +14,9 @@ const cName = allowZoom != 'true' && imgsrc ? 'logo' : 'logo-no-zoom'
 <div class="card">
 
     <!-- Display the Logo -->
-    <div class={cName} style={`background-image:url(${imgPath})`}></div>
+    <a class="position" href={href}>
+        <div class={cName} style={`background-image:url(${imgPath})`}></div>
+    </a>
 
     <div class="dynamic-holder">
         
