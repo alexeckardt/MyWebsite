@@ -1,4 +1,3 @@
-import { Background } from '@/app/Background';
 import React, { ReactNode } from 'react';
 import { SocialIcon } from './social_icon';
 
@@ -12,9 +11,10 @@ interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     href?: string; // Link to project page
     githubHref?: string;
     itchHref?: string;
+    backgroundPositionY?: string;
 }
 
-export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, children, ...props }) => {
+export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, backgroundPositionY, children, ...props }) => {
 
 
     const bgClass = `h-32 w-full overflow-hidden bg-bottom`;
@@ -28,7 +28,7 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
     console.log(bgClass, backgroundImage);
     return (
         <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border-l border-r border-b rounded-lg border-royal-200 dark:border-royal-600 shadow-lg bg-white dark:bg-royal-900">
-            <div className={bgClass} style={{ backgroundImage, backgroundSize: 'cover' }}></div>
+            <div className={bgClass} style={{ backgroundImage, backgroundSize: 'cover', backgroundPositionY }}></div>
 
             <div className="absolute top-1 right-1 flex flex-row gap-x-1">
                 {

@@ -34,7 +34,8 @@ export const Projects = () => {
                     tagline={"Top 10 Game of GMTK 2023 Game Jam"}
                     tags={['GML']}
                     year={2024}
-                    bgImage={'pinball_bkg.png'}
+                    bgImage={'pinball_highres.png'}
+                    backgroundPositionY='35%'
 
                     itchHref="https://alexeckardt.itch.io/pinball-pioneer"
                 >
@@ -57,8 +58,9 @@ export const Projects = () => {
                     tagline={"Solo-developed Action Adventure Game"}
                     tags={['GML']}
                     year={2023}
-                    bgImage={'soulflame_bkg.png'}
+                    bgImage={'soulflame_highres.png'}
                     itchHref="https://alexeckardt.itch.io/soulflamealpha"
+                    backgroundPositionY='50%'
                 >
                     <div className="font-funnel dark:text-royal-300 flex flex-col gap-y-2 mb-2">
                         <div>
