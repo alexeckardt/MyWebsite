@@ -17,20 +17,45 @@ export const ExperimentCard: React.FC<ProjectProps> = ({ allowZoom, href, name, 
 
     // No Zoom if necessary
     return (
-        <div
-            className="w-full min-h-32 bg-royal-900 border border-royal-600 rounded-lg shadow-xl overflow-hidden hover:bg-size-[105%] bg-size-[100%] bg-center transition-[0.3s]"
-            style={{ backgroundImage }}
-        >
-            <div id='glass-plane' className="w-full min-h-32 h-full overflow-hidden lg:opacity-0 lg:transition-[0.3] backdrop-blur-[10px] lg:backdrop-blur-[0px] lg:hover:backdrop-blur-[10px] lg:hover:opacity-100 bg-white/30 lg:bg-transparent lg:hover:bg-white/30">
+        <div className="w-96 bg-royal-900 border border-royal-600 rounded-[10px] transition duration-200 p-4">
+            {/* Logo */}
+            <a className="flex items-center flex-1 cursor-default" href={href} rel="noopener noreferrer" target='_blank'>
+                <div
+                    className={`w-full h-20 rounded-lg bg-black bg-center transition duration-100 ${allowZoom ? "hover:bg-[length:90%]" : ""
+                        }`}
+                    style={{
+                        backgroundImage: `url(${imgPath})`,
+                        backgroundSize: allowZoom ? "100%" : "cover",
+                    }}
+                ></div>
+            </a>
 
-                <div className='p-5'>
-                    <a className="w-fit flex items-center text-black hover:text-royal-900 hover:underline active:text-royal-950" href={href}>
-                        <div className='w-fit font-funnel text-3xl font-semibold mb-1'>{name}</div>
+            <div className="flex flex-col justify-between min-h-[150px]">
+                {/* Title */}
+                <div className="flex items-center gap-1 mt-5 mb-2">
+                    <a className="flex items-center flex-1" href={href} rel="noopener noreferrer" target='_blank'>
+                        <h1 className="font-semibold font-funnel text-[1.4rem] text-[var(--textcol)] max-w-[90%] transition duration-100 hover:text-[var(--primary-p)] font-[var(--title_font_family)]">
+                            {name}
+                        </h1>
                     </a>
-                    {children}
+                    {year && (
+                        <div className="text-base font-funnel font-light text-[var(--textcol-dark)] font-[var(--title_font_family)] flex-[0.2]">
+                            {year}
+                        </div>
+                    )}
                 </div>
 
+                {/* Description */}
+                {children}
+
+                {/* Tags */}
+                {/* <div className="flex flex-wrap gap-1">
+                    {tags &&
+                        tags.map((item, index) => (
+                            <WorkExperienceTag key={index} item={item} />
+                        ))}
+                </div> */}
             </div>
         </div>
-    )
+    );
 };
