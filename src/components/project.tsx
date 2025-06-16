@@ -2,7 +2,7 @@ import { Background } from '@/app/Background';
 import React, { ReactNode } from 'react';
 import { SocialIcon } from './social_icon';
 
-interface WorkExperienceItemProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
     tagline: string;
     tags: string[];
@@ -14,7 +14,7 @@ interface WorkExperienceItemProps extends React.HTMLAttributes<HTMLDivElement> {
     itchHref?: string;
 }
 
-export const Project: React.FC<WorkExperienceItemProps> = ({ name, tagline, tags, bgImage, year, children, ...props }) => {
+export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, children, ...props }) => {
 
 
     const bgClass = `h-32 w-full overflow-hidden bg-bottom`;
