@@ -9,7 +9,7 @@ interface WorkExperienceItemProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ year, company, title, iconClass, children }) => {
     return (
-        <div className="items-start justify-start flex flex-col gap-y-2 w-full border-b pb-2 border-royal-700">
+        <div className="items-start justify-start flex flex-col gap-y-2 w-full border-b pb-2 border-royal-200 dark:border-royal-700">
 
             <div className="w-full flex justify-between items-center">
 
@@ -32,7 +32,7 @@ export const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ year, co
                     {year}
                 </div>
             </div>
-            <div className="mt-2">
+            <div className="mt-2 dark:text-royal-300">
                 {children}
             </div>
         </div>

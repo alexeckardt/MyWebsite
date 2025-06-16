@@ -2,7 +2,7 @@ import { WorkExperienceItem } from "@/components/work_experience_line"
 
 export const WorkExperience = () => {
     return (
-        <div className="w-7/12 flex flex-col items-start text-start justify-start p-8 gap-y-4">
+        <div className="w-11/12 lg:w-7/12 flex flex-col items-start text-start justify-start p-8 gap-y-4">
 
             <div className="font-funnel font-semibold text-3xl mb-5">Work Experience</div>
 

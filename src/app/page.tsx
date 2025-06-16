@@ -7,8 +7,7 @@ import { Background } from "./Background";
 
 export default function Home() {
   return (
-    <body className='bg-royal-200 dark:bg-royal-950'>
-      <div className="items-center justify-items-center min-h-screen m-8 mb-20 gap-16 sm:m-20 bg-royal-100 dark:bg-royal-900 shadow-lg rounded-lg overflow-hidden">
+      <div className="items-center justify-items-center min-h-screen sm:m-10 mb-20 xl:mx-30 gap-16 bg-royal-50 dark:bg-royal-950 shadow-xl sm:rounded-lg overflow-hidden">
 
         <Background />
 
@@ -21,6 +20,5 @@ export default function Home() {
         <Experiments />
 
       </div>
-    </body>
   );
 }
