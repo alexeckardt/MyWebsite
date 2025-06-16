@@ -17,15 +17,13 @@ export const ExperimentCard: React.FC<ProjectProps> = ({ allowZoom, href, name, 
 
     // No Zoom if necessary
     return (
-        <div className="w-96 bg-royal-900 border border-royal-600 rounded-[10px] transition duration-200 p-4">
+        <div className="w-96 bg-white dark:bg-royal-900 border border-royal-200 dark:border-royal-600 rounded-[10px] transition duration-200 p-4 shadow-lg">
             {/* Logo */}
             <a className="flex items-center flex-1 cursor-default" href={href} rel="noopener noreferrer" target='_blank'>
                 <div
-                    className={`w-full h-20 rounded-lg bg-black bg-center transition duration-100 ${allowZoom ? "hover:bg-[length:90%]" : ""
-                        }`}
+                    className={`w-full h-20 rounded-lg bg-black bg-center transition-[0.3s] bg-size-[100%] hover:bg-size-[110%]`}
                     style={{
                         backgroundImage: `url(${imgPath})`,
-                        backgroundSize: allowZoom ? "100%" : "cover",
                     }}
                 ></div>
             </a>

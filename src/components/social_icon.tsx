@@ -7,9 +7,9 @@ interface SocialIconProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const SocialIcon: React.FC<SocialIconProps> = ({ website, icon, ...props }) => {
     return (
-        <a href={website} target="_blank" rel="noopener noreferrer" className={props.className}>
+        <a href={website} target="_blank" rel="noopener noreferrer">
 
-            <div className="dark:text-royal-100 dark:hover:text-white text-royal-800 hover:text-royal-500">
+            <div className={props.className || "text-royal-100 hover:text-white"}>
                 {props.children}
             </div>
         </a>
