@@ -72,9 +72,9 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
 
 
             <div className="px-5 mt-3">
-                <div className="flex w-full justify-between items-end">
+                <div className="flex flex-col sm:flex-row w-full justify-between items-end">
 
-                    <div className='font-funnel flex items-end justify-end gap-x-4'>
+                    <div className='w-full md:w-fit font-funnel flex flex-col md:flex-row items-start md:items-end justify-start md:justify-end gap-x-4'>
                         <div className="text-2xl font-semibold">
 
                             {
