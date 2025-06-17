@@ -1,93 +1,36 @@
-# Alex Eckardt Portfolio Website
-
-## Table of Contents
-
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#key-features">Key Features</a></li>
-      </ul>
-    </li>
-    <li><a href="#architecture">Architecture</a></li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-## About The Project
-
-This repository contains the source code for my personal website, alexeckardt.ca. The website serves as a portfolio to showcase my projects, work experience, and skills as a CS Undergrad and Software Developer. It includes sections for work experience, projects, experiments, and a CV.
-
-### Key Features
-
-- **Welcome Section:** Introduces me and provides links to my social media profiles.
-- **Work Experience:** Displays my past work experiences with descriptions, dates, and relevant tags.
-- **Projects:** Showcases key projects with interactive elements and descriptions.
-- **Experiments:** Highlights smaller projects and experiments.
-- **CV Section:** Provides a link to download my resume.
-- **Interactive Elements:** Includes interactive cards and fluid simulation background.
-- **Responsive Design:** Adapts to different screen sizes for optimal viewing on various devices.
-
-## Architecture
-
-The website is built using Astro, a modern static site generator. Here's a breakdown of the key technologies and architectural components:
-
-- **Astro:** Used for building the website structure, managing components, and generating static HTML, CSS, and JavaScript.
-- **JavaScript:** Used for interactive elements, card animations, and fluid simulation.
-- **CSS:** Used for styling the website and creating a visually appealing design.
-- **HTML:** Used for structuring the content and layout of the website.
-- **jQuery:** Used for card animations in `public/card.js`.
-- **WebGL:** Used for fluid simulation in `public/fluid.js`.
-
-The directory structure is organized as follows:
-
-- `astro.config.mjs`: Astro configuration file.
-- `package.json`: Lists project dependencies and scripts.
-- `public/`: Contains static assets such as JavaScript files, images, and fonts.
-- `src/`: Contains the main source code for the website.
-  - `components/`: Reusable Astro components.
-  - `layouts/`: Layout component for structuring pages.
-  - `pages/`: Astro pages that define the website routes.
-  - `sections/`: Astro components that represent different sections of the website.
-  - `style/`: CSS stylesheets for styling the website.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-To run this project locally, follow these steps:
+First, run the development server:
 
-### Prerequisites
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- Node.js (version 16 or higher) and npm installed.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Installation
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/alexeckardt/mywebsite
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd alexeckardt-mywebsite
-   ```
-3. Install the dependencies:
-   ```sh
-   npm install
-   ```
-4. Start the development server:
-   ```sh
-   npm run dev
-   ```
-5. Open your browser and navigate to `http://localhost:3000`.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Acknowledgments
+## Learn More
 
-- The fluid simulation is based on the WebGL Fluid Simulation by Pavel Dobryakov.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
