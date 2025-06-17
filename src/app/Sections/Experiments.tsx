@@ -10,7 +10,7 @@ export const Experiments = () => {
             </div>
 
             {/* Content */}
-            <div className="w-11/12 flex flex-col items-start text-start justify-start px-5 gap-y-5">
+            <div className="w-11/12 flex flex-col items-center text-center justify-start px-5 gap-y-5">
                 <div className="w-full max-w-[1800px] flex flex-wrap items-center justify-center gap-[30px]">
 
                     <ExperimentCard
