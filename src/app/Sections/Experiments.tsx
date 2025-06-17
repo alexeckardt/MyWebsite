@@ -5,13 +5,13 @@ export const Experiments = () => {
         <div className='flex flex-col w-full items-center justify-center'>
             
             {/* Keep Header Inline w others */}
-            <div className="w-11/12 lg:w-7/12 flex flex-col items-start text-start justify-start px-8 mt-4">
+            <div className="w-11/12 lg:w-7/12 max-w-[1800px] flex flex-col items-start text-start justify-start px-8 mt-4">
                 <div className="font-funnel font-semibold text-3xl mb-5">Experiments</div>
             </div>
 
             {/* Content */}
-            <div className="w-11/12 flex flex-col items-center text-center justify-start px-5 gap-y-5">
-                <div className="w-full max-w-[1800px] flex flex-wrap items-center justify-center gap-[30px]">
+            <div className="w-11/12 max-w-[1800px] flex flex-col items-center text-center justify-start px-5 gap-y-5">
+                <div className="w-full flex flex-wrap items-center justify-center gap-[30px]">
 
                     <ExperimentCard
                         href="https://github.com/whabinski/ObesityClassificationModel"

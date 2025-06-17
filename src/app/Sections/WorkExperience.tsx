@@ -2,9 +2,9 @@ import { WorkExperienceItem } from "@/components/work_experience_line"
 
 export const WorkExperience = () => {
     return (
-        <div className="w-11/12 lg:w-7/12 flex flex-col items-start text-start justify-start p-8 gap-y-4">
+        <div className="w-11/12 lg:w-7/12 max-w-[1800px] flex flex-col items-start text-start justify-start p-8 gap-y-4">
 
-            <div className="font-funnel font-semibold text-3xl mb-5">Work Experience</div>
+            <div className="font-funnel font-semibold text-3xl mb-5 mt-12">Work Experience</div>
 
             <WorkExperienceItem company={"Samos Insurance Solutions"} title={"Software Developer"} iconClass={"w-12 h-12 bg-[url(/images/work/samosinsure_cover.jpg)] bg-cover rounded-xl"} year={2025}>
                 <div className="font-funnel dark:text-royal-300 mb-1">
@@ -13,9 +13,9 @@ export const WorkExperience = () => {
                 </div>
             </WorkExperienceItem>
 
-            <WorkExperienceItem company={"Samos Insurance Solutions"} title={"Business Data Analyst Intern"} iconClass={"w-12 h-12 bg-[url(/images/work/samosinsure_cover.jpg)] bg-cover rounded-xl"} year={2024}>
+            <WorkExperienceItem company={"Samos Insurance Solutions"} title={"Business Data Analyst Intern (Co-op)"} iconClass={"w-12 h-12 bg-[url(/images/work/samosinsure_cover.jpg)] bg-cover rounded-xl"} year={2024}>
                 <div className="font-funnel dark:text-royal-300 mb-1">
-                    My 4th overall co-op term, I built a streamlined Claims Portal with a focus on intuitive user experience. Set up the company's affiliate system using PostgreSQL to manage contacts and referrals. Added new features to the quoting portal and redesigned the customer landing page. Much of this continued into my part-time work after my internship ended.
+                    I built a streamlined Claims Portal with a focus on intuitive user experience. Set up the company's affiliate system using PostgreSQL to manage contacts and referrals. Added new features to the quoting portal and redesigned the customer landing page. Much of this continued into my part-time work after my internship ended.
                 </div>
             </WorkExperienceItem>
 
@@ -25,13 +25,13 @@ export const WorkExperience = () => {
                 </div>
             </WorkExperienceItem>
 
-            <WorkExperienceItem company={"Orbital Quantum"} title={"Operations Lead"} iconClass={"w-12 h-12 bg-[url(/images/work/oquantum.png)] bg-cover rounded-xl"} year={2023}>
+            <WorkExperienceItem company={"Orbital Quantum"} title={"Operations Lead (Co-op)"} iconClass={"w-12 h-12 bg-[url(/images/work/oquantum.png)] bg-cover rounded-xl"} year={2023}>
                 <div className="font-funnel dark:text-royal-300 mb-1">
                     Honed Backend Software Development skills while learning the fundamentals of startup business systems and operations.
                 </div>
             </WorkExperienceItem>
 
-            <WorkExperienceItem company={"Yarowa"} title={"Junior Software Developer"} iconClass={"w-12 h-12 bg-[url(/images/work/jarowa_logo.jpg)] bg-cover rounded-xl"} year={2022}>
+            <WorkExperienceItem company={"Yarowa"} title={"Junior Software Developer (Co-op)"} iconClass={"w-12 h-12 bg-[url(/images/work/jarowa_logo.jpg)] bg-cover rounded-xl"} year={2022}>
                 <div className="font-funnel dark:text-royal-300 mb-1">
                     Backend Software Development for the pre-processing of client data for Machine Learning Applications using Microsoft Azure. Created an internal use company chatbot to handle the provisioning of development environments and other common tasks.
                 </div>

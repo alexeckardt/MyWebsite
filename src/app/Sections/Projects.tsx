@@ -2,7 +2,7 @@ import { Project } from "@/components/project"
 
 export const Projects = () => {
     return (
-        <div className="w-11/12 lg:w-7/12 flex flex-col items-start text-start justify-start p-8">
+        <div className="w-11/12 lg:w-7/12 max-w-[1800px] flex flex-col items-start text-start justify-start p-8">
             <div className="font-funnel font-semibold text-3xl mb-5">Projects</div>
 
             <div className="w-full flex flex-col gap-y-12 mt-2">
@@ -79,7 +79,8 @@ export const Projects = () => {
                     name='GO Transit Viewer'
                     tagline='A simple web app to view GO Transit schedules' tags={['React', 'Next.js', 'TypeScript']}
                     year={2023}
-                    bgImage={'gotransitviewer.png'}
+                    bgImage={'gotransit_highres.png'}
+                    backgroundPositionY="70%"
                     githubHref="https://github.com/alexeckardt/GO-Transit-Visualizer"
                     href="https://alexeckardt.github.io/GO-Transit-Visualizer/"
                 >

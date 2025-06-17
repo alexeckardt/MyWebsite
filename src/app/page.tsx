@@ -11,9 +11,9 @@ export default function Home() {
 
       <Welcome />
 
-      <div className="h-80 w-11/12 lg:w-7/12 shadow-lg  dark:rounded-lg bg-cover bg-[url(/images/backgrounds/valley.png)]"
+      <div className="h-80 w-11/12 lg:w-7/12 max-w-[1800px] shadow-lg  dark:rounded-lg bg-cover bg-[url(/images/backgrounds/valley.png)]"
         style={{ imageRendering: 'pixelated' }}></div>
-      <div className='w-11/12 lg:w-7/12 font-funnel text-sm'>I also do pixel art!</div>
+      <div className='w-11/12 lg:w-7/12 max-w-[1800px] font-funnel text-sm'>I also do pixel art!</div>
 
       <WorkExperience />
       <Projects />
