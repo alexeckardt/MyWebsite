@@ -12,9 +12,9 @@ export const Welcome = () => {
                 <div className="font-funnel text-8xl font-semibold text-black dark:text-white -mt-4">Alex Eckardt</div>
             </div>
 
-            <div className="w-11/12 lg:w-7/12 max-w-[1800px] p-5 font-funnel text-lg mt-2 mb-3 text-royal-900 dark:text-royal-400">
-                <div className="mb-2">I'm a Software Engineer and a New-Grad Computer Science Student.</div>
-                <div className="mb-2">I'm always happy to talk to new people! For any inquires, email <span className='text-royal-700 dark:text-purple-400'>alexeckardt0@gmail.com</span></div>
+            <div className="w-11/12 lg:w-7/12 flex items-center justify-center flex-col text-center max-w-[1800px] p-5 font-funnel text-lg mt-2 mb-3 text-royal-900 dark:text-royal-400">
+                <div className="mb-4">I'm a Software Engineer and a New-Grad Computer Science Student.</div>
+                <div className="mb-0 leading-6">I'm always happy to talk to new people! For any inquires, email <span className='text-royal-700 dark:text-purple-400'>alexeckardt0@gmail.com</span></div>
             </div>
             
             <div className="absolute top-0 right-4">
