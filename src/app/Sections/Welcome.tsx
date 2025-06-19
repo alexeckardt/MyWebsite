@@ -8,7 +8,7 @@ export const Welcome = () => {
             <div className="h-64 w-full overflow-hidden bg-[url(/images/backgrounds/header_dark.png)] bg-bottom bg-cover"></div>
 
             <div className="inline mt-5 mx-20 lg:mx-0">
-                <div className="font-funnel text-2xl text-black dark:text-white -ml-4 mb-1">Hi, I'm</div>
+                <div className="font-funnel text-2xl text-black dark:text-white lg:-ml-4 mb-4 lg:mb-2">Hi, I'm</div>
                 <div className="font-funnel text-8xl font-semibold text-black dark:text-white -mt-4">Alex Eckardt</div>
             </div>
 

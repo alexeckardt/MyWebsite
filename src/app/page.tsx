@@ -7,14 +7,17 @@ import { SocialIcon } from "@/components/social_icon";
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center min-h-screen sm:m-10 mb-20 xl:mx-30 gap-16 bg-royal-50 dark:bg-royal-950 shadow-xl sm:rounded-lg overflow-hidden">
+    <div className="items-center justify-center min-h-screen mb-20 sm:m-10 xl:mx-30 sm:rounded-lg gap-16 bg-royal-50 dark:bg-royal-950 shadow-xl overflow-hidden">
 
       <Welcome />
 
-      <div className="h-80 w-11/12 lg:w-7/12 max-w-[1800px] shadow-lg  dark:rounded-lg bg-cover bg-[url(/images/backgrounds/valley.png)]"
-        style={{ imageRendering: 'pixelated' }}></div>
-      <div className='w-11/12 lg:w-7/12 max-w-[1800px] font-funnel text-sm'>I also do pixel art!</div>
 
+      <div className='relative w-full flex flex-col items-center'>
+        <div className="h-80 w-11/12 lg:w-7/12 max-w-[1800px] shadow-lg  dark:rounded-lg bg-cover bg-[url(/images/backgrounds/valley.png)]"
+          style={{ imageRendering: 'pixelated' }}></div>
+        <div className='w-11/12 lg:w-7/12 max-w-[1800px] font-funnel text-sm'>I also do pixel art!</div>
+      </div>
+      
       <WorkExperience />
       <Projects />
       <Experiments />
