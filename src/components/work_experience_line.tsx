@@ -5,9 +5,11 @@ interface WorkExperienceItemProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
     year?: string | number;
     iconClass: string;
+    href?: string;
+
 }
 
-export const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ year, company, title, iconClass, children }) => {
+export const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ year, company, title, iconClass, children, href }) => {
     return (
         <div className="items-start justify-start flex flex-col gap-y-2 w-full border-b pb-2 border-royal-200 dark:border-royal-700">
 
@@ -19,10 +21,14 @@ export const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ year, co
 
                     <div className="flex flex-col">
                         <div className="font-funnel text-xl text-royale-900 dark:text-royale-50 font-semibold">
-                            {title}
+                            <a href={href}>
+                                {title}
+                            </a>
                         </div>
                         <div className="font-funnel font-light text-royal-500 dark:text-royal-400">
-                            {company}
+                            <a href={href} className="hover:underline">
+                                {company}
+                            </a>
                         </div>
                     </div>
 
