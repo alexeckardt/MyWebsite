@@ -4,11 +4,8 @@ export const Projects = () => {
     return (
 
         <div className='relative w-full flex flex-col items-center'>
-            <div className="w-11/12 lg:w-7/12 max-w-[1800px] flex flex-col items-start text-start justify-start p-8">
-                <div className="font-funnel font-semibold text-3xl mb-5">Projects</div>
-
+            <div className="flex flex-col items-start text-start justify-start">
                 <div className="w-full flex flex-col gap-y-12 mt-2">
-
                     <Project
                         name={"MeetingBot"}
                         tagline={"Self-hosting Online meeting recording API"}

@@ -9,7 +9,7 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ website, icon, ...props 
     return (
         <a href={website} target="_blank" rel="noopener noreferrer">
 
-            <div className={props.className || "text-royal-100 hover:text-white"}>
+            <div className={"text-black dark:text-light hover:text-neutral-700 dark:hover:text-neutral-300"}>
                 {props.children}
             </div>
         </a>

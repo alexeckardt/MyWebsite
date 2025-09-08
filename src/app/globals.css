@@ -19,19 +19,7 @@
 }
 
 /* :root { */
-@theme {
-  --color-royal-50: hsl(255, 60%, 95%);
-  --color-royal-100: hsl(254, 44%, 90%);
-  --color-royal-200: hsl(255, 50%, 82%);
-  --color-royal-300: hsl(255, 50%, 72%);
-  --color-royal-400: hsl(255, 50%, 62%);
-  --color-royal-500: hsl(255, 48%, 45%);
-  --color-royal-600: hsl(255, 48%, 30%);
-  --color-royal-700: hsl(255, 51%, 20%);
-  --color-royal-800: hsl(253, 70%, 14%);
-  --color-royal-900: hsl(253, 70%, 9%);
-  --color-royal-950: hsl(254, 68%, 5%);
-}
+@theme {}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -43,5 +31,63 @@
 body {
   color: var(--foreground);
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: 'Funnel Display', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Geist Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.main>h1 {
+  @apply text-2xl font-sans font-semibold mb-8
+}
+
+.main>h2 {
+  @apply text-lg font-sans font-medium mt-8 mb-1
+}
+
+p > a {
+  @apply text-black font-medium underline decoration-neutral-400 dark:decoration-neutral-400 dark:text-white hover:underline;
+}
+
+.links>a {
+  @apply flex gap-1 text-neutral-700 overflow-visible dark:text-neutral-400 hover:underline
+}
+
+b {
+  @apply text-black font-medium dark:text-white;
+}
+
+.bloglink {
+  @apply no-underline flex flex-col justify-center items-start p-3 w-full h-20 rounded-lg overflow-hidden bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 border border-gray-200 mb-2
+}
+
+.youtube-video {
+  @apply flex items-center justify-center overflow-hidden max-w-full h-50 rounded-lg overflow-hidden border border-gray-200 mb-2
+}
+
+.blog {
+  @apply font-sans w-full mb-12
+}
+
+.blog>h1 {
+  @apply font-sans text-3xl font-semibold mt-8 mb-2
+}
+
+.blog>h2 {
+  @apply font-sans text-xl font-semibold mt-2 mb-1 text-neutral-700 dark:text-neutral-300
+}
+
+.blog>h3 {
+  @apply font-sans text-lg font-semibold -mb-1
+}
+
+.blog>h4 {
+  @apply font-sans text-lg -mb-1
+}
+
+.blog>p {
+  @apply font-sans mb-5 text-base/6
+}
+
+.blog > .codearea {
+
+  @apply min-h-12 border border-gray-200 w-full bg-gray-50 rounded-md px-2 py-5 mb-4
+
 }
