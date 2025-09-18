@@ -1,3 +1,5 @@
+import { AppShell } from "@/components/AppShell";
+
 export default function Home() {
 
   const blogPages = [
@@ -8,25 +10,21 @@ export default function Home() {
   ]
 
   return (
-    <>
-      {/* Header */}
-      <div className="h-1/4 w-full -z-1 overflow-hidden bg-[url(/images/backgrounds/header_dark.png)] bg-bottom bg-cover fixed top-0 left-0"></div>
+    <AppShell>
+
+      <a className="mb-5 md:-ml-5 text-gray-400 hover:text-gray-300" href="/">back</a>
 
       {/* Body */}
-      <div className="bg-white w-full mt-24">
-        <div className="flex flex-col max-w-[65ch] mx-12 lg:mx-auto pt-12 lg:mt-10">
+      <div className="main">
+        <h1>Thanks for reading!</h1>
 
-          <div className="main">
-            <h1>Thanks for reading!</h1>
-
-            {blogPages.map((page, index) => (
-              <a href={page.link} key={index} className="bloglink">
-                <h4 className="text-lg font-light">{page.title}</h4>
-              </a>
-            ))}
-          </div>
-        </div>
+        {blogPages.map((page, index) => (
+          <a href={page.link} key={index} className="bloglink">
+            <h4 className="text-lg font-light">{page.title}</h4>
+          </a>
+        ))}
       </div>
-    </>
+
+    </AppShell>
   );
 }

@@ -9,7 +9,7 @@ export const AppShell = ({ children, ...props }: any) => {
 
 
             {/* Body */}
-            <div className="bg-white w-full mt-24">
+            <div className="bg-background w-full mt-24">
                 <div className="flex flex-col w-full max-w-[65ch] mx-12 lg:mx-auto pt-12 lg:mt-10">
                     {/* Header */}
                     <></>

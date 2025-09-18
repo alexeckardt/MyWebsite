@@ -19,7 +19,19 @@
 }
 
 /* :root { */
-@theme {}
+@theme {
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0a0a0a;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -50,12 +62,16 @@ p > a {
   @apply flex gap-1 text-neutral-700 overflow-visible dark:text-neutral-400 hover:underline
 }
 
+.links {
+  @apply flex flex-wrap gap-4 max-w-full md:gap-8
+}
+
 b {
   @apply text-black font-medium dark:text-white;
 }
 
 .bloglink {
-  @apply no-underline flex flex-col justify-center items-start p-3 w-full h-20 rounded-lg overflow-hidden bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 border border-gray-200 mb-2
+  @apply no-underline flex flex-col justify-center items-start p-3 w-full h-20 rounded-lg overflow-hidden border mb-2 bg-gray-50 hover:bg-gray-100 border-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700
 }
 
 .youtube-video {
@@ -87,7 +103,36 @@ b {
 }
 
 .blog > .codearea {
-
   @apply min-h-12 border border-gray-200 w-full bg-gray-50 rounded-md px-2 py-5 mb-4
+}
 
+/* Modern Code Block Styling */
+.codeblock-container {
+  @apply w-full mb-6 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-900;
+}
+
+.codeblock-header {
+  @apply flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700;
+}
+
+.codeblock-filename {
+  @apply text-sm font-mono text-gray-600 dark:text-gray-400;
+}
+
+.codeblock-copy-btn {
+  @apply p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300;
+}
+
+.codeblock-content {
+  @apply p-4 overflow-x-auto text-sm;
+}
+
+.codeblock-content code {
+  @apply font-mono leading-relaxed;
+}
+
+/* Prism themes: light by default, Tokyo Night in dark mode */
+@import "prismjs/themes/prism.css";
+@media (prefers-color-scheme: dark) {
+  @import "./prism-tokyo-night.css";
 }

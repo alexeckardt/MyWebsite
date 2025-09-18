@@ -6,7 +6,7 @@ export const BlogPostShell = ({ children, title, date, videoUrl, ...props }: any
     return (
         <AppShell>
 
-            <a className="mb-5 md:-ml-5 text-gray-400 dar:text-gray-300" href="/blog">back</a>
+            <a className="mb-5 md:-ml-5 text-gray-400 hover:text-gray-300" href="/blog">back</a>
 
             <div className="flex flex-col gap-0">
                 <h1 className='text-5xl font-sans font-semibold'>{title}</h1>

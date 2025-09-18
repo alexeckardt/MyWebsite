@@ -1,4 +1,5 @@
 import { BlogPostShell } from "@/components/BlogPostShell";
+import {CodeBlock} from "@/components/CodeBlock";
 
 export default function BlogPost() {
   return (
@@ -30,9 +31,30 @@ export default function BlogPost() {
       <p>Content</p>
       <h1>Section</h1>
 
-      <div className="codearea">
-      I need to do some coding here.
-      </div>
+      <CodeBlock language="typescript" filename="example.ts">
+{`// Example TypeScript code with proper syntax highlighting
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+function createUser(userData: Partial<User>): User {
+  return {
+    id: Math.random(),
+    name: userData.name || 'Anonymous',
+    email: userData.email || 'user@example.com'
+  };
+}
+
+// Usage example
+const newUser = createUser({
+  name: 'John Doe',
+  email: 'john@example.com'
+});
+
+console.log('Created user:', newUser);`}
+      </CodeBlock>
 
 
     </BlogPostShell>
