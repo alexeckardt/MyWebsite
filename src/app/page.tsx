@@ -5,17 +5,11 @@ import { Projects } from "../Sections/Projects";
 import { Experiments } from "../Sections/Experiments";
 import { SocialIcon } from "@/components/social_icon";
 import { InlineOutboundLink } from "@/components/InlineOutboundLink";
+import { getPosts } from "@/lib/posts";
 
-export default function Home() {
+export default async function Home() {
 
-
-  const blogPosts = [
-    {
-      title: "Devlog 0",
-      link: "/blog/devlog-0"
-    },
-  ]
-
+  const posts = await getPosts();
 
   return (
     <>
@@ -45,13 +39,22 @@ export default function Home() {
               <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="/Alexander_Eckardt_Website_Resume.pdf"> cv <InlineOutboundLink /></a>
             </div>
 
-            <h2>Recent Blog Post{blogPosts.length > 1 && 's'}</h2>
-            {blogPosts.map((video) => (
-              <a key={video.title} href={video.link} target="_blank" rel="noopener noreferrer" className="bloglink">
-                <p>{video.title}</p>
-                <p className="font-sans font-light">Read</p>
-              </a>
-            ))}
+            <h2>Recent Blog Post{posts.length > 1 && 's'}</h2>
+            {posts.map((post) => (
+            <a href={`/blog/${post.slug}`} key={post.slug} className="bloglink">
+              <h4 className="text-lg font-light">{post.title}</h4>
+              {post.date && (
+                <p className="text-xs text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
+              )}
+              {post.description && (
+                <p className="text-sm text-gray-500">{post.description}</p>
+              )}
+            </a>
+          ))}
+
+
+
+
             <div className="links">
               <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="/blog"> see all <InlineOutboundLink /></a>
             </div>
