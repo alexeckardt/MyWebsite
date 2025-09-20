@@ -11,7 +11,9 @@ export default async function Home() {
       {/* Body */}
       <div className="main">
         <h1>Thanks for reading!</h1>
+        <p>I post infrequently about things I've been working on. Read below!</p>
 
+        <h2>All Blog Posts</h2>
         {posts.map((post) => (
           <a href={`/blog/${post.slug}`} key={post.slug} className="bloglink">
             <h4 className="text-lg font-light">{post.title}</h4>

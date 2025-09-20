@@ -7,6 +7,7 @@ import { SocialIcon } from "@/components/social_icon";
 import { InlineOutboundLink } from "@/components/InlineOutboundLink";
 import { getPosts } from "@/lib/posts";
 import Favicon from '../../public/favicon.png';
+import { OnwardLink } from "@/components/OnwardLink";
 
 export default async function Home() {
 
@@ -67,7 +68,7 @@ export default async function Home() {
                 )}
               </a>
             ))}
-            <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700" target="_blank" rel="noopener noreferrer" href="/blog"> see all <InlineOutboundLink /></a>
+            <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700" href="/blog"> see all <OnwardLink /></a>
 
 
 
