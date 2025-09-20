@@ -8,6 +8,7 @@
   --foreground: #171717;
 }
 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -71,7 +72,7 @@ b {
 }
 
 .bloglink {
-  @apply no-underline flex flex-col justify-center items-start p-3 w-full h-20 rounded-lg overflow-hidden border mb-2 bg-gray-50 hover:bg-gray-100 border-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700
+  @apply no-underline flex flex-col justify-center items-start p-3 w-full min-h-20 rounded-lg overflow-hidden border mb-2 bg-gray-50 hover:bg-gray-100 border-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700
 }
 
 .youtube-video {
@@ -129,6 +130,13 @@ b {
 
 .codeblock-content code {
   @apply font-mono leading-relaxed;
+}
+
+/* Pixel art utility: keeps edges crisp when scaled */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback */
+  -ms-interpolation-mode: nearest-neighbor; /* old IE */
 }
 
 /* Prism themes: light by default, Tokyo Night in dark mode */

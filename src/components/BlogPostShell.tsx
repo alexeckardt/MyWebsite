@@ -1,7 +1,10 @@
 import { ReactNode } from "react";
 import { AppShell } from "./AppShell";
 
-export const BlogPostShell = ({ children, title, date, videoUrl, ...props }: any) => {
+export const BlogPostShell = ({ children, metadata, videoUrl, ...props }: any) => {
+
+    let { title, description, date } = metadata;
+    date = new Date(date).toLocaleDateString();
 
     return (
         <AppShell>
@@ -10,7 +13,8 @@ export const BlogPostShell = ({ children, title, date, videoUrl, ...props }: any
 
             <div className="flex flex-col gap-0">
                 <h1 className='text-5xl font-sans font-semibold'>{title}</h1>
-                <h2 className='font-sans font-base text-xl mb-6'>{date}</h2>
+                <h4 className='font-sans font-base text-xl mb-6'>{date}</h4>
+                <h2 className='font-sans font-base text-xl mb-6'>{description}</h2>
             </div>
 
             {videoUrl &&
