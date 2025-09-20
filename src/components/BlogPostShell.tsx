@@ -8,8 +8,7 @@ export const BlogPostShell = ({ children, metadata, videoUrl, ...props }: any) =
 
     return (
         <AppShell>
-
-            <a className="mb-5 md:-ml-5 text-gray-400 hover:text-gray-300" href="/blog">back</a>
+            <a className="flex items-center text-gray-200 dark:text-gray-700 hover:text-gray-300 -ml-4" href="/">...home </a>
 
             <div className="flex flex-col gap-0">
                 <h1 className='text-5xl font-sans font-semibold'>{title}</h1>

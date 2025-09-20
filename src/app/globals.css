@@ -72,7 +72,7 @@ b {
 }
 
 .bloglink {
-  @apply no-underline flex flex-col justify-center items-start p-3 w-full min-h-20 rounded-lg overflow-hidden border mb-2 bg-gray-50 hover:bg-gray-100 border-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700
+  @apply no-underline flex flex-col justify-center items-start p-3 w-full min-h-20 rounded-lg overflow-hidden border mb-2 bg-gray-50 hover:bg-gray-100 border-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:active:bg-gray-700 dark:border-gray-700
 }
 
 .youtube-video {
@@ -125,11 +125,11 @@ b {
 }
 
 .codeblock-content {
-  @apply p-4 overflow-x-auto text-sm;
+  @apply p-4 overflow-x-auto; /* smaller default */
 }
 
 .codeblock-content code {
-  @apply font-mono leading-relaxed;
+  @apply font-mono leading-relaxed; /* inherits font-size from pre */
 }
 
 /* Pixel art utility: keeps edges crisp when scaled */
