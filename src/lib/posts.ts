@@ -6,6 +6,7 @@ export type PostMeta = {
   title: string;
   date?: string; // ISO or human
   description?: string;
+  tag?: string; // project, review, etc.
 };
 
 const BLOG_DIR = path.join(process.cwd(), 'src', 'app', 'blog');
@@ -35,10 +36,12 @@ export async function getPosts(): Promise<PostMeta[]> {
     }
 
     posts.push({
+      ...meta,
       slug,
       title: meta.title || humanizeSlug(slug),
       date: meta.date,
       description: meta.description,
+      tag: humanizeSlug(meta.tag || ""),
     });
   }
 

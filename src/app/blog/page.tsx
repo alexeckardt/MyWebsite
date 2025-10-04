@@ -1,4 +1,5 @@
 import { AppShell } from "@/components/AppShell";
+import { BlogPostLink } from "@/components/BlogPostLink";
 import { getPosts } from "@/lib/posts";
 
 export default async function Home() {
@@ -15,15 +16,7 @@ export default async function Home() {
 
         <h2>All Blog Posts</h2>
         {posts.map((post) => (
-          <a href={`/blog/${post.slug}`} key={post.slug} className="bloglink">
-            <h4 className="text-lg font-light">{post.title}</h4>
-            {post.date && (
-              <p className="text-xs text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
-            )}
-            {post.description && (
-              <p className="text-sm text-gray-500">{post.description}</p>
-            )}
-          </a>
+          <BlogPostLink key={post.slug} post={post} />
         ))}
       </div>
     </AppShell>
