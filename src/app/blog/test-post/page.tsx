@@ -1,12 +1,12 @@
 import { BlogPostShell } from "@/components/BlogPostShell";
 import {CodeBlock} from "@/components/CodeBlock";
 import { useLocation } from "react-router-dom";
-import metadata from "./meta.json";
+// import metadata from "./meta.json";
 
 export default function BlogPost() {
   return (
     <BlogPostShell
-      metadata={metadata}
+      // metadata={metadata}
       videoUrl={"/header-light.png"}
     >
 

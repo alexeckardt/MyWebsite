@@ -27,22 +27,25 @@ export async function getPosts(): Promise<PostMeta[]> {
     }
 
     const metaPath = path.join(BLOG_DIR, slug, 'meta.json');
-    let meta: Partial<PostMeta> = {};
+    let meta: Partial<PostMeta> | undefined = {};
     try {
       const raw = await fs.readFile(metaPath, 'utf-8');
       meta = JSON.parse(raw);
     } catch {
       // optional meta; fall back to slug title
+      meta = undefined;
     }
 
-    posts.push({
-      ...meta,
-      slug,
-      title: meta.title || humanizeSlug(slug),
-      date: meta.date,
-      description: meta.description,
-      tag: humanizeSlug(meta.tag || ""),
-    });
+    if (meta) {
+      posts.push({
+        ...meta,
+        slug,
+        title: meta.title || humanizeSlug(slug),
+        date: meta.date,
+        description: meta.description,
+        tag: humanizeSlug(meta.tag || ""),
+      });
+    }
   }
 
   // Sort by date desc if available, otherwise by slug desc
