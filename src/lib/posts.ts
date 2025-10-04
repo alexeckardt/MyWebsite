@@ -7,6 +7,8 @@ export type PostMeta = {
   date?: string; // ISO or human
   description?: string;
   tag?: string; // project, review, etc.
+
+  ignore?: boolean; // if true, do not include in blog index
 };
 
 const BLOG_DIR = path.join(process.cwd(), 'src', 'app', 'blog');
@@ -32,11 +34,11 @@ export async function getPosts(): Promise<PostMeta[]> {
       const raw = await fs.readFile(metaPath, 'utf-8');
       meta = JSON.parse(raw);
     } catch {
-      // optional meta; fall back to slug title
+      // ignore missing or invalid meta.json; hidden 
       meta = undefined;
     }
 
-    if (meta) {
+    if (meta && (meta?.ignore ?? false) !== true) {
       posts.push({
         ...meta,
         slug,
