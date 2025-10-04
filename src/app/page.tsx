@@ -15,7 +15,7 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    <>
+    <div className="min-h-screen w-full bg-background text-foreground mb-20">
       {/* Header */}
       <div className="h-1/4 w-full -z-1 overflow-hidden bg-[url(/images/backgrounds/header_dark.png)] bg-bottom bg-cover fixed top-0 left-0">
       </div>
@@ -64,11 +64,15 @@ export default async function Home() {
             ))}
             <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700 hover:text-gray-400 dark:hover:text-gray-500" href="/blog"> see all <OnwardLink /></a>
 
-            
+
+            <h2>Projects</h2>
+            <Projects />
+
+
 
           </div>
         </div>
       </div >
-    </>
+    </div>
   );
 }

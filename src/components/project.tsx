@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { SocialIcon } from './social_icon';
+import { ArrowRight } from 'lucide-react'; // Adjust the path based on your project structure
 
 interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
@@ -12,9 +13,11 @@ interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     githubHref?: string;
     itchHref?: string;
     backgroundPositionY?: string;
+
+    blogurl?: string;
 }
 
-export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, backgroundPositionY, children, ...props }) => {
+export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, backgroundPositionY, children, blogurl, ...props }) => {
 
 
     const bgClass = `h-32 w-full overflow-hidden bg-bottom`;
@@ -27,7 +30,7 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
 
     console.log(bgClass, backgroundImage);
     return (
-        <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border-l border-r border-b rounded-lg border-royal-200 dark:border-royal-600 shadow-lg bg-white dark:bg-royal-900">
+        <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
             <div className={bgClass} style={{ backgroundImage, backgroundSize: 'cover', backgroundPositionY }}></div>
 
             <div className="absolute top-1 right-1 flex flex-row gap-x-1">
@@ -64,43 +67,44 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
                     props.href &&
                     <div className="p-1 bg-white/10 hover:bg-white/20 active:bg-black/20 shadow-xl backdrop-blur-[10px] rounded-full">
                         <SocialIcon website={props.href}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className='w-7 h-7' viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                                <path d="M14 3h7v7" />
-                                <path d="M10 14L21 3" />
-                                <path d="M21 21H3V3" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className='w-7 h-7' fill='current' viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" /><path fill="currentColor" d="M11 6a1 1 0 1 1 0 2H5v11h11v-6a1 1 0 1 1 2 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm9-3a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V6.414l-8.293 8.293a1 1 0 0 1-1.414-1.414L17.586 5H15a1 1 0 1 1 0-2Z" /></g></svg>
                         </SocialIcon>
                     </div>
                 }
             </div>
 
 
-            <div className="px-5 mt-3">
-                <div className="flex flex-col sm:flex-row w-full justify-between items-end">
+            <div className="px-5 mt-3 w-full">
+                <div className="flex flex-col sm:flex-row w-full justify-between items-start sm:items-end">
 
-                    <div className='w-full md:w-fit font-funnel flex flex-col md:flex-row items-start md:items-end justify-start md:justify-end gap-x-4'>
-                        <div className="text-2xl font-semibold">
+                    <div className='w-full wrap-none font-funnel flex flex-col md:flex-row items-start sm:items-end justify-start gap-x-4'>
+                        <div className="text-xl font-semibold">
 
                             {
-                                link 
-                                ?
-                                <a href={link} target='_blank' rel="noopener noreferrer" className='hover:text-royal-200 active:text-royal-500 hover:underline'>
-                                    {name}
-                                </a>
-                                :
-                                name
+                                link
+                                    ?
+                                    <a href={link} target='_blank' rel="noopener noreferrer" className='hover:text-royal-200 active:text-royal-500 hover:underline'>
+                                        {name}
+                                    </a>
+                                    :
+                                    name
                             }
 
                         </div>
-                        <div className="text-lg font-light text-royal-600 dark:text-royal-400">{tagline}</div>
+                        <div className="text-sm font-light max-w-3/4 text-royal-600 dark:text-royal-400">{tagline}</div>
                     </div>
 
-                    <div className="font-funnel font-light text-royal-400 dark:text-royal-500">
+                    <div className="font-funnel font-light text-royal-400 dark:text-royal-500 ml-0 sm:ml-4">
                         {year}
                     </div>
                 </div>
 
                 <div className="pb-1 mt-5 mb-3">
+
+                    {blogurl &&
+                        <a className='text-xs flex gapx-3 w-fit text-gray-200 hover:text-gray-50' href={blogurl}>Related Blog Post <ArrowRight width={14} height={14} /></a>
+                    }
+
                     {children}
                 </div>
             </div>
