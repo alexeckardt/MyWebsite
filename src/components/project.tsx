@@ -99,13 +99,10 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
                     </div>
                 </div>
 
-                <div className="pb-1 mt-5 mb-3">
-
+                <div className="pb-1 mt-1 mb-3">
                     {blogurl &&
-                        <a className='text-xs flex gapx-3 w-fit text-gray-200 hover:text-gray-50' href={blogurl}>Related Blog Post <ArrowRight width={14} height={14} /></a>
+                        <a className='text-xs flex gapx-3 w-fit text-gray-200 hover:text-gray-50 mt-2' href={blogurl}>Related Blog Post <ArrowRight width={14} height={14} /></a>
                     }
-
-                    {children}
                 </div>
             </div>
         </div>
