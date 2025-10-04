@@ -45,6 +45,7 @@ export default async function Home() {
               {/* <p>I currently work @ <a target="_blank" rel="noopener noreferrer" href="https://samos.com">Samos Insurance</a> as a Software Developer. I also am working on <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/soulflame">Soulflame</a>, an action adventure platforming game. I am an alumnus of <b>McMaster University</b>, where I studied Computer Science.</p> */}
               {/* <p>Previously, I worked @ <a target="_blank" rel="noopener noreferrer" href="https://orbitalquantum.com">Orbital Quantum</a> and <a target="_blank" rel="noopener noreferrer" href="https://www.yarowa.com/english/home/">Yarowa</a>.</p> */}
               {/* <p>I have many projects, including <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/pinball-pioneer">Pinball Pioneer</a>, which placed in the Top 0.1% of entires.</p> */}
+                <p>In my free time, I'm working on <a className="inline-flex items-center gap-1 mr-1" target="_blank" rel="noopener noreferrer" href={"https://soulflamegame.com"}>Soulflame <InlineOutboundLink /></a>, an action adventure video game.</p>
             </div>
 
             <h2>Links</h2>
@@ -68,7 +69,7 @@ export default async function Home() {
                 )}
               </a>
             ))}
-            <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700" href="/blog"> see all <OnwardLink /></a>
+            <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700 hover:text-gray-400 dark:hover:text-gray-500" href="/blog"> see all <OnwardLink /></a>
 
 
 
