@@ -42,7 +42,7 @@ export default async function Home() {
             </h1>
 
             <div className="mb-2 gap-5 flex flex-col font-sans text-neutral-600 dark:text-neutral-100 text-base/6 font-size-[1rem]">
-              <p>I like to code fun stuff and mess around with tiny squares. I'm a new-grad software developer from <b>McMaster University</b>.</p>
+              <p>I like to code fun stuff and mess around with tiny squares. I'm a newgrad software developer from <b>McMaster University</b>.</p>
               {/* <p>I currently work @ <a target="_blank" rel="noopener noreferrer" href="https://samos.com">Samos Insurance</a> as a Software Developer. I also am working on <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/soulflame">Soulflame</a>, an action adventure platforming game. I am an alumnus of <b>McMaster University</b>, where I studied Computer Science.</p> */}
               {/* <p>Previously, I worked @ <a target="_blank" rel="noopener noreferrer" href="https://orbitalquantum.com">Orbital Quantum</a> and <a target="_blank" rel="noopener noreferrer" href="https://www.yarowa.com/english/home/">Yarowa</a>.</p> */}
               {/* <p>I have many projects, including <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/pinball-pioneer">Pinball Pioneer</a>, which placed in the Top 0.1% of entires.</p> */}

@@ -26,6 +26,7 @@ export const Projects = () => {
                         year={2025}
                         githubHref={'https://github.com/meetingbot/meetingbot'}
                         href={'https://meetingbot.tech'}
+                        blogurl="/blog/meetingbot"
                     >
                     </Project>
 
