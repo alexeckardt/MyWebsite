@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 import { AppShell } from "./AppShell";
+import Image from "next/image";
 
-export const BlogPostShell = ({ children, metadata, videoUrl, ...props }: any) => {
+export const BlogPostShell = ({ children, metadata, videoUrl, imageUrl, ...props }: any) => {
 
     let { title, description, date } = metadata;
     date = new Date(date).toLocaleDateString();
@@ -22,6 +23,14 @@ export const BlogPostShell = ({ children, metadata, videoUrl, ...props }: any) =
                     src={videoUrl}
                     className="youtube-video"
                 ></iframe>
+            }
+
+            {imageUrl &&
+                <Image src={imageUrl}
+                    alt={title}
+                    width={800}
+                    height={400}
+                    className="rounded-lg mb-5 shadow-lg cover" />
             }
 
             <div className="blog w-full">

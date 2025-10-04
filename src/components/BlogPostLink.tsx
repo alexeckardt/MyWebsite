@@ -7,18 +7,19 @@ interface BlogPostLinkProps {
 export const BlogPostLink = ({ post }: BlogPostLinkProps) => {
 
     console.log(post);
-    let tagCol = "blue-500";
-    switch (post.tag) {
+    let tagCol = "#3b82f6"; // default to blue
+    switch (post.tag?.toLowerCase()) {
         case "project":
-            tagCol = "purple-500";
+            tagCol = "#a855f7";
             break;
         case "review":
-            tagCol = "yellow-500";
+            tagCol = "#eab308";
             break;
         case "project review":
-            tagCol = "green-500";
+            tagCol = "#2ab844";
             break;
     }
+    console.log(tagCol);
 
     return (
         <a href={`/blog/${post.slug}`} key={post.slug} className="bloglink group">
@@ -26,7 +27,7 @@ export const BlogPostLink = ({ post }: BlogPostLinkProps) => {
             <div className="flex justify-between items-center w-full">
                 <h4 className="text-lg font-light">{post.title}</h4>
                 {post.tag && (
-                    <p className={`text-xs text-${tagCol} px-2 py-1 rounded-full border opacity-80 group-hover:opacity-100`}>{post.tag}</p>
+                    <p style={{color: `${tagCol}`}}className={`text-xs px-2 py-1 rounded-full border opacity-80 group-hover:opacity-100`}>{post.tag}</p>
                 )}
             </div>
 

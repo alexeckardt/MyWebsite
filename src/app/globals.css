@@ -100,7 +100,7 @@ b {
 }
 
 .blog>p {
-  @apply font-sans mb-5 text-base/6
+  @apply font-sans mb-5 text-base/6 text-gray-600 dark:text-gray-400
 }
 
 .blog > .codearea {
