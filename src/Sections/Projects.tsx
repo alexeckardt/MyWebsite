@@ -12,10 +12,10 @@ export const Projects = () => {
                         tagline={"Solo-developed Action Adventure Game"}
                         tags={['GML']}
                         year={2025}
-                        bgImage={'soulflame_highres.png'}
+                        bgImage={'soulflame_new_bkg.png'}
                         itchHref="https://alexeckardt.itch.io/soulflame"
                         href="https://soulflamegame.com"
-                        backgroundPositionY='0%'
+                        backgroundPositionY='30%'
                     >
                     </Project>
 

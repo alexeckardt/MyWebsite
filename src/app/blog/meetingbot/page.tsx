@@ -8,7 +8,7 @@ export default function BlogPost() {
   return (
     <BlogPostShell
       metadata={metadata}
-    // imageUrl={"/images/projects/meetingbot_banner.png"}
+      imageUrl={"/images/blog/meetingbot-poster.png"}
     >
       <p>
         <strong>MeetingBot</strong> is our self-hostable meeting automation tool — a bot that joins
@@ -20,7 +20,7 @@ export default function BlogPost() {
       <ul>
         <li className="ml-2"><a href="https://github.com/owengretzinger" target="_blank" rel="noopener noreferrer" className='flex gap-2 items-center w-fit'>• Owen Gretzinger <InlineOutboundLink /></a></li>
         <li className="ml-2"><a href="https://github.com/sarahsimionescu" target="_blank" rel="noopener noreferrer" className='flex gap-2 items-center w-fit'>• Sarah Simionescu<InlineOutboundLink /></a></li>
-        <li className="ml-2"><a href="https://github.com/err53" target="_blank" rel="noopener noreferrer"className='flex gap-2 items-center w-fit'>• Jason Huang<InlineOutboundLink /></a></li>
+        <li className="ml-2"><a href="https://github.com/err53" target="_blank" rel="noopener noreferrer" className='flex gap-2 items-center w-fit'>• Jason Huang<InlineOutboundLink /></a></li>
         <li className="ml-2"><a href="https://github.com/sahibkhokhar" target="_blank" rel="noopener noreferrer" className='flex gap-2 items-center w-fit'>• Sahib Khokhar<InlineOutboundLink /></a></li>
       </ul>
 
@@ -34,19 +34,21 @@ export default function BlogPost() {
       <p>
         Early on, we scoped three core features:
       </p>
-      <ul>
-        <li>Join meetings automatically via link and authenticate locally</li>
-        <li>Record sessions (audio + video)</li>
-        <li>Provide APIs for developers to build meeting-based automations</li>
+      <ul className="mb-5">
+        <li>• Join meetings automatically via link and authenticate locally</li>
+        <li>• Record sessions (audio + video)</li>
+        <li>• Provide APIs for developers to build meeting-based automations</li>
       </ul>
 
-      <Image
-        src="/images/blog/meetingbot-poster.png"
-        alt="MeetingBot Poster"
-        width={800}
-        height={600}
-      />
-      <p>Infographic Poster of MeetingBot architecture and use-cases</p>
+      <div className="flex justify-center items-center m-10 flex-col w-full">
+        <Image
+          src="/images/blog/meetingbot-architecture.png"
+          alt="MeetingBot Poster"
+          width={800}
+          height={600}
+        />
+        <p>Infographic Poster of MeetingBot architecture and use-cases</p>
+      </div>
 
       <h2>Challenges Along the Way</h2>
       <p>
@@ -118,20 +120,24 @@ CMD ["pnpm", "start"]`}
 
       <p>After many months of development, we were able to show off our project at the McMaster University Capstone Expo in April of 2025. We got a lot of people coming up and asking questions, and it was an awesome experience.</p>
 
-      <Image
-        src="/images/blog/meetingbot-team.png"
-        alt="Expo Team Photo"
-        width={800}
-        height={500}
-      />
-      <p>Our Team at the McMaster University Capstone Expo, April 2025</p>
+
+      <div className="flex justify-center items-center m-10 flex-col w-full">
+        <Image
+          src="/images/blog/meetingbot-team.png"
+          alt="Expo Team Photo"
+          width={800}
+          height={500}
+        />
+        <p>Our Team at the McMaster University Capstone Expo, April 2025</p>
+      </div>
+
 
       <h2>Lessons Learned</h2>
-      <ul>
-        <li>FFmpeg is powerful but merciless — always isolate and test it in small scripts first.</li>
-        <li>Browser automation + media recording = unexpected edge cases. Use retries liberally.</li>
-        <li>Docker caching can save you hours when iterating on multi-layered builds.</li>
-        <li>Good discussions are as valuable as good commits.</li>
+      <ul className="mb-5">
+        <li>• FFmpeg is powerful but merciless — always isolate and test it in small scripts first.</li>
+        <li>• Browser automation + media recording = unexpected edge cases. Use retries liberally.</li>
+        <li>• Docker caching can save you hours when iterating on multi-layered builds.</li>
+        <li>• Good discussions are as valuable as good commits.</li>
       </ul>
 
       <h2>Try It Yourself</h2>
