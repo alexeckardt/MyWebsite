@@ -1,0 +1,104 @@
+/* Prism.js Tokyo Night (Dark) theme - inspired by VS Code Tokyo Night */
+/* Palette */
+/* bg: #1a1b26, fg: #c0caf5, comment: #565f89, cyan: #7dcfff, blue: #7aa2f7,
+   purple: #bb9af7, green: #9ece6a, red: #f7768e, orange: #ff9e64, yellow: #e0af68 */
+
+/* Base */
+pre[class*="language-"],
+code[class*="language-"] {
+  color: #c0caf5;
+  background: #1a1b26;
+  text-shadow: none;
+}
+
+/* Ensure block code doesn't show a 'text-only' background highlight */
+pre[class*="language-"] > code {
+  background: transparent !important;
+}
+
+pre[class*="language-"] {
+  padding: 1rem;
+  margin: 0;
+  overflow: auto;
+  border-radius: 0.5rem;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+/* Selection */
+pre[class*="language-"] ::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection {
+  background: rgba(125, 207, 255, 0.25);
+}
+
+/* Tokens */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #565f89;
+  font-style: italic;
+}
+
+.token.punctuation { color: #a9b1d6; }
+
+.token.namespace { opacity: 0.8; }
+
+.token.tag,
+.token.selector,
+.token.deleted { color: #f7768e; }
+
+.token.function { color: #7aa2f7; }
+
+.token.keyword { color: #bb9af7; }
+
+.token.property,
+.token.constant,
+.token.symbol { color: #e0af68; }
+
+.token.boolean,
+.token.number { color: #ff9e64; }
+
+.token.attr-name { color: #7dcfff; }
+
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted { color: #9ece6a; }
+
+/* Soften operators (e.g., colon) to avoid odd emphasis */
+.token.operator { color: #a9b1d6; }
+.token.entity,
+.token.url { color: #7dcfff; }
+
+.token.atrule,
+.token.attr-value { color: #e0af68; }
+
+.token.variable { color: #c0caf5; }
+
+.token.class-name { color: #e0af68; }
+
+.token.regex,
+.token.important { color: #f7768e; }
+
+.token.bold { font-weight: 700; }
+.token.italic { font-style: italic; }
+
+/* Line Highlight */
+.line-highlight,
+.line-numbers .line-numbers-rows {
+  border-color: #2a2b3d;
+}
+
+/* Clear unintended backgrounds on token spans from external styles */
+pre[class*="language-"] .token,
+code[class*="language-"] .token {
+  background: transparent !important;
+  box-shadow: none !important;
+}

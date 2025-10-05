@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { SocialIcon } from './social_icon';
+import { ArrowRight } from 'lucide-react'; // Adjust the path based on your project structure
 
 interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
@@ -12,9 +13,11 @@ interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     githubHref?: string;
     itchHref?: string;
     backgroundPositionY?: string;
+
+    blogurl?: string;
 }
 
-export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, backgroundPositionY, children, ...props }) => {
+export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, year, backgroundPositionY, children, blogurl, ...props }) => {
 
 
     const bgClass = `h-32 w-full overflow-hidden bg-bottom`;
@@ -25,10 +28,9 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
 
 
 
-    console.log(bgClass, backgroundImage);
     return (
-        <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border-l border-r border-b rounded-lg border-royal-200 dark:border-royal-600 shadow-lg bg-white dark:bg-royal-900">
-            <div className={bgClass} style={{ backgroundImage, backgroundSize: 'cover', backgroundPositionY }}></div>
+        // <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
+        <div className="flex flex-col overflow-hidden relative gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
 
             <div className="absolute top-1 right-1 flex flex-row gap-x-1">
                 {
@@ -71,33 +73,35 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
             </div>
 
 
-            <div className="px-5 mt-3">
-                <div className="flex flex-col sm:flex-row w-full justify-between items-end">
+            <div className="px-5 mt-3 w-full">
+                <div className="flex flex-col sm:flex-row w-full justify-between items-start sm:items-end">
 
-                    <div className='w-full md:w-fit font-funnel flex flex-col md:flex-row items-start md:items-end justify-start md:justify-end gap-x-4'>
-                        <div className="text-2xl font-semibold">
+                    <div className='w-full wrap-none font-funnel flex flex-col md:flex-row items-start sm:items-end justify-start gap-x-4'>
+                        <div className="text-xl font-semibold">
 
                             {
-                                link 
-                                ?
-                                <a href={link} target='_blank' rel="noopener noreferrer" className='hover:text-royal-200 active:text-royal-500 hover:underline'>
-                                    {name}
-                                </a>
-                                :
-                                name
+                                link
+                                    ?
+                                    <a href={link} target='_blank' rel="noopener noreferrer" className='hover:text-royal-200 active:text-royal-500 hover:underline'>
+                                        {name}
+                                    </a>
+                                    :
+                                    name
                             }
 
                         </div>
-                        <div className="text-lg font-light text-royal-600 dark:text-royal-400">{tagline}</div>
+                        <div className="text-sm font-light max-w-3/4 text-royal-600 dark:text-royal-400">{tagline}</div>
                     </div>
 
-                    <div className="font-funnel font-light text-royal-400 dark:text-royal-500">
+                    <div className="font-funnel font-light text-royal-400 dark:text-royal-500 ml-0 sm:ml-4">
                         {year}
                     </div>
                 </div>
 
-                <div className="pb-1 mt-5 mb-3">
-                    {children}
+                <div className="pb-1 mt-1 mb-3">
+                    {blogurl &&
+                        <a className='text-xs flex gap-x-3 w-fit text-gray-200 hover:text-gray-50 mt-2' href={blogurl}>Related Blog Post <ArrowRight width={14} height={14} /></a>
+                    }
                 </div>
             </div>
         </div>

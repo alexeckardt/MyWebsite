@@ -8,6 +8,7 @@
   --foreground: #171717;
 }
 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -20,17 +21,17 @@
 
 /* :root { */
 @theme {
-  --color-royal-50: hsl(255, 60%, 95%);
-  --color-royal-100: hsl(254, 44%, 90%);
-  --color-royal-200: hsl(255, 50%, 82%);
-  --color-royal-300: hsl(255, 50%, 72%);
-  --color-royal-400: hsl(255, 50%, 62%);
-  --color-royal-500: hsl(255, 48%, 45%);
-  --color-royal-600: hsl(255, 48%, 30%);
-  --color-royal-700: hsl(255, 51%, 20%);
-  --color-royal-800: hsl(253, 70%, 14%);
-  --color-royal-900: hsl(253, 70%, 9%);
-  --color-royal-950: hsl(254, 68%, 5%);
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,5 +44,103 @@
 body {
   color: var(--foreground);
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: 'Funnel Display', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Geist Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.main>h1 {
+  @apply text-2xl font-sans font-semibold mb-8
+}
+
+.main>h2 {
+  @apply text-lg font-sans font-medium mt-8 mb-1
+}
+
+p > a {
+  @apply text-black font-medium underline decoration-neutral-400 dark:decoration-neutral-400 dark:text-white hover:underline;
+}
+
+.links>a {
+  @apply flex gap-1 text-neutral-700 overflow-visible dark:text-neutral-400 hover:underline
+}
+
+.links {
+  @apply flex flex-wrap gap-4 max-w-full md:gap-8
+}
+
+b {
+  @apply text-black font-medium dark:text-white;
+}
+
+.bloglink {
+  @apply no-underline flex flex-col justify-center items-start p-3 w-full min-h-20 rounded-lg overflow-hidden border mb-2 bg-gray-50 hover:bg-gray-100 border-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700
+}
+
+.youtube-video {
+  @apply flex items-center justify-center overflow-hidden max-w-full h-50 rounded-lg overflow-hidden border border-gray-200 mb-2
+}
+
+.blog {
+  @apply font-sans w-full mb-12
+}
+
+.blog>h1 {
+  @apply font-sans text-3xl font-semibold mt-8 mb-2
+}
+
+.blog>h2 {
+  @apply font-sans text-xl font-semibold mt-2 mb-1 text-neutral-700 dark:text-neutral-300
+}
+
+.blog>h3 {
+  @apply font-sans text-lg font-semibold -mb-1
+}
+
+.blog>h4 {
+  @apply font-sans text-lg -mb-1
+}
+
+.blog>p {
+  @apply font-sans mb-5 text-base/6 text-gray-600 dark:text-gray-400
+}
+
+.blog > .codearea {
+  @apply min-h-12 border border-gray-200 w-full bg-gray-50 rounded-md px-2 py-5 mb-4
+}
+
+/* Modern Code Block Styling */
+.codeblock-container {
+  @apply w-full mb-6 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-900;
+}
+
+.codeblock-header {
+  @apply flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700;
+}
+
+.codeblock-filename {
+  @apply text-sm font-mono text-gray-600 dark:text-gray-400;
+}
+
+.codeblock-copy-btn {
+  @apply p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300;
+}
+
+.codeblock-content {
+  @apply p-4 overflow-x-auto text-sm;
+}
+
+.codeblock-content code {
+  @apply font-mono leading-relaxed;
+}
+
+/* Pixel art utility: keeps edges crisp when scaled */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback */
+  -ms-interpolation-mode: nearest-neighbor; /* old IE */
+}
+
+/* Prism themes: light by default, Tokyo Night in dark mode */
+@import "prismjs/themes/prism.css";
+@media (prefers-color-scheme: dark) {
+  @import "./prism-tokyo-night.css";
 }

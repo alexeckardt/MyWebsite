@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.11.3",
+    "@types/prismjs": "^1.26.5",
     "next": "15.3.3",
+    "prismjs": "^1.30.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.9.1"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.349",
