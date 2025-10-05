@@ -34,7 +34,7 @@ export default function BlogPost() {
       <p><em>Hour 25-42:</em> Title screen + pause menu, basic SFX pass, and polish (ball trails, subtle bloom).</p>
       <p><em>Hour 42-48:</em> Final balance, bug triage, packaging, and itch page copy.</p>
 
-      <p>Funilly enough, as I got closer and closer to my regular bed-time on the second night, I felt a surge of energy - I didn't want to stop. I pished through all the way until submission at 8AM.</p>
+      <p>Funnily enough, as I got closer and closer to my regular bed-time on the second night, I felt a surge of energy - I didn't want to stop. I pushed through all the way until submission at 8AM.</p>
       <p>My so-called "friends" then decided to drag me to Toronto after this (just kidding, I wanted to go - they supported me with late night Ice Capps); At the end of our excursion, I ended up staying up for 32 hours straight, my all time record.</p>
 
       <Image
@@ -56,12 +56,12 @@ export default function BlogPost() {
 
 
       <h2>Results</h2>
-      <p>After the judging period from the community, I ended up in 7th place, out of 7000 entries. This let me </p>
+      <p>After the judging period from the community, I ended up in 7th place, out of 7000 entries. This let me reach a much wider audience than I expected and gave me a huge boost of motivation to keep making games.</p>
 
-      <p>I got a lot of feedback, many of it being that I should have embedded my game into the website instead of making a stand-alone application. This would probably have let me reach more people, so I definetly will keep that in mind for my next game jam entry.</p>
+      <p>I got a lot of feedback, many of it being that I should have embedded my game into the website instead of making a stand-alone application. This would probably have let me reach more people, so I definitely will keep that in mind for my next game jam entry.</p>
 
       <p>The following is by Mark Brown (the creator and organizer of this jam), and it's his review of his favourite 20 games. This was super amazing for me</p>
-      <p>I may not have been on of his favourites, but I'm featured at 2:51 !</p>
+      <p>I may not have been one of his favourites, but I'm featured at 2:51 !</p>
 
 
       <div className="mb-8">

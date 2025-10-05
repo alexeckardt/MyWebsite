@@ -28,10 +28,9 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
 
 
 
-    console.log(bgClass, backgroundImage);
     return (
-        <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
-            <div className={bgClass} style={{ backgroundImage, backgroundSize: 'cover', backgroundPositionY }}></div>
+        // <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
+        <div className="flex flex-col overflow-hidden relative gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
 
             <div className="absolute top-1 right-1 flex flex-row gap-x-1">
                 {
@@ -101,7 +100,7 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
 
                 <div className="pb-1 mt-1 mb-3">
                     {blogurl &&
-                        <a className='text-xs flex gapx-3 w-fit text-gray-200 hover:text-gray-50 mt-2' href={blogurl}>Related Blog Post <ArrowRight width={14} height={14} /></a>
+                        <a className='text-xs flex gap-x-3 w-fit text-gray-200 hover:text-gray-50 mt-2' href={blogurl}>Related Blog Post <ArrowRight width={14} height={14} /></a>
                     }
                 </div>
             </div>

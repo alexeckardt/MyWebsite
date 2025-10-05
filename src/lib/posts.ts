@@ -34,7 +34,7 @@ export async function getPosts(): Promise<PostMeta[]> {
       const raw = await fs.readFile(metaPath, 'utf-8');
       meta = JSON.parse(raw);
     } catch {
-      // ignore missing or invalid meta.json; hidden 
+      // Ignore missing or invalid meta.json; post will be hidden from index.
       meta = undefined;
     }
 
@@ -45,7 +45,7 @@ export async function getPosts(): Promise<PostMeta[]> {
         title: meta.title || humanizeSlug(slug),
         date: meta.date,
         description: meta.description,
-        tag: humanizeSlug(meta.tag || ""),
+        tag: meta.tag ? humanizeSlug(meta.tag) : undefined,
       });
     }
   }
