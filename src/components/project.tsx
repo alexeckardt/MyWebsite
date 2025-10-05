@@ -31,6 +31,7 @@ export const Project: React.FC<ProjectProps> = ({ name, tagline, tags, bgImage, 
     return (
         // <div className="flex overflow-hidden relative items-start justify-start flex flex-col gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
         <div className="flex flex-col overflow-hidden relative gap-y-2 w-full border border-neutral-700 rounded-lg shadow-lg bg-neutral-900 ">
+            <div className={bgClass} style={{ backgroundImage, backgroundSize: 'cover', backgroundPositionY }}></div>
 
             <div className="absolute top-1 right-1 flex flex-row gap-x-1">
                 {
