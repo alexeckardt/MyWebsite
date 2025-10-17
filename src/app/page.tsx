@@ -8,13 +8,14 @@ import { InlineOutboundLink } from "@/components/InlineOutboundLink";
 import { getPosts } from "@/lib/posts";
 import Favicon from '../../public/favicon.png';
 import { OnwardLink } from "@/components/OnwardLink";
+import { BlogPostLink } from "@/components/BlogPostLink";
 
 export default async function Home() {
 
   const posts = await getPosts();
 
   return (
-    <>
+    <div className="min-h-screen w-full bg-background text-foreground mb-20">
       {/* Header */}
       <div className="h-1/4 w-full -z-1 overflow-hidden bg-[url(/images/backgrounds/header_dark.png)] bg-bottom bg-cover fixed top-0 left-0">
       </div>
@@ -41,10 +42,11 @@ export default async function Home() {
             </h1>
 
             <div className="mb-2 gap-5 flex flex-col font-sans text-neutral-600 dark:text-neutral-100 text-base/6 font-size-[1rem]">
-              <p>I like to code fun stuff and mess around with tiny squares. I'm a new-grad software developer from <b>McMaster University</b>.</p>
+              <p>I like to code fun stuff and mess around with tiny squares. I'm a newgrad software developer from <b>McMaster University</b>.</p>
               {/* <p>I currently work @ <a target="_blank" rel="noopener noreferrer" href="https://samos.com">Samos Insurance</a> as a Software Developer. I also am working on <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/soulflame">Soulflame</a>, an action adventure platforming game. I am an alumnus of <b>McMaster University</b>, where I studied Computer Science.</p> */}
               {/* <p>Previously, I worked @ <a target="_blank" rel="noopener noreferrer" href="https://orbitalquantum.com">Orbital Quantum</a> and <a target="_blank" rel="noopener noreferrer" href="https://www.yarowa.com/english/home/">Yarowa</a>.</p> */}
               {/* <p>I have many projects, including <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/pinball-pioneer">Pinball Pioneer</a>, which placed in the Top 0.1% of entires.</p> */}
+              <p>In my free time, I'm working on <a className="inline-flex items-center gap-1 mr-1" target="_blank" rel="noopener noreferrer" href={"https://soulflamegame.com"}>Soulflame <InlineOutboundLink /></a>, an action adventure video game.</p>
             </div>
 
             <h2>Links</h2>
@@ -58,23 +60,19 @@ export default async function Home() {
 
             <h2>Blog Posts</h2>
             {posts.map((post) => (
-              <a href={`/blog/${post.slug}`} key={post.slug} className="bloglink">
-                <h4 className="text-lg font-light">{post.title}</h4>
-                {post.date && (
-                  <p className="text-xs text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
-                )}
-                {post.description && (
-                  <p className="text-sm text-gray-500 mt-1">{post.description}</p>
-                )}
-              </a>
+              <BlogPostLink key={post.slug} post={post} />
             ))}
-            <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700" href="/blog"> see all <OnwardLink /></a>
+            <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700 hover:text-gray-400 dark:hover:text-gray-500" href="/blog"> see all <OnwardLink /></a>
+
+
+            <h2>Projects</h2>
+            <Projects />
 
 
 
           </div>
         </div>
       </div >
-    </>
+    </div>
   );
 }

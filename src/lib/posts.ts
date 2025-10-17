@@ -6,6 +6,9 @@ export type PostMeta = {
   title: string;
   date?: string; // ISO or human
   description?: string;
+  tag?: string; // project, review, etc.
+
+  ignore?: boolean; // if true, do not include in blog index
 };
 
 const BLOG_DIR = path.join(process.cwd(), 'src', 'app', 'blog');
@@ -26,20 +29,25 @@ export async function getPosts(): Promise<PostMeta[]> {
     }
 
     const metaPath = path.join(BLOG_DIR, slug, 'meta.json');
-    let meta: Partial<PostMeta> = {};
+    let meta: Partial<PostMeta> | undefined = {};
     try {
       const raw = await fs.readFile(metaPath, 'utf-8');
       meta = JSON.parse(raw);
     } catch {
-      // optional meta; fall back to slug title
+      // Ignore missing or invalid meta.json; post will be hidden from index.
+      meta = undefined;
     }
 
-    posts.push({
-      slug,
-      title: meta.title || humanizeSlug(slug),
-      date: meta.date,
-      description: meta.description,
-    });
+    if (meta && (meta?.ignore ?? false) !== true) {
+      posts.push({
+        ...meta,
+        slug,
+        title: meta.title || humanizeSlug(slug),
+        date: meta.date,
+        description: meta.description,
+        tag: meta.tag ? humanizeSlug(meta.tag) : undefined,
+      });
+    }
   }
 
   // Sort by date desc if available, otherwise by slug desc
