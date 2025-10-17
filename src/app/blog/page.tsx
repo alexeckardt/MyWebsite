@@ -7,7 +7,8 @@ export default async function Home() {
 
   return (
     <AppShell>
-      <a className="mb-5 md:-ml-5 text-gray-400 hover:text-gray-300" href="/">back</a>
+      <a className="flex items-center text-gray-200 dark:text-gray-700 hover:text-gray-300 -ml-4" href="/">...home </a>
+      
 
       {/* Body */}
       <div className="main">

@@ -17,9 +17,10 @@ interface CodeBlockProps {
   language?: string;
   children: string;
   filename?: string;
+  className?: string; // extra classes for <pre>, e.g., font size overrides
 }
 
-export function CodeBlock({ language = 'javascript', children, filename }: CodeBlockProps) {
+export function CodeBlock({ language = 'javascript', children, filename, className }: CodeBlockProps) {
   const codeRef = useRef<HTMLElement>(null);
   const [isClient, setIsClient] = useState(false);
 
@@ -49,6 +50,8 @@ export function CodeBlock({ language = 'javascript', children, filename }: CodeB
     }
   };
 
+  const preClass = className ? `codeblock-content ${className}` : 'codeblock-content';
+
   return (
     <div className="codeblock-container">
       {filename && (
@@ -66,7 +69,7 @@ export function CodeBlock({ language = 'javascript', children, filename }: CodeB
           </button>
         </div>
       )}
-      <pre className="codeblock-content" suppressHydrationWarning>
+      <pre className={preClass} suppressHydrationWarning>
         <code ref={codeRef} className={`language-${language}`} suppressHydrationWarning>
           {children}
         </code>
