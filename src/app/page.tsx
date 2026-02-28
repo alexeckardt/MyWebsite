@@ -64,11 +64,8 @@ export default async function Home() {
             ))}
             <a className="flex items-center gap-1 text-gray-200 dark:text-gray-700 hover:text-gray-400 dark:hover:text-gray-500" href="/blog"> see all <OnwardLink /></a>
 
-
             <h2>Projects</h2>
             <Projects />
-
-
 
           </div>
         </div>
