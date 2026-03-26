@@ -20,8 +20,6 @@ export default async function Home() {
       <div className="h-1/4 w-full -z-1 overflow-hidden bg-[url(/images/backgrounds/header_dark.png)] bg-bottom bg-cover fixed top-0 left-0">
       </div>
 
-
-
       {/* Body */}
       <div className="bg-background w-full mt-24 relative">
 
@@ -34,9 +32,18 @@ export default async function Home() {
           className="relative -top-[26px] left-2 lg:left-12"
         />
 
-        <div className="flex flex-col max-w-[65ch] mx-12 lg:mx-auto pt-12 lg:mt-10">
-          <div className="main">
 
+        <div className="bg-[#05ce78] py-6 text-center text-black">
+          I am currently running a Kickstarter for my main project, <a href="https://kickstarter.com/projects/alex-eckardt/soulflame" className='underline font-semibold' >Soulflame</a>!
+
+          Please check it out and decide if you are interested or not.
+        </div>
+
+        <div className="flex flex-col max-w-[65ch] mx-12 lg:mx-auto pt-12 lg:mt-10">
+
+
+
+          <div className="main">
             <h1 className="flex items-center gap-3 text-3xl font-bold mb-4">
               Hi, I'm Alex Eckardt &#128075;
             </h1>
