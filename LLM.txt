@@ -1,0 +1,54 @@
+MyWebsite LLM Guide
+
+Purpose
+- Personal portfolio website for Alex Eckardt.
+- Use this file to understand the site structure, core highlights, and where to find the most important content.
+
+Primary links
+- Home: /
+- Blog index: /blog
+- Resume PDF: /Alexander_Eckardt_Website_Resume.pdf
+- GitHub: https://github.com/alexeckardt
+- LinkedIn: https://linkedin.com/in/alex-eckardt
+- YouTube: https://www.youtube.com/@pixeqla
+
+Who Alex is
+- Software engineer and new grad Computer Science student from McMaster University.
+- Founder of an indie game studio - Alex Eckardt Games
+- Focuses on games, web apps, automation tools, and practical engineering work.
+
+Resume highlights
+- Current role: Software Developer at Samos Insurance Solutions.
+- Previous roles: Business Data Analyst Intern (Co-op) at Samos, Teaching Assistant at McMaster University, Operations Lead (Co-op) at Orbital Quantum, Junior Software Developer (Co-op) at Yarowa.
+- Education: McMaster University, Computer Science.
+- Core experience spans backend systems, frontend work, serverless APIs, browser automation, Docker, cloud tooling, and teaching.
+
+Highlighted projects
+- Soulflame: solo-developed action adventure game and main current project.
+- MeetingBot: self-hostable meeting automation and recording platform for Zoom, Teams, and Google Meet.
+- Pinball Pioneer: GMTK Game Jam pinball game and a standout portfolio piece.
+- GO Transit Viewer: web app for visualizing GO Transit routes.
+
+Other portfolio sections
+- Work Experience: detailed role descriptions and company links.
+- Projects: major shipped work with links to live demos, GitHub, and itch.io.
+- Experiments: smaller technical experiments and prototypes.
+- Blog: longer writeups about projects and engineering lessons.
+
+Technical themes across the site
+- Next.js, React, TypeScript, Tailwind CSS, and custom component-driven UI.
+- Game development and interactive tools.
+- Docker, AWS, Terraform, Playwright, FFmpeg, PostgreSQL, Azure, Python, SwiftUI, C#, and GameMaker.
+- Emphasis on shipping, practical problem solving, and polished presentation.
+
+Key content that is worth surfacing
+- Current Kickstarter for Soulflame on the homepage.
+- Resume and contact links in the hero section.
+- Project cards and blog posts for MeetingBot, Pinball Pioneer, and GO Transit Viewer.
+- Work history and experience timeline.
+
+Scraping guidance
+- The homepage is the best compact summary of identity, links, and top projects.
+- The blog index is the best place to discover detailed project writeups.
+- The resume PDF contains the canonical career history, but the homepage and work section already mirror most of the important details.
+- Prefer the project and work sections over generic prose when extracting facts.
