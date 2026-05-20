@@ -32,13 +32,6 @@ export default async function Home() {
           className="relative -top-[26px] left-2 lg:left-12"
         />
 
-
-        <div className="bg-[#05ce78] py-6 text-center text-black">
-          I am currently running a Kickstarter for my main project, <a href="https://kickstarter.com/projects/alex-eckardt/soulflame" className='underline font-semibold' >Soulflame</a>!
-
-          Please check it out and decide if you are interested or not.
-        </div>
-
         <div className="flex flex-col max-w-[65ch] mx-12 lg:mx-auto pt-12 lg:mt-10">
 
 
@@ -53,15 +46,21 @@ export default async function Home() {
               {/* <p>I currently work @ <a target="_blank" rel="noopener noreferrer" href="https://samos.com">Samos Insurance</a> as a Software Developer. I also am working on <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/soulflame">Soulflame</a>, an action adventure platforming game. I am an alumnus of <b>McMaster University</b>, where I studied Computer Science.</p> */}
               {/* <p>Previously, I worked @ <a target="_blank" rel="noopener noreferrer" href="https://orbitalquantum.com">Orbital Quantum</a> and <a target="_blank" rel="noopener noreferrer" href="https://www.yarowa.com/english/home/">Yarowa</a>.</p> */}
               {/* <p>I have many projects, including <a target="_blank" rel="noopener noreferrer" href="https://alexeckardt.itch.io/pinball-pioneer">Pinball Pioneer</a>, which placed in the Top 0.1% of entires.</p> */}
-              <p>I'm the founder of an <a className="inline-flex items-center gap-1 mr-1" target="_blank" rel="noopener noreferrer" href={"https://alexeckardtgames.com"}>indie game studio<InlineOutboundLink /></a>.</p>
+              <p>
+                I'm the founder of an
+                <a className="inline-flex items-center gap-1 mr-1 ml-1" target="_blank" rel="noopener noreferrer" href={"https://alexeckardtgames.com"}>
+                  indie game studio<InlineOutboundLink />
+                </a>, working on
+                <a className="inline-flex items-center gap-1 mr-1 ml-1" target="_blank" rel="noopener noreferrer" href={"https://soulflamegame.com"}>Soulflame<InlineOutboundLink /></a>
+              </p>
             </div>
 
             <h2>Links</h2>
             <div className="links">
-              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://github.com/alexeckardt"> code <InlineOutboundLink /></a>
-              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/alex-eckardt"> connect <InlineOutboundLink /></a>
-              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeqla"> watch <InlineOutboundLink /></a>
-              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="/Alexander_Eckardt_Website_Resume.pdf"> cv <InlineOutboundLink /></a>
+              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://github.com/alexeckardt"> github <InlineOutboundLink /></a>
+              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/alex-eckardt"> linkedin <InlineOutboundLink /></a>
+              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeqla"> youtube <InlineOutboundLink /></a>
+              <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="/Alexander_Eckardt_Website_Resume.pdf"> CV <InlineOutboundLink /></a>
               {/* <a className="flex items-center gap-1" target="_blank" rel="noopener noreferrer" href="https://x.com/pixeqla"> follow <InlineOutboundLink /></a> */}
             </div>
 
